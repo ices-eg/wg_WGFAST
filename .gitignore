@@ -31,3 +31,9 @@ vignettes/*.pdf
 # Temporary files created by R markdown
 *.utf8.md
 *.knit.md
+/SONAR-netCDF4/generated/source template.cdl
+/SONAR-netCDF4/generated/source template-tables-only.docx
+/SONAR-netCDF4/generated/coordinate system figure.png
+/SONAR-netCDF4/generated/coordinate system figure.emf
+/SONAR-netCDF4/generated/coordinate system figure.png
+/SONAR-netCDF4/generated/coordinate system figure.emf
