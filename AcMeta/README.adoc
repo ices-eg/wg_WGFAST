@@ -1,0 +1,34 @@
+= A metadata convention for processed acoustic data from active acoustic systems
+
+This directory contains the text, source files, and utilities that are necessary to generate the AcMeta convention document. It is also the place where new versions of the convention are discussed and developed.
+
+Version 1.10 of the AcMeta convention (as ICES SISP 4-TG-AcMeta) is available https://www.ices.dk/sites/pub/Publication%20Reports/ICES%20Survey%20Protocols%20(SISP)/SISP-4%20A%20metadata%20convention%20for%20processed%20acoustic%20data%20from%20active%20acoustic%20systems.pdf[here]. Previous versions were 1.0 (2013) and 1.05 (2014).
+
+== Contributing to this convention
+
+Please take a moment to review this document in order to make the contribution
+process easy and effective for everyone involved.
+
+=== Using the issue tracker
+
+The issue tracker is the preferred channel for corrections, enhancements and submitting pull
+requests.
+
+=== Enhancements
+
+Enhancement requests are welcome. But take a moment to find out whether your idea
+fits with the scope and aims of the project. It's up to *you* to make a strong
+case to convince the convention's coordinators of the merits of this feature. Please
+provide as much detail and context as possible. 
+
+=== Pull requests
+
+Good pull requests - corrections, improvements, new features - are a fantastic
+help. They should remain focused in scope and avoid containing unrelated
+commits.
+
+*Please ask first* before embarking on any significant pull request (e.g.
+implementing features, refactoring the document),
+otherwise you risk spending a lot of time working on something that the
+convention's coordinators might not want to merge into the project.
+
