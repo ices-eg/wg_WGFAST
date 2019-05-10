@@ -40,15 +40,10 @@ In many cases the cost of collecting acoustic data is significant and adhering t
 The metadata attribute fields in this document build on existing conventions and are presented following the netCDF (network Common Data Format) cite:[rew1990,unidata2017] format of global attributes. The global attributes describe the overall contents of the file and allow for data discovery. Global attributes can be thought of as conveying five kinds of information:
 
 * What: What are the data in the dataset?
-
 * Where: The spatial coverage of the data.
-
 * When: The temporal coverage of the data.
-
 * Who: Who produced the data?
-
 * How: How were the data produced and how are they being made available?
-
 
 All fields should be human-readable and can be of either '`character`' or '`numeric`' type. Where applicable, metadata attribute definitions will state that controlled vocabulary should be used. Use of controlled vocabulary aids consistency, accuracy, interoperability, and data discovery. Standard lists for controlled vocabulary developed specifically for this metadata convention are given in <<_standard_lists_for_controlled_vocabulary>>. If the appropriate words are not present in the standard list users should provide their own terminology. The standard lists can be extended according to user feedback to accommodate new terminologies in future versions of this metadata convention.
 
@@ -66,67 +61,47 @@ Processed acoustic data and metadata may be held in a variety of formats includi
 
 == Summary of metadata categories
 
-*Metadata Record*
+Metadata Record:: Uniform resource identifier (URI) that uniquely identifies the metadata record.
 
-Uniform resource identifier (URI) that uniquely identifies the metadata record.
+Mission metadata:: Metadata that gives a high level description of the overarching initiative (e.g. mission, project, ocean observing system) under which the acoustic data were collected.
 
-*Mission metadata*
+Cruise metadata:: Attributes that describe the cruise from which the acoustic data were acquired. Metadata should provide information that readily enables the cruise to be identified and be aware of cruise objectives, other instrumentation, and data acquired.
 
-Metadata that gives a high level description of the overarching initiative (e.g. mission, project, ocean observing system) under which the acoustic data were collected.
+Ship metadata:: Attributes that describe the ship from which acoustic data were collected. Metadata should provide information that uniquely identifies the ship and its basic specifications to enable an understanding of the type of ship and its purpose.
 
-*Cruise metadata*
+Mooring metadata:: Attributes that describe the mooring from which acoustic data were collected.
 
-Attributes that describe the cruise from which the acoustic data were acquired. Metadata should provide information that readily enables the cruise to be identified and be aware of cruise objectives, other instrumentation, and data acquired.
+Transect metadata:: Attributes that describe transect data. Transect metadata would normally apply to acoustic data from a moving platform.
 
-*Ship metadata*
+Instrument metadata:: Attributes that describe the acoustic instrument that recorded the raw data from which the processed data were derived.
 
-Attributes that describe the ship from which acoustic data were collected. Metadata should provide information that uniquely identifies the ship and its basic specifications to enable an understanding of the type of ship and its purpose.
+Ancillary instruments:: Attributes that provide the opportunity to list ancillary instruments that may be of relevance to the acoustic data set.
 
-*Mooring metadata*
+Calibration metadata:: Attributes that describe calibration procedures and calibration accuracy and precision.
 
-Attributes that describe the mooring from which acoustic data were collected.
+Data acquisition metadata:: Attributes that describe the data acquisition process.
 
-*Transect metadata*
+Data processing metadata:: Attributes that describe the data processing procedures. Data processing procedures may be complex and difficult to capture in a simple list of attributes. Therefore links to documents that give more comprehensive descriptions of processing procedures should be given if appropriate.
 
-Attributes that describe transect data. Transect metadata would normally apply to acoustic data from a moving platform.
+Dataset metadata:: Attributes that describe the set of data. Some attributes will vary with each data file and may be automatically generated from the data file. When possible, automatic generation of dataset attribute metadata is preferred to reduce effort and the possibility of human error. Other attributes will need to be manually generated. In many cases attributes may be unchanged between datasets; hence the use of a metadata template which includes stable attributes may be beneficial.
 
-*Instrument metadata*
-
-Attributes that describe the acoustic instrument that recorded the raw data from which the processed data were derived.
-
-*Ancillary instruments*
-
-Attributes that provide the opportunity to list ancillary instruments that may be of relevance to the acoustic data set.
-
-*Calibration metadata*
-
-Attributes that describe calibration procedures and calibration accuracy and precision.
-
-*Data acquisition metadata*
-
-Attributes that describe the data acquisition process.
-
-*Data processing metadata*
-
-Attributes that describe the data processing procedures. Data processing procedures may be complex and difficult to capture in a simple list of attributes. Therefore links to documents that give more comprehensive descriptions of processing procedures should be given if appropriate.
-
-*Dataset metadata*
-
-Attributes that describe the set of data. Some attributes will vary with each data file and may be automatically generated from the data file. When possible, automatic generation of dataset attribute metadata is preferred to reduce effort and the possibility of human error. Other attributes will need to be manually generated. In many cases attributes may be unchanged between datasets; hence the use of a metadata template which includes stable attributes may be beneficial.
-
-*Data metadata*
-
-Attributes that describe the data in a dataset, including the type of scattering quantity that is stored and the data horizontal and vertical dimensions.
+Data metadata:: Attributes that describe the data in a dataset, including the type of scattering quantity that is stored and the data horizontal and vertical dimensions.
 
 == Description of metadata category table headers
 
-* *Attribute name*: Unique name for the attribute. When possible, names will conform to existing standards. Non-authoritative attributes are prefixed with the category name to ensure that they are unique. For example the 'name' attribute for cruise and ship categories are prefixed to be cruise_name and ship_name respectively. White space or blank characters are not allowed and the underscore '`_`' character is used instead. For this metadata convention all attribute fields are lowercase.
-* *Definition*: Description of attribute.
-* *Data type*: S for string, N for numeric
-* *Units*: If applicable, the units to be used for numeric attributes, using the SI standard.
-* *Authority*: Where they exist, the relevant authority is cited for each of the attribute fields. The field is left blank if no authority exists.
-* *Obligation*: Following Dublin Core documentation cite:[dublincore2004], Obligation '`indicates whether the element is required to always or sometimes be present. In this application profile, the obligation can be: mandatory (M), mandatory if applicable (MA), strongly recommended (R) or optional (O). Mandatory ensures that some of the elements are always supported and mandatory if applicable means that this element must be supported if the information is available. An element with a mandatory obligation must have a value. The strongly recommended and the optional elements should be filled with a value if the information is appropriate to the given resource but if not, they may be omitted.`' An example of an MA field would be attributes in the mooring table that are only populated if the data relates to the mooring in some way.
-* *Maximum occurrences*: Specifies the maximum number of instances of the attribute. Single occurrences are shown by '`1`'. Multiple, but specified number of occurrences, are indicated by '`N`'. A fixed number of occurrences are allowed (e.g., '`2`', '`3`', etc). For example, if the data comes from a cruise then the attribute field cruise_name is mandatory and applicable and has a maximum occurrence of 1.
+Attribute name:: Unique name for the attribute. When possible, names will conform to existing standards. Non-authoritative attributes are prefixed with the category name to ensure that they are unique. For example the 'name' attribute for cruise and ship categories are prefixed to be cruise_name and ship_name respectively. White space or blank characters are not allowed and the underscore ´_´ character is used instead. For this metadata convention all attribute fields are lowercase.
+
+Definition:: Description of attribute.
+
+Data type:: S for string, N for numeric
+
+Units:: If applicable, the units to be used for numeric attributes, using the SI standard.
+
+Authority:: Where they exist, the relevant authority is cited for each of the attribute fields. The field is left blank if no authority exists.
+
+Obligation:: Following Dublin Core documentation cite:[dublincore2004], Obligation '`indicates whether the element is required to always or sometimes be present. In this application profile, the obligation can be: mandatory (M), mandatory if applicable (MA), strongly recommended pass:[(R)] or optional (O). Mandatory ensures that some of the elements are always supported and mandatory if applicable means that this element must be supported if the information is available. An element with a mandatory obligation must have a value. The strongly recommended and the optional elements should be filled with a value if the information is appropriate to the given resource but if not, they may be omitted.`' An example of an MA field would be attributes in the mooring table that are only populated if the data relates to the mooring in some way.
+
+Maximum occurrences:: Specifies the maximum number of instances of the attribute. Single occurrences are shown by '`1`'. Multiple, but specified number of occurrences, are indicated by '`N`'. A fixed number of occurrences are allowed (e.g., '`2`', '`3`', etc). For example, if the data comes from a cruise then the attribute field cruise_name is mandatory and applicable and has a maximum occurrence of 1.
 
 == Definition of attributes for active acoustic metadata
 
@@ -875,13 +850,13 @@ Added new attribute of "`Convention`" to the Metadata category.
 
 The ICES Data Centre (Hjalte Parner, Nils Olav Handegard) are constructing an Acoustic Trawl Survey database with the intention of implementing the ICES Acoustic Metadata Standard. Through this process a number of new and existing attribute fields were discussed. This revision documents the consequent changes that were made as described below.
 
-*Add:* Category: Cruise attributes: cruise_summary_report attribute.
+Add:: Category: Cruise attributes: cruise_summary_report attribute.
 
-*Add:* Category: Ship attributes: ship_platform_code using ICES database
+Add:: Category: Ship attributes: ship_platform_code using ICES database
 
-*Add:* Category: Ship attributes: ship_platform_class using ICES database
+Add:: Category: Ship attributes: ship_platform_class using ICES database
 
-*Add:* Category: Data processing: data_processing_triwave_correction
+Add:: Category: Data processing: data_processing_triwave_correction
 
 Minor edits to wording of Category Mooring: mooring_uplimit, mooring_downlimit, mooring_z_units.
 
@@ -889,10 +864,10 @@ Minor edits to wording of Category Transect: transect_uplimit, transect_downlimi
 
 Minor edits to wording of Category Dataset: uplimit, downlimit and z_units.
 
-*Add:* Category: Metadata record: convention_version
+Add:: Category: Metadata record: convention_version
 
 Revised convention version. Previous versions were using a decimal number series - e.g. version 1.01, 1.02 etc. limiting the minor number series to 99 revisions. This revision alters the convention to follow the more common convention in the computer world where the version number is described by two integers separated by a full stop. Thus following this convention our previous version 1.05 would now be version 1.5, that is the 5^th^ revision in version 1 series. This version 1.10 is the 10^th^ revision of the version 1 series.
 
-*Revised:* Category: Data attributes: data_range_axis_interval to data_range_axis_interval_type for consistency with attribute for vertical dimeionsion: data_ping_axis_interval_type.
+Revised:: Category: Data attributes: data_range_axis_interval to data_range_axis_interval_type for consistency with attribute for vertical dimeionsion: data_ping_axis_interval_type.
 
-*Add:* Category: Data attributes: data_range_axis_interval_value
+Add:: Category: Data attributes: data_range_axis_interval_value
