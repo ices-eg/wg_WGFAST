@@ -45,9 +45,9 @@ The metadata attribute fields in this document build on existing conventions and
 * Who: Who produced the data?
 * How: How were the data produced and how are they being made available?
 
-All fields should be human-readable and can be of either '`character`' or '`numeric`' type. Where applicable, metadata attribute definitions will state that controlled vocabulary should be used. Use of controlled vocabulary aids consistency, accuracy, interoperability, and data discovery. Standard lists for controlled vocabulary developed specifically for this metadata convention are given in <<_standard_lists_for_controlled_vocabulary>>. If the appropriate words are not present in the standard list users should provide their own terminology. The standard lists can be extended according to user feedback to accommodate new terminologies in future versions of this metadata convention.
+All fields should be human-readable and can be of either '`character`' or '`numeric`' type. Where applicable, metadata attribute definitions will state that controlled vocabulary should be used. Use of controlled vocabulary aids consistency, accuracy, interoperability, and data discovery. Standard lists for controlled vocabulary developed specifically for this metadata convention are given in <<listControlledVocab>>. If the appropriate words are not present in the standard list users should provide their own terminology. The standard lists can be extended according to user feedback to accommodate new terminologies in future versions of this metadata convention.
 
-Wherever possible, the global attributes are based on established authorities. In some instances the metadata attribute may cite other authorities, while other metadata attributes may be unique to this metadata convention. Where they exist, the relevant authority is cited for each of the attribute fields. A table of the various metadata authorities is given in <<_metadata_authorities>>.
+Wherever possible, the global attributes are based on established authorities. In some instances the metadata attribute may cite other authorities, while other metadata attributes may be unique to this metadata convention. Where they exist, the relevant authority is cited for each of the attribute fields. A table of the various metadata authorities is given in <<metadataAuthorities>>.
 
 The metadata attributes are grouped according to logical categories. This is done to help both author and reader navigate the metadata record, but it is important to note that this does not describe a formal hierarchical structure. The metadata record of this convention is effectively a continuous list. Thus each global attribute must have a unique name for it to be unambiguously identified. Attribute names that are sourced from existing authorities are by necessity identical to that used by the authority in order to facilitate automatic harvesting of metadata. To ensure uniqueness, non-authoritative attributes are prefixed with the category name of this metadata convention. White spaces or blank characters are not allowed in attribute names as these are not supported by some of the established authorities (e.g. CF, the NetCDF Climate and Forecast Metadata Convention) and the underscore '`_`' character is used instead. Specific categories of ship and mooring attributes have been developed for this current version of the metadata convention. Further development of metadata attribute fields for other acoustic systems (e.g. autonomous underwater vehicles, gliders, towed bodies, acoustic lenses, and parametric arrays) can be developed as required, following the form of existing conventions used in this document.
 
@@ -251,7 +251,7 @@ http://seadatanet.maris2.nl/v_bodc_vocab/search.asp?name=(C381)%20Ports+Gazettee
 |transect_uplimit |The constant coordinate for the uppermost face or edge in the vertical, z, dimension. |N | |Dublin core* |MA |1
 |transect_downlimit |The constant coordinate for the lowermost face or edge in the vertical, z, dimension. |N | |Dublin core* |MA |1
 |transect_units |The units of unlabelled numeric values of transect_northlimit, transect_eastlimit, transect_southlimit, transect_westlimit. Units specified as appropriate to the projection. E.g. geographic coordinates specify 'signed decimal degrees', UTM specify 'm'. |S | |Dublin core* |MA |1
-|transect_zunits |The units of unlabelled numeric values of transect_uplimit, transect_downlimit. *SI units are* 'm'. |S | |Dublin core* |MA |1
+|transect_zunits |The units of unlabelled numeric values of transect_uplimit, transect_downlimit. SI units are 'm'. |S | |Dublin core* |MA |1
 |transect_projection |The name of the projection used with any parameters required, such as ellipsoid parameters, datum, standard parallels and meridians, zone, etc |S | |Dublin core* |MA |1
 |transect_comments |Free text field for relevant information that might not be captured by the defined attributes |S | | |O |1
 |===
@@ -270,10 +270,10 @@ http://seadatanet.maris2.nl/v_bodc_vocab/search.asp?name=(C381)%20Ports+Gazettee
 |instrument_transducer_beam_type |For example 'single-beam, split-aperture'. See controlled vocabulary table for transducer types in <<list_intrument_beam_type>>. |S | | |M |1
 |instrument_transducer_serial |Transducer serial number |S | | |R |N
 |instrument_transducer_depth |Mean depth of transducer face beneath the water surface. |N |m | |O |1
-|instrument_transducer_orientation |Direction perpendicular to the face of the transducer. A simple description for a ship mounted sounder would be 'downward looking', a mooring could be 'upward looking'. If required <<_transducer_orientation_conventions>> provides a comprehensive description of transducer orientation conventions. |S | | |M |1
+|instrument_transducer_orientation |Direction perpendicular to the face of the transducer. A simple description for a ship mounted sounder would be 'downward looking', a mooring could be 'upward looking'. If required <<transducerOrientationConventions>> provides a comprehensive description of transducer orientation conventions. |S | | |M |1
 |instrument_transducer_psi |Manufacturer specified transducer equivalent beam angle, expressed as latexmath:[10 \log_{10}(\psi)], where latexmath:[\psi] has units of steradians. Note this value is not necessarily used for processing. Check data processing attributes. |N |dB | |R |1
-|instrument_transducer_beam_angle_major |Major beam opening, also referred to athwartship angle. See <<_beam_geometry>> for description of beam geometry conventions |N |degrees | |R |1
-|instrument_transducer_beam_angle_minor |Minor beam opening, also referred to alongship angle. See <<_beam_geometry>> for description of beam geometry conventions |N |degrees | |R |1
+|instrument_transducer_beam_angle_major |Major beam opening, also referred to athwartship angle. See <<beamGeometry>> for description of beam geometry conventions |N |degrees | |R |1
+|instrument_transducer_beam_angle_minor |Minor beam opening, also referred to alongship angle. See <<beamGeometry>> for description of beam geometry conventions |N |degrees | |R |1
 |instrument_transceiver_manufacturer |Transceiver manufacturer |S | | |M |1
 |instrument_transceiver_model |Transceiver model |S | | |M |1
 |instrument_transceiver_serial |Transceiver serial number |S | | |R |1
@@ -492,7 +492,7 @@ If range axis interval values vary within each dataset they cannot be specified 
 |===
 
 [appendix]
-== Metadata authorities
+== Metadata authorities [[metadataAuthorities]]
 
 .Authorities for various metadata attribute fields used in this convention or used for general reference:
 [cols=",,",]
@@ -523,7 +523,8 @@ http://en.wikipedia.org/wiki/Climate_and_Forecast_Metadata_Conventions
 |===
 
 [appendix]
-== Standard lists for controlled vocabulary
+== Standard lists for controlled vocabulary [[listControlledVocab]]
+
 
 === Category: Mission attributes: mission_platform; Ship attributes: ship_type [[list_mission_attributes]]
 
@@ -583,7 +584,7 @@ http://en.wikipedia.org/wiki/Climate_and_Forecast_Metadata_Conventions
 |===
 
 [appendix]
-== Transducer orientation conventions
+== Transducer orientation conventions [[transducerOrientationConventions]]
 
 This Appendix was reproduced with permission from the Echoview 5.1 help file (see also http://www.echoview.com[www.echoview.com]).
 
@@ -773,7 +774,7 @@ alongship = 0° , athwartship = -45° , rotation = 90°
 * For a transducer with an elevation of 0° (that is, vertically downward pointing), the azimuth angle is logically equivalent to the transducer rotation. Echoview does not adjust the rotation angle on the dialog if you specify an azimuth without any elevation. We recommend, for clarity, that you do not use a non-zero azimuth with a zero elevation.
 
 [appendix]
-== Beam geometry
+== Beam geometry [[beamGeometry]]
 
 This Appendix was reproduced with permission from the Echoview 5.1 help file (see also http://www.echoview.com[www.echoview.com])
 
@@ -836,7 +837,7 @@ bibliography::[]
 
 Added new category of attributes, 'data' which describe the data type being stored and its dimensions (i.e. cell size).
 
-Altered obligations on attributes from Mandatory (M) or Mandatory if Applicable (MA) to recommended (R) for ship_breadth, ship_tonnage, ship_engine_power, ship_noise_design and ship_acknowledgements.
+Altered obligations on attributes from Mandatory (M) or Mandatory if Applicable (MA) to recommended pass:[(R)] for ship_breadth, ship_tonnage, ship_engine_power, ship_noise_design and ship_acknowledgements.
 
 Changed term data_processing_transceiver_gain to data_processing_on_axis_gain
 
