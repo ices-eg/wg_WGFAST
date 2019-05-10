@@ -14,6 +14,34 @@ ICES WGFAST Topic Group, TG-AcMeta
 :bibtex-file: references.bib
 :bibtex-style: ices-journal-of-marine-science
 
+
+International Council for the Exploration of the Sea +
+Conseil International pour l’Exploration de la Mer
+
+{empty}H. C. Andersens Boulevard 44-46  +
+DK-1553 Copenhagen V +
+Denmark +
+Telephone (+45) 33 38 67 00 +
+Telefax (+45) 33 93 42 15 +
+http://www.ices.dk[www.ices.dk] +
+info@ices.dk
+
+Recommended format for purposes of citation:
+
+ICES. 2016. A metadata convention for processed acoustic data from active acoustic
+systems. Series of ICES Survey Protocols SISP 4-TG-AcMeta. 48 pp.
+
+Series Editor: Emory D. Anderson
+
+The material in this report may be reused for non-commercial purposes using the recommended citation. ICES may only grant usage rights of information, data, images, graphs, etc. of which it has ownership. For other third-party material cited in this report, you must contact the original copyright holder for permission. For citation of datasets or use of data to be included in other databases, please refer to the latest ICES data policy on ICES website. All extracts must be acknowledged. For other reproduction requests please contact the General Secretary.
+
+This document is the product of an Expert Group under the auspices of the International Council for the Exploration of the Sea and does not necessarily represent the view of the Council.
+
+ISBN 978-87-7482-191-5 +
+ISSN 2304-6252
+
+(C) 2016 International Council for the Exploration of the Sea
+
 :sectnums!:
 == Background and Terms of reference
 :sectnums:
@@ -528,7 +556,7 @@ http://en.wikipedia.org/wiki/Climate_and_Forecast_Metadata_Conventions
 
 === Category: Mission attributes: mission_platform; Ship attributes: ship_type [[list_mission_attributes]]
 
-%[autowidth]
+[%autowidth]
 |===
 |Ship, research
 |Ship, fishing
