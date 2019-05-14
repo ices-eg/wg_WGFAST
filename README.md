@@ -4,7 +4,7 @@ http://www.ices.dk/community/groups/Pages/WGFAST.aspx
 
 ## Contents
 
-This repository contains two conventions developed by WGFAST: [AcMeta](acoustic metadata) and a file format for [SONAR-netCDF4](sonar data).
+This repository contains two conventions developed by WGFAST: [acoustic metadata](AcMeta) and a file format for [sonar data](SONAR-netCDF4).
 
 ## Overview
 
