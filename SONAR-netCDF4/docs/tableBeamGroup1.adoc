@@ -139,4 +139,8 @@
 | | |
 |transmit_t transmit_type(ping_time) |M |Type of transmit pulse.
 |:long_name = "Type of transmitted pulse" | |
+| | |
+|int receive_transducer_index(beam) |MA |Receiving or monostatic transducer index associated with the given beam
+|:valid_min = "0" | |
+|:long_name = "Receive transducer index" | |
 |=========================================================================================================================================================================================================================================================================================================================================================
