@@ -6,12 +6,11 @@ on:
       - 'SONAR-netCDF4'
 
 jobs:
-  runs-on: ubuntu-latest
-  steps:
-    # comment
-	- name: Checkout
-	  uses: actions/checkout@v2
-	- uses mgred/scidoctor-action@master
-	  with:
-	     args: asciidoctor crr341.adoc
-	  
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # comment
+      - uses: actions/checkout@v2
+      - uses: mgred/scidoctor-action@master
+        with:
+          args: asciidoctor crr341.adoc
