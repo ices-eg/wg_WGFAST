@@ -9,7 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # comment
+      # comment XX
       - uses: actions/checkout@v2
       - uses: mgred/asciidoctor-action@master
         with:
