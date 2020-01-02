@@ -11,6 +11,6 @@ jobs:
     steps:
       # comment
       - uses: actions/checkout@v2
-      - uses: mgred/scidoctor-action@master
+      - uses: mgred/asciidoctor-action@master
         with:
           args: asciidoctor crr341.adoc
