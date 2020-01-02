@@ -13,4 +13,3 @@ jobs:
     - uses mgred/scidoctor-action@master
       with:
 	args: asciidoctor crr341.adoc
-	  
