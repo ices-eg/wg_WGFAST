@@ -25,7 +25,7 @@ Contributors to this convention may not be familiar with Git, GitHub, and AsciiD
 
 ==== Git & GitHub
 
-Git is a version control system used to manage and keep track of edits while GitHub is a cloud-based hosting service used to manages Git repositories. wg_WGFAST is a repository within the https://github.com/ices-eg[ICES Expert Groups].
+Git is a version control system used to manage and keep track of edits while GitHub is a cloud-based hosting service used to manages Git repositories. wg_WGFAST is a repository within the https://github.com/ices-eg[ICES Expert Groups] workspace.
 
 If you wish to edit the document, fork the repository, clone it locally (or edit the forked version online), commit your changes, then create a pull request. There are plenty of Git and https://guides.github.com/[GitHub tutorials] and explanations online to help you with this.
 
