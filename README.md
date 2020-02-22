@@ -2,6 +2,12 @@
 
 http://www.ices.dk/community/groups/Pages/WGFAST.aspx
 
+## Contents
+
+This repository contains two conventions developed by WGFAST: [acoustic metadata](AcMeta) and a file format for [sonar data](SONAR-netCDF4).
+
+## Overview
+
 ICES Working Group on Fisheries Acoustics, Science and Technology (WGFAST) focuses on the development and application of science and technology used to observe the marine environment (i.e. acoustic and other sensors).
 
 WGFAST holds state-of-the-art expertise in advanced acoustic-trawl survey techniques, and employs these techniques on a wide range of platforms including research vessels, ships of opportunity, and observatories.

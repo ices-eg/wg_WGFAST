@@ -1,4 +1,4 @@
-= The SONAR-netCDF4 convention for sonar data, Version 1.0
+= The SONAR-netCDF4 convention for sonar data, Version 1.1
 Gavin Macaulay <gavin.macaulay@hi.no>; Héctor Peña <hector.pena@hi.no>
 :toc: left
 :toclevels: 3
@@ -170,7 +170,6 @@ An example of a SONAR-netCDF4 file is provided in the Common Data form Language 
 The top-level group contains metadata about the SONAR-netCDF4 file, represented as attributes in the group (<<topLevelTable>>).
 
 .Description of the top-level group.
-[cols=",,",options="header",]
 [[topLevelTable]]
 include::tableToplevel.adoc[]
 
@@ -179,7 +178,6 @@ include::tableToplevel.adoc[]
 The annotation group contains timestamped annotations with optional identification code. Annotations are typically textual notes entered by users relevant to the data at a particular time. Some sonar systems provide an interface for creating manual and programmatic annotations. The netCDF4 group name is */Annotation* and is described in <<annotationTable>>.
 
 .Description of the annotation group.
-[cols=",,",options="header",]
 [[annotationTable]]
 include::tableAnnotation.adoc[]
 
@@ -188,23 +186,45 @@ include::tableAnnotation.adoc[]
 The environment group contains information on environmental conditions, especially the speed of sound in water and acoustic absorption. The netCDF4 group name is */Environment* and is described in <<environmentTable>>. Sound speed, absorption, and current profiles can also be stored in this group, as can profile measurements of salinity, temperature, and pressure. Such profile data should use the NCEI NetCDF “profile” template, v2.0 or greater.
 
 .Description of the environment group.
-[cols=",,",options="header",]
 [[environmentTable]]
 include::tableEnvironment.adoc[]
 
 ==== Platform group
 
-This group contains information about the sonar platform (e.g. ship). The netCDF4 group name is */Platform* and is described in <<platformGroupTable>>. The coordinate system convention, including the definition of pitch and roll, is detailed in <<_coordinate_systems>>.
+This group contains information about the sonar platform (e.g. ship). The netCDF4 group name is */Platform* and is described in <<platformGroupTable>>. Optionally, subgroups of /Platform can be used to store data from individual instruments that provide measurements about the platform, such as position, attitude, etc (note that if the measurements are about the environment around the platform they should be stored in the /Environment group). This structure must be used to store all instrument data. 
 
-Optionally, /Platform subgroups can be included to store data from individual instruments. This would provide a standard place to store unprocessed and unparsed instrument data from multiple GPS sensors, motion reference units, etc. The data format is not prescribed, but could, for example, be NMEA-style text and/or numeric values. Subgroups must have one attribute called “description” that provides a short description of the contents. Other attributes can be added as desired. The variables under the subgroup should have appropriate names and an attribute that gives the units, where appropriate. If NMEA telegrams are stored, it is suggested that the group name is NMEA and follows the convention described in <<NMEATable>>.
+Each platform can contain several instruments of the same type, such as multiple position sensors. Each instrument type is defined as a subgroup of the /Platform group and data for each instrument are stored in a subgroup of the instrument group. Subgroup names for common instrument types are given in <<platformInstrumentsTable>> and how to store data from those instruments are also cross-referenced in <<platformInstrumentsTable>>. For example, data from individual position and attitude instruments are stored as subgroups of the /Platform/Position and /Platform/Attitude subgroups. The names of those subgroups must match the names of the instrument's serial number or identifier as defined in the MRU_ids and position_ids variables in the /Platform group (<<platformGroupTable>>).  Additional instrument type subgroups can be created as required.
+
+Each instrument group can also store unprocessed and unparsed sensor data. The data format for unprocessed and unparsed data is not prescribed, but could, for example, be NMEA-style text and/or numeric values. These subgroups must have one attribute called “description” that provides a short description of the contents. Other attributes can be added as desired. The variables under the subgroup should have appropriate names and an attribute that gives the units, where appropriate.
+
+As a general example, parsed data from a GPS with id _Garmin1234_ would be stored in /Platform/Position/Garmin1234 and if NMEA data from that GPS were also stored, it would be in /Platform/Position/Garmin1234/NMEA.
+
+The coordinate system convention used for the /Platform group variables is detailed in <<_coordinate_systems>>.
 
 .Description of the platform group.
-[cols=",,",options="header",]
 [[platformGroupTable]]
 include::tablePlatform.adoc[]
 
-.Suggested group for storing NMEA datagrams from marine instruments.
+.Suggested subgroup names for platform instruments.
 [cols=",,",options="header",]
+[[platformInstrumentsTable]]
+|===
+|Sensor or datagram |Subgroup name | Comment
+|Attitude sensors, MRU |Attitude | Use data structure described in <<AttitudeSubGroup>>
+|GPS sensors, Position |Position | Use data structure described in <<PositionSubGroup>>
+|Clock or time synchronisation datagrams | Clock | 
+|NMEA telegrams | NMEA | Use data structure described in <<NMEATable>>.
+|===
+
+.Description of a platform attitude subgroup.
+[[AttitudeSubGroup]]
+include::tableAttitude_sub_group.adoc[]
+
+.Description of a platform position subgroup.
+[[PositionSubGroup]]
+include::tablePosition_sub_group.adoc[]
+
+.Suggested group for storing NMEA datagrams from marine instruments.
 [[NMEATable]]
 include::tableNMEA.adoc[]
 
@@ -213,7 +233,6 @@ include::tableNMEA.adoc[]
 The provenance group provides information on how the SONAR-netCDF4 version of the data were created. The netCDF4 group name is */Provenance* and is described in <<provenanceTable>>.
 
 .Description of the provenance group.
-[cols=",,",options="header",]
 [[provenanceTable]]
 include::tableProvenance.adoc[]
 
@@ -226,12 +245,10 @@ Data from each beam mode (e.g. horizontal and vertical beam modes) are stored in
 Subgroups under /Sonar each have a coordinate variable that contains ping timestamps. In some cases the coordinate variables in different subgroups contain the same data (such as when a sonar produces several types of beam data from each and every ping). To avoid duplication of timestamp data, a coordinate variable can be used across multiple subgroups. For organisational reasons, it is then recommended that such coordinate variables be located in the /Sonar group. 
 
 .Description of the sonar group.
-[cols=",,",options="header",]
 [[sonarGroupTable]]
 include::tableSonar.adoc[]
 
 .Description of the beam mode subgroups of the sonar group.
-[cols=",,",options="header",]
 [[sonarBeammodeTable]]
 include::tableBeamGroup1.adoc[]
 
@@ -251,17 +268,21 @@ The complex-valued backscatter data are converted into calibrated target strengt
 
 [stem]
 ++++
+\begin{equation}
 TS = 10 \log_{10}(P_{r}) + 40\log_{10}(r) + 2\alpha r - 10\log10_{10}( \frac{P_t\lambda^{2}}{16\pi^2}) - G - 40\log_{10}(\cos\gamma),
+\end{equation}
 ++++
 
 where latexmath:[P_r] is linearly proportional to the received power (square of the magnitude of the complex number given by backscatter_r and backscatter_i, W) and _r_ is the range between the transducer and target, calculated from:
 
 [stem]
 ++++
-r = \frac{c ( dt \cdot i - t_0 )}{2},
+\begin{equation} \label{eq:timeToRange}
+r = \frac{c ( dt \cdot i - t_0)}{2},
+\end{equation}
 ++++
 
-where _c_ is sound speed (NetCDF4 variable is sound_speed_indicative, m/s), _dt_ is the time between recorded samples (sample_interval, s), _i_ is the sample number (from zero to one less than the number of samples), and latexmath:[t_0] is a time-offset (sample_time_offset, s).
+where _c_ is sound speed (NetCDF4 variable is sound_speed_indicative, m/s), _dt_ is the time between recorded samples (sample_interval, s), _i_ is the sample number (from zero to one less than the number of samples), and latexmath:[t_0] is a time-offset (sample_time_offset-blanking_interval, s).
 
 The absorption coefficient of sound in water is _α_ (absorption_indicative, dB/m), latexmath:[P_t] is the transmit power (transmit_power, W), latexmath:[\lambda] is the acoustic wavelength (derived from the average of transmit_frequency_start and transmit_frequency_stop, and sound_speed_indicative, m), _G_ is the transducer gain (transducer_gain, dB)_,_ and latexmath:[\gamma] is the beam tilt angle (derived from beam_direction_x, beam_direction_y, beam_direction_z, degrees from horizontal).
 
@@ -269,7 +290,9 @@ The volume backscatter strength (Sv, citenp:[maclennan2002]) is derived from a s
 
 [stem]
 ++++
+\begin{equation}
 S_{v} = 10\log_{10}(P_{r}) + 20\log_{10}(r) + 2\alpha r - 10\log_{10}(\frac{P_t\lambda^{2}c\psi\tau_{e}}{32\pi^{2}}) - G - 40\log_{10}(\cos\gamma),
+\end{equation}
 ++++
 
 where latexmath:[\psi] is the equivalent beam angle (equivalent_beam_angle, sr), latexmath:[\tau_e] is the effective pulse duration (transmit_duration_equivalent, s), and _G_ is the transducer gain (transducer_gain, dB).
@@ -280,10 +303,12 @@ Type 2 conversion equations are intended for data recorded by Furuno omnisonars.
 
 [stem]
 ++++
+\begin{equation}
 TS = 20\log_{10}(\frac{A}{\sqrt{2}}) + 40\log_{10}(r) + 2\alpha r - (SL + K + \Delta G + G_{T}),
+\end{equation}
 ++++
 
-where _A_ (backscatter_r, 1) is linearly proportional to the amplitude of the received echo , _r_ is the range as given by equation (2), and _α_ is the absorption coefficient of sound in water (absorption_indicative, dB/m). _SL_ is source level (transmit_source_level, dB re 1μPa at 1 m) and _K_ is receiver sensitivity (receiver_sensitivity, dB re 1/μPa). Both parameters may depend on tilt angle of the beam for transmitting and receiving.
+where _A_ (backscatter_r, 1) is linearly proportional to the amplitude of the received echo , _r_ is the range as given by equation \eqref{eq:timeToRange}, and _α_ is the absorption coefficient of sound in water (absorption_indicative, dB/m). _SL_ is source level (transmit_source_level, dB re 1μPa at 1 m) and _K_ is receiver sensitivity (receiver_sensitivity, dB re 1/μPa). Both parameters may depend on tilt angle of the beam for transmitting and receiving.
 
 Gain correction, latexmath:[\Delta G], (gain_correction, dB) is determined by the calibration. Time-varied gain, latexmath:[G_T] (time_varied_gain, dB), is given at each sample number _i_.
 
@@ -291,7 +316,9 @@ The volume backscatter strength is derived from a similar equation:
 
 [stem]
 ++++
+\begin{equation}
 S_v = 20\log_{10}(\frac{A}{\sqrt{2}}) + 20\log_{10}(r) + 2\alpha r - 10\log_{10}( \frac{c\tau_e}{2}\Psi ) - (SL + K + \Delta G + G_T),
+\end{equation}
 ++++
 
 where _c_ is sound speed (sound_speed_indicative, m/s), latexmath:[\tau_e] is the effective pulse duration (transmit_duration_equivalent, s), and latexmath:[\Psi] is the equivalent beam angle (equivalent_beam_angle, sr). Considering the time-varied-gain (TVG) effect on the echo shape cite:[sawada1993], the replacement of _r_ by latexmath:[r - r_0], where latexmath:[r_0 = \frac{1}{4} c \tau_e], is recommended cite:[maclennan1986,furusawaRangeErrorsSound1999] for calculation of latexmath:[S_v].

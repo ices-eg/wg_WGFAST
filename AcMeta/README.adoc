@@ -2,33 +2,58 @@
 
 This directory contains the text, source files, and utilities that are necessary to generate the AcMeta convention document. It is also the place where new versions of the convention are discussed and developed.
 
-Version 1.10 of the AcMeta convention (as ICES SISP 4-TG-AcMeta) is available https://www.ices.dk/sites/pub/Publication%20Reports/ICES%20Survey%20Protocols%20(SISP)/SISP-4%20A%20metadata%20convention%20for%20processed%20acoustic%20data%20from%20active%20acoustic%20systems.pdf[here]. Previous versions were 1.0 (2013) and 1.05 (2014).
+Version 1.10 of the AcMeta convention (as ICES SISP 4-TG-AcMeta) is available https://www.ices.dk/sites/pub/Publication%20Reports/ICES%20Survey%20Protocols%20(SISP)/SISP-4%20A%20metadata%20convention%20for%20processed%20acoustic%20data%20from%20active%20acoustic%20systems.pdf[here]. Previous published versions were 1.0 (2013) and 1.05 (2014).
 
 == Contributing to this convention
 
-Please take a moment to review this document in order to make the contribution
-process easy and effective for everyone involved.
+WGFAST welcomes suggestions, discussion, and contributions to this metadata convention. 
+Please take a moment to review this document in order to make the process easy and effective for everyone involved.
 
-=== Using the issue tracker
-
-The issue tracker is the preferred channel for corrections, enhancements and submitting pull
-requests.
-
-=== Enhancements
+The convention is stored in the AsciiDoc markup language and stored on this github repository. Suggestions, discussions and contributions are done through the facilities provided by github - use the issue tracker for suggestions and discussions. Create pull requests for contributions. 
 
 Enhancement requests are welcome. But take a moment to find out whether your idea
-fits with the scope and aims of the project. It's up to *you* to make a strong
-case to convince the convention's coordinators of the merits of this feature. Please
-provide as much detail and context as possible. 
+fits with the scope and aims of the convention and whether your idea can be achieved within the existing metadata convention. It is your role to adequately explain and justify the merits of what you want. Please provide as much detail and context as possible. 
 
-=== Pull requests
+Good pull requests - corrections, improvements, etc are a great help. They should remain focused in scope and avoid containing unrelated commits.
 
-Good pull requests - corrections, improvements, new features - are a fantastic
-help. They should remain focused in scope and avoid containing unrelated
-commits.
-
-*Please ask first* before embarking on any significant pull request (e.g.
-implementing features, refactoring the document),
+*Please ask first* before starting on any significant pull request,
 otherwise you risk spending a lot of time working on something that the
 convention's coordinators might not want to merge into the project.
 
+=== AsciiDoc tools
+
+Contributors to this convention may not be familiar with git, github, and AscciDoc, so we provide here some starting points and suggestions.
+
+==== Git & github 
+
+If you wish to edit the document, fork the repository, clone it locally (or edit the forked version online), commit your changes, then create a pull request. There are plenty of git and github tutorials and explanations online to help you with this. 
+
+The https://www.sourcetreeapp.com/[Sourcetree] program for Windows and Mac is a useful tool for working with git repositories. https://tortoisehg.bitbucket.io/[TortoiseHg] for Windows and Linux is another option. You can of course also use the git command line interface.
+
+==== Real-time rendering of the document
+
+When editing the convention file, it is useful to see the rendered version of the document as changes are made. Ways to achieve this are explained https://asciidoctor.org/docs/editing-asciidoc-with-live-preview/[here]. We find that 
+https://github.com/asciidoctor/asciidoctor-browser-extension[Asciidoctor.js Live Preview] works well, but note that it does not currently do the bibliography in the AcMeta document.
+
+==== Off-line rendering of the document
+
+This requires installing AsciiDoctor onto your computer and can be somewhat complicated. Instructions are https://asciidoctor.org/docs/install-toolchain/[here]. Remember to also install the asciidoctor-bibtex extension. Once all installed, the convention can be rendered in several formats with these commands.
+
+HTML files:: Generates one or more files (images are kept separate):
+
+ asciidoctor -r asciidoctor-bibtex acmeta.adoc
+
+HTML (single file):: For a single html file (including the images, which makes it easier to distribute):
+
+ asciidoctor -r asciidoctor-bibtex --backend html5 -a data-uri acmeta.adoc
+ 
+PDF:: Note that the asciidoctor-mathematical extension must be installed to get the mathematical equations correctly rendered:
+
+ asciidoctor-pdf -r asciidoctor-bibtex  acmeta.adoc
+ 
+Word (.docx):: First convert to docbook format, then install and use https://pandoc.org/[pandoc] to convert to Word:
+
+ asciidoctor -r asciidoctor-bibtex --backend docbook acmeta.adoc
+ pandoc --from docbook --to docx -o acmeta.docx acmeta.xml
+ 
+ 
