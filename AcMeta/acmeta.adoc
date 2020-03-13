@@ -4,6 +4,7 @@
 
 
 ==== Table of Contents
+// Gavin says that these should be greated automatically but not seeing this
 * Background and Terms of reference
 * 1. Purpose of this document
 * 2. Global attributes
