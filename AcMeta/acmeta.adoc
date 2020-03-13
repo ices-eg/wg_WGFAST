@@ -97,7 +97,7 @@ Cruise metadata:: Attributes that describe the cruise from which the acoustic da
 
 Ship metadata:: Attributes that describe the ship from which acoustic data were collected. Metadata should provide information that uniquely identifies the ship and its basic specifications to enable an understanding of the type of ship and its purpose.
 
-Platfomg metadata:: Attributes that describe the platform from which acoustic data were collected.
+Platform metadata:: Attributes that describe the platform from which acoustic data were collected.
 
 Transect metadata:: Attributes that describe transect data. Transect metadata would normally apply to acoustic data from a moving platform.
 
