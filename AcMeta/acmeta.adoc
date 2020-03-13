@@ -36,9 +36,8 @@
 * References
 * Revisions
 
-
-:revnumber: 1.10
-:revdate: 1 November 2016
+:revnumber: 2.0
+:revdate: 15 March 2020
 :toc: left
 :toclevels: 3
 :doctype: book
@@ -74,11 +73,11 @@ Series Editor: Emory D. Anderson
 The material in this report may be reused for non-commercial purposes using the recommended citation. ICES may only grant usage rights of information, data, images, graphs, etc. of which it has ownership. For other third-party material cited in this report, you must contact the original copyright holder for permission. For citation of datasets or use of data to be included in other databases, please refer to the latest ICES data policy on ICES website. All extracts must be acknowledged. For other reproduction requests please contact the General Secretary.
 
 This document is the product of an Expert Group under the auspices of the International Council for the Exploration of the Sea and does not necessarily represent the view of the Council.
-
+// will these need to be updated?
 ISBN 978-87-7482-191-5 +
 ISSN 2304-6252
 
-(C) 2016 International Council for the Exploration of the Sea
+(C) 2020 International Council for the Exploration of the Sea
 
 :sectnums!:
 == Background and Terms of reference
