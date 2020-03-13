@@ -1,42 +1,5 @@
 = A metadata convention for processed acoustic data from active acoustic systems
-
-==== ICES WGFAST Topic Group, TG-AcMeta
-
-
-==== Table of Contents
-// Gavin says that these should be greated automatically but not seeing this
-* Background and Terms of reference
-* 1. Purpose of this document
-* 2. Global attributes
-* 3. Implementation of metadata convention
-* 4. Summary of metadata categories
-* 5. Description of metadata category table headers
-* 6. Definition of attributes for active acoustic metadata
-** 6.1. Category: Metadata record
-** 6.2. Category: Mission attributes
-** 6.3. Category: Cruise attributes
-** 6.4. Category: Ship attributes
-** 6.5. Category. Platform attributes
-** 6.6. Category: Transect attributes
-** 6.7. Category: Instrument attributes
-** 6.8. Category: Ancillary instrumentation
-** 6.9. Category: Calibration attributes
-**6.10. Category: Data acquisition attributes
-** 6.11. Category: Data processing attributes
-** 6.12. Category: Dataset attributes
-** 6.13. Category: Data attributes
-* Appendix A: Metadata authorities
-* Appendix B: Standard lists for controlled vocabulary
-** B.1. Category: Mission attributes: mission_platform; Ship attributes: ship_type
-** B.2. Category: Instrument attributes: instrument_transducer_location
-** B.3. Category: Instrument attributes: instrument_transducer_beam_type
-** B.4. Category: Calibration attributes: calibration_aquisition_method
-* Appendix C: Transducer orientation conventions
-* Appendix D: Beam geometry
-* Appendix E: List of participants
-* References
-* Revisions
-
+ICES WGFAST Topic Group, TG-AcMeta
 :revnumber: 2.0
 :revdate: 15 March 2020
 :toc: left
@@ -50,7 +13,6 @@
 :eqnums:
 :bibtex-file: references.bib
 :bibtex-style: ices-journal-of-marine-science
-
 
 International Council for the Exploration of the Sea +
 Conseil International pour l’Exploration de la Mer
