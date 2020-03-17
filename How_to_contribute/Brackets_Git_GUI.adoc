@@ -77,13 +77,20 @@ image:Brackets_commit_1.png[] +
 
 _Please follow best practices when writing commit messages_. +
 image:Brackets_commit_2.png[] +
+{empty} +
 
 === Pushing to GitHub
 1. Push the commits to GitHub by clicking on the `Push` button. +
 image:Brackets_push_1.png[] +
+{empty} +
 
-2. A dialog box will come up. +
+2. A dialog box will appear. +
 Make sure you are pushing to the correct branch of your remote repository, which will most likely be the current tracking branch (the one that is checked out). +
 You do not have to fill out your username and password if your credentials are managed elsewhere. +
 Click `OK`. +
-image:Brackets_push_2.png[]
+image:Brackets_push_2.png[] +
+{empty} +
+
+3. If there are no conflicts you will get a successful response. Click, `OK`.
+
+image:Brackets_push_3.png[]
