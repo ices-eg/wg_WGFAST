@@ -1,0 +1,74 @@
+= How to use Git/GitHub GUI in Atom
+Erin LaBrecque
+:revnumber: 0.02
+:revdate: 2020-03-16
+:imagesdir: images\
+:toc: preamble
+:toclevels: 4
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+
+These are basic instructions on how to use the Git/GitHub GUI in Atom.
+
+
+== Git/GitHub GUI in Atom
+If this is the first time you are accessing GitHub through Atom, you will have to get an authentication token. Open the GitHub pane and follow the directions.
+
+image:Atom_GitHub_token.png[] +
+{empty} +
+
+=== Clone
+1. Open the GitHub pane by clicking on the GitHub tab. +
+2. Click on "Clone an existing GitHub repository". +
+3. Go to your forked repository in GitHub and copy the HTTPS address to the clipboard. See <<2_suggested_workflow.adoc#Clone the forked repository to your local computer,Clone the forked repository to your local computer>> in the Suggested Workflow file. +
+4. In Atom, add the HTTPS address to "Clone from". +
+Your user name will replace "erinann" in the GitHub address. +
+5. Add the full pathname to the directory where you want to your local repository to live. Make sure that the name of the final folder is "wg_WGFAST". +
+Note: There is no "Browse" option to add a full pathname. You have to type it in or copy and paste. +
+6. Click on "Clone" +
+{empty} +
+
+image:Atom_GUI_clone_1.png[]
+image:Atom_GUI_clone_2.png[] +
+{empty} +
+
+=== Add upstream repository
+As of today (2020-03-16) there is no GUI function to add the upstream remote repository (at least that I could find). You will have to do this in your terminal. +
+{empty} +
+
+=== New branch
+1. Click on the branch icon. The default branch is `master`. +
+2. Click on `New Branch` and type in the name of your new branch. +
+*NAMING your branch* - You can name your branch anything you want, but please name it something descriptive. In the example below the branch is named with the author's initials and a SHORT description of the branch's purpose. +
+3. Click on `Publish` to push your branch to your remote repository and set up tracking.
+image:Atom_GUI_branch.png[] +
+{empty} +
+
+=== Edit files
+Open a file and edit it. +
+
+To open the AsciiDoc live preview pane, use `Ctrl+Shift+A` (Linux/Windows) or `cmd+shift+A` (macOS). The AsciiDoc packages have to be installed.
+
+If you would like more room to view the live preview pane, you can close the Git and GitHub panels.
+{empty} +
+
+=== Stage and commit
+1. To stage file(s), open the Git panel, right-click on the file(s) you want to stage and choose `Stage`. If you want to stage all the files, click on `Stage All`.
+2. Enter a useful commit message to let people know what changes you made, and click `Commit to master`. +
+Or, if you need to add a commit message more than 50 characters long, click on the square in the lower, right corner of the commit message text box to open the message editor. +
+
+_Please follow best practices when writing commit messages_. +
+image:Atom_GUI_stage.png[]
+image:Atom_GUI_commit.png[] +
+{empty} +
+
+=== Pushing to GitHub
+1. Click on the `Push` to push your commits to your working branch of your remote repository. +
+image:Atom_GUI_push.png[] +
+In this example, one commit will be pushed to the `EL_doc_edits` branch of the `erinann/wg_WGFAST` repository (remote) on GitHub. +
+{empty} +
