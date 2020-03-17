@@ -176,7 +176,7 @@ In your terminal you should also notice the name of your branch in parentheses a
 
 .Set up tracking between repositories
 ----
-git push -u origin EL_test_docs
+git push -u origin EL_doc_edits
 ----
 When you push the branch from your local repository to your remote repository with the `-u` flag, tracking is set up between the two repositories. `-u` is short of `--set-upstream`. +
 {empty} +
