@@ -342,9 +342,6 @@ To https://github.com/erinann/wg_WGFAST.git
 ----
 {empty} +
 
-
-*IN PROGRESS FROM HERE ON. HAVE TO EDIT FOR FK-BN-PR WORKFLOW* +
-
 === Submit a Pull Request
 After all your edits have been pushed to the remote repository (GitHub), submit a pull request to `ices-eg/wg_WGFAST`. A pull request tells others about the changes you made (all the commits), allows the convention coordinators to approve or deny your changes, and provides an area to discuss the changes if needed. It is called a pull request because you are asking the upstream repository to pull the changes from the branch of your fork. +
 
