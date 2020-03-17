@@ -182,9 +182,11 @@ When you push the branch from your local repository to your remote repository wi
 {empty} +
 
 === Add the local repository to a workspace in your text editor/IDE
+Time to step away from the terminal and open your text editor/IDE.
+
 * You only have to do this step once. +
 
-Now that the repository is on your computer, add it to a workspace in your text editor/IDE and check that you are on the correct branch.
+Now that the repository is on your computer, add it to a workspace in text editor/IDE you chose, and check that you are on the correct branch.
 
 .*AsciidocFX*: +
 . Click on the image:ADFX_folder_icon.png[] and navigate to the folder.
@@ -344,25 +346,26 @@ To https://github.com/erinann/wg_WGFAST.git
 *IN PROGRESS FROM HERE ON. HAVE TO EDIT FOR FK-BN-PR WORKFLOW* +
 
 === Submit a Pull Request
-After all the edits have been pushed to the remote repository (GitHub), submit a pull request to `ices-eg/wg_WGFAST`. A pull request tells others about the changes you made (all the commits), allows the convention coordinators to approve or deny your changes, and provides an area to discuss the changes if needed. It is called a pull request because you are asking the upstream repository to pull the changes from your fork. +
+After all your edits have been pushed to the remote repository (GitHub), submit a pull request to `ices-eg/wg_WGFAST`. A pull request tells others about the changes you made (all the commits), allows the convention coordinators to approve or deny your changes, and provides an area to discuss the changes if needed. It is called a pull request because you are asking the upstream repository to pull the changes from the branch of your fork. +
 
-1. In GitHub, open your `wg_WGFAST` repository, and click on `Pull request`.
-** If you want to see the differences between the documents in your forked repository and the upstream repository, click on `Compare`. Your additions will be highlighted in green and subtractions will be highlighted in red.
+1. In GitHub, open your `wg_WGFAST` repository, and switch to your branch by clicking on the down arrow and choosing your branch.
+2. Click on `Pull request`.
+** If you want to see the differences between the documents the branch of your forked repository and the upstream repository, click on `Compare`. Your additions will be highlighted in green and subtractions will be highlighted in red.
 
-image:GitHub_PR_1.png[] +
+image:GitHub_PR_1and2.png[] +
 {empty} +
-
-[start=2]
-2. Make sure that the `master` branch of the base repository (`ices-eg/wg_WGFAST`) pulls the changes from the correct branch of your repository. In most cases, it will be the `master` branch. Click on `Create pull request`. +
-
-image:GitHub_PR_2.png[] +
-{empty} +
-
 
 [start=3]
-3. Add a commit message and extra details in the text editor window, then click `Create pull request`. +
+3. Make sure that the `master` branch of the base repository (`ices-eg/wg_WGFAST`) pulls the changes from the working branch of your repository.
 
 image:GitHub_PR_3.png[] +
+{empty} +
+
+
+[start=4]
+4. Add a commit message and extra details in the text editor window, then click `Create pull request`. +
+
+image:GitHub_PR_4.png[] +
 {empty} +
 
 Once your pull request has been submitted, a convention coordinator will be notified and will review your edits. Your edits will either be merged into the `ices-eg/wg_WGFAST` `master` branch by a coordinator or a coordinator might reply back to you asking to clarify or update text. Only convention coordinators have permission to merge pull requests. +

@@ -37,7 +37,7 @@ image:Brackets_GUI_clone.png[] +
 === Add upstream repository
 1. Open the Git extension and click on the image:Brackets_origin_button.png[] button. +
 2. Choose _Create new remote_. +
-3. You can name your new remote anything you would like, but it is a good idea to call it `upstream` to stay in the Git parlance. +
+3. You can name your new remote anything you would like, but it is a good idea to call it `upstream` to stay with Git parlance. +
 4. Add the URL to the `ices-eg/wg_WGFAST` repository. +
 https://github.com/ices-eg/wg_WGFAST +
 image:Brackets_GUI_upstream_remote.png[] +
@@ -48,7 +48,7 @@ When you want to get updates from the upstream remote repository (`ices-eg/wg_WG
 2. Change the remote to `upstream`. +
 3. Click on the `Fetch` button. +
 image:Brackets_GUI_fetch.png[] +
-Note: You might also have to use the `Pull` button. I have not done this yet as no pull requests have been merged to `master` in the upstream repository.
+Note: You will also have to use the `Pull` button. I have not done this yet as no pull requests have been merged to `master` in the upstream repository. Will update soon.
 {empty} +
 
 === New branch
@@ -62,7 +62,7 @@ image:Brackets_GUI_new_branch.png[] +
 === Edit files
 Open a file and edit it. +
 
-To open the AsciiDoc live preview pane, click on the AsciiDoc extension in the right side of the screen. The extension icon will be present with an AsciiDoc document is open. +
+To open the AsciiDoc live preview pane, click on the AsciiDoc extension in the right side of the screen. The extension icon will only be present if an AsciiDoc document is open. +
 {empty} +
 
 === Stage and commit
