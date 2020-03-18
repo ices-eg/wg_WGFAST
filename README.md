@@ -11,7 +11,7 @@ This repository contains two conventions developed by the WGFAST:
 
 This repository also contains a directory of [help files](How_to_contribute) on how to contribute to both documents.
 
-An HTML preview of the current working draft of the metadata convention is [here](https://htmlpreview.github.io/?https://github.com/ices-gists/wg_WGFAST/blob/master/SISP_formatted/TG-AcMeta.html).
+An HTML preview of the current working draft of the metadata convention is [here](https://htmlpreview.github.io/?https://github.com/ices-eg/wg_WGFAST/blob/master/SISP_formatted/TG-AcMeta.html).
 
 
 ## Overview
