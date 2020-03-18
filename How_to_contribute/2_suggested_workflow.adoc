@@ -342,6 +342,10 @@ To https://github.com/erinann/wg_WGFAST.git
 ----
 {empty} +
 
+NOTE: A GitHub Action is set to automatically build a new HTML version of `acmeta.adoc` when commits are pushed to the `master` branch. A new HTML file will not be built in your working branch. +
+{empty} +
+
+
 === Submit a Pull Request
 After all your edits have been pushed to the remote repository (GitHub), submit a pull request to `ices-eg/wg_WGFAST`. A pull request tells others about the changes you made (all the commits), allows the convention coordinators to approve or deny your changes, and provides an area to discuss the changes if needed. It is called a pull request because you are asking the upstream repository to pull the changes from the branch of your fork. +
 
@@ -371,7 +375,7 @@ Once your pull request has been submitted, a convention coordinator will be noti
 == Updating your forked repository
 When you create a fork of a repository you only have the version of the files that are in the repository at that time. Assume you made corrections and edits to the metadata convention document and submitted a pull request that was accepted (:tada: Good job!). A couple days later several other contributors submit pull requests that were accepted. Now you have an old copy of the forked repository and are out of sync with the upstream repo. To update your forked repository you have to "synchronize your fork", also known as "getting upstream updates".
 
-Steps 1 and 2 are duplicated from <<Add the upstream repository, Add the upstream repository>>. +
+Steps 1 and 2 are duplicates of <<Add the upstream repository, Add the upstream repository>>. +
 
 1. Open the Git terminal and navigate to the directory with your local repository. +
 
@@ -425,24 +429,29 @@ $ git fetch upstream
 {empty} +
 
 [start=4]
-4. Checkout the branch you want to put the commits into. This is usually the `master` branch of your local forked repo.
+4. Checkout the branch you want to put the commits into. This is usually the `master` branch of your local repository.
 ----
 $ git checkout master
 ----
 {empty} +
 
 [start=5]
-5. Merge the `upstream/master` into your local `master` to bring your fork's `master` branch in sync with the upstream repository.
+5. Merge the `upstream/master` into your local `master` to bring your `master` branch in sync with the upstream repository.
 ----
 $ git merge upstream/master
+----
+
+If you would like to update the `master` branch of your remote repository as well, push the edits from your local repository to your remote repository.
+----
+$ git push
 ----
 {empty} +
 
 
 == Editing documents in GitHub
-Editing large parts of the convention documents directly in GitHub is **not** recommended unless you are an expert in GitHub and AsciiDoc markup. +
+Editing large parts of the conventions directly in GitHub is **not** recommended unless you are an expert in GitHub and AsciiDoc markup. +
 {empty} +
-The easiest way to edit a few typographical errors, if you do not want to clone the repository to your local computer, is to edit the document directly in GitHub. +
+The easiest way to edit a few typographical errors, if you do not want to clone the repository to your computer, is to edit the document directly in GitHub. +
 
 
 1. After <<Fork the ices-eg/wg_WGFAST repository, forking>> the `ices-eg/wg_WGFAST` repository to your GitHub account, open the repository and click on the file you would like to edit.
