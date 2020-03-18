@@ -1,7 +1,7 @@
-= Suggested workflow to contribute to the ICES WGFAST convention documents
+= Suggested workflow to contribute to the ICES WGFAST conventions
 Erin LaBrecque
 :revnumber: 0.02
-:revdate: 2020-03-14
+:revdate: 2020-03-18
 :imagesdir: images\
 :toc: preamble
 :toclevels: 4

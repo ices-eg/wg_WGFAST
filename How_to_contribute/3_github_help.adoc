@@ -1,7 +1,7 @@
 = GitHub help
 Erin LaBrecque
-:revnumber: 0.01
-:revdate: 2020-02-25
+:revnumber: 0.02
+:revdate: 2020-03-14
 :imagesdir: images\
 :toc: preamble
 :toclevels: 4

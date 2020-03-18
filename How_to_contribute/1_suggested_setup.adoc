@@ -1,7 +1,7 @@
-= Suggested setup to contribute to the ICES WGFAST convention documents
+= Suggested setup to contribute to the ICES WGFAST conventions
 Erin LaBrecque
 :revnumber: 0.02
-:revdate: 2020-03-14
+:revdate: 2020-03-18
 :imagesdir: images\
 :toc: preamble
 :toclevels: 4
@@ -13,7 +13,7 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
-These instructions are to help contributors who have not used Git, GitHub, or AsciiDoc markup get started.
+These instructions are for contributors who have not used Git, GitHub, or AsciiDoc markup get started.
 
 If you have experience in Git and GitHub, skip the setup and workflow files and read through link:experienced_github_users.adoc[A quick workflow for experienced Git and GitHub users].
 

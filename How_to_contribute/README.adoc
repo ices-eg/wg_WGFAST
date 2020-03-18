@@ -1,7 +1,7 @@
 = How to contribute to the AcMeta and SONAR-netCDF4 documents
 Erin LaBrecque
 :revnumber: 0.02
-:revdate: 2020-03-14
+:revdate: 2020-03-18
 :imagesdir: images\
 :toc: preamble
 :toclevels: 4
@@ -26,9 +26,9 @@ Please keep reading. :smile:
 
 == Where do I start?
 === Here
-We realize that learning Git workflows and commands is probably not what you thought of when you thought of contributing to the WGFAST convention documents. Don't worry. We have created several help files to get you up and running with the least amount of friction. You concentrate on contributing to the WGFAST convention documents and we will take care of the "Git-stuff".
+We realize that learning Git workflows and commands is probably not what you thought of when you thought of contributing to the WGFAST conventions. Don't worry. We have created several help files to get you up and running with the least amount of friction. You concentrate on contributing to the WGFAST conventions and we will take care of the "Git-stuff".
 
-You might be thinking that using a Git workflow to edit the WGFAST convention documents is overkill. The conventions are text documents, not software. Yes, Git is widely used in tech industries to track source code changes and develop software, and it has a lot of terminology that can be confusing if you are not familiar with it. But at its core, Git is an open-source and well developed _distributed version control system_ - it tracks all changes in a project from multiple contributors. That is why we are using it. +
+You might be thinking that using a Git workflow to edit the WGFAST conventions is overkill. The conventions are text documents, not software. Yes, Git is widely used in tech industries to track source code changes and develop software, and it has a lot of terminology that can be confusing if you are not familiar with it. But at its core, Git is an open-source and well developed _distributed version control system_ - it tracks all changes in a project from multiple contributors. That is why we are using it. +
 {empty} +
 
 .A few things to keep in mind:
@@ -38,26 +38,32 @@ You might be thinking that using a Git workflow to edit the WGFAST convention do
 . If you do not want to work in a terminal you can use either the Atom or Brackets text editors/IDEs. Both have Git/GitHub integration and you can use a GUI for most Git commands.
 
 === Next
-. Read the rest of this page. This is a README file. Each folder in the `ices-eg/wg_WFAST` repository has an associated README file with information on the other files in that folder.
+. Read the rest of this page. This is a README file. Most folders in the `ices-eg/wg_WFAST` repository has an associated README file with information about the other files in that folder.
 . Read through the  link:1_suggested_setup.adoc[Suggested setup to contribute to the ICES WGFAST convention documents].
 . Read through the link:Git_and_GitHub_terminology.adoc[Git and GitHub terminology] file. There also a graphic of the workflow in that file.
 . Read through the link:2_suggested_workflow.adoc[Suggested workflow to contribute to the ICES WGFAST convention documents].
 . Read the individual help files when needed.
 
 Links to all the help files are at the bottom of this document, or you can click on a document's link at the top of this page. +
+{empty} +
 
 === The `ices-eg/wg_WGFAST` repository
-`wg_WGFAST` is a repository owned by `ices-eg` on GitHub. A repository is a permanent record of a project's development.
+What is a Git repository? A repository is a permanent record of a project's development. +
+`wg_WGFAST` is a repository managed by `ices-eg` folks on GitHub.
 
 https://github.com/ices-eg[`ices-eg`] is the ICES Expert Groups' GitHub account. It is an account of "Workspaces for ICES expert groups to archive code and case-specific methods". https://github.com/ices-eg/wg_WGFAST[`wg_WGFAST`] is the repository for the working group on Fisheries Acoustics, Science and Technology.
 
-.There are three folders within the wg_WGFAST repository
-. `How_to_contribute`: Contains help files on how to contribute to the convention documents. You are in this folder.
+.There are five folders within the wg_WGFAST repository
+. `How_to_contribute`: Contains help files on how to contribute to the conventions. You are in this folder.
 . `AcMeta` - Contains the _A metadata convention for processed acoustic data from active acoustic systems_ document and supporting files.
 . `SONAR-netCDR` - Contains the `docs` subfolder with the _The SONAR-netCDF4 convention for sonar data, Version 1.1_ document and supporting files, and the `src` subfolder with MATLAB code.
+. `SISP_formatted` - Contains the latest HTML file of the metadata convention. You can view this file in your web browser by going https://htmlpreview.github.io/?https://github.com/ices-gists/wg_WGFAST/blob/master/SISP_formatted/TG-AcMeta.html[here].
+. `.github/workflows` - Contains the `.yml` for a GitHub Action to build the HTML and put it in `SISP_formatted`. Do not touch this file, please. +
+{empty} +
+
 
 === Help
-If you still have questions about _how_ to contribute to the convention documents after reading through the help files in the "How to contribute" folder, please open an https://github.com/ices-eg/wg_WGFAST/issues[issue] and submit your questions there. Mention `@erinann` in the isssue.
+If you still have questions about _how_ to contribute to the convention documents after reading through the help files in the "How to contribute" folder, please open an issue in the https://github.com/ices-eg/wg_WGFAST/issues[issue tracker] and submit your questions there. Mention `@erinann` in the issue.
 
 
 == Git and GitHub
@@ -98,8 +104,8 @@ NOTE: The help files are written in AsciiDoc (.adoc) markup. If you want to take
 [cols=2, width="90%", options = header]
 |=========
 |Filename |Document name
-|1_suggested_setup.adoc | Suggested setup to contribute to the ICES WGFAST convention documents
-|2_suggested_workflow.adoc |Suggested workflow to contribute to the ICES WGFAST convention documents
+|1_suggested_setup.adoc | Suggested setup to contribute to the ICES WGFAST conventions
+|2_suggested_workflow.adoc |Suggested workflow to contribute to the ICES WGFAST conventions
 |3_github_help.adoc | GitHub help
 |4_git_help.adoc | Git help
 |5_plain_text_editor_help.adoc |Text editors/IDEs help

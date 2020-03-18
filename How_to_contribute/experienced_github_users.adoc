@@ -21,12 +21,13 @@ This is the general workflow to contribute to the WGFAST convention documents fo
 . In GitHub, fork the `ices-eg\wg_WGFAST` repository to your own GitHub account.
 . Clone the forked repository to your local computer.
 . Create a branch for your edits and work in that branch. A good naming convention for your branch would be `xx_edits` where `xx` is your initials.
-. Edit the AsciiDoc files. Stage, commit, and push the edits in your local branch to the branch in your remote repository.
-. In GitHub, submit a pull request from your edits branch to the `ices-eg\wg_WGFAST` repository.
+. Edit the AsciiDoc files. Stage, commit, and push the edits to the working branch in your remote repository.
+. In GitHub, submit a pull request from your working branch to the master branch of the `ices-eg\wg_WGFAST` repository. +
 
-https://jarednielsen.com/learn-git-branch-workflow/[This] is a good blog post on the Git Fork-Branch-Pull Request workflow. (Hat tip: Wu-Jung Lee)
+https://jarednielsen.com/learn-git-branch-workflow/[This] is a good blog post on the Git Fork-Branch-Pull Request workflow. (Hat tip: Wu-Jung Lee) +
+{empty} +
 
-*Please ask first* before starting on any significant edits, otherwise you risk spending a lot of time working on something that the convention coordinators might not want to merge into the project. You can contact the convention coordinators by opening an https://github.com/ices-eg/wg_WGFAST/issues[issue].
+*Please ask first* before starting on any significant edits, otherwise you risk spending a lot of time working on something that the convention coordinators might not want to merge into the project. You can contact the convention coordinators by opening an issue in the https://github.com/ices-eg/wg_WGFAST/issues[issue tracker].
 
 The https://www.sourcetreeapp.com/[Sourcetree] program for Windows and Mac is a useful tool for working with Git repositories. https://tortoisehg.bitbucket.io/[TortoiseHg] for Windows and Linux is another option. You can of course also use the Git command line interface.
 
