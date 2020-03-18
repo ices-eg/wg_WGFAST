@@ -1,7 +1,7 @@
 = A metadata convention for processed acoustic data from active acoustic systems
 ICES WGFAST Topic Group, TG-AcMeta
-:revnumber: 1.10
-:revdate: 1 November 2016
+:revnumber: 2.0
+:revdate: 15 March 2020
 :toc: left
 :toclevels: 3
 :doctype: book
@@ -13,7 +13,6 @@ ICES WGFAST Topic Group, TG-AcMeta
 :eqnums:
 :bibtex-file: references.bib
 :bibtex-style: ices-journal-of-marine-science
-
 
 International Council for the Exploration of the Sea +
 Conseil International pour l’Exploration de la Mer
@@ -28,19 +27,20 @@ info@ices.dk
 
 Recommended format for purposes of citation:
 
-ICES. 2016. A metadata convention for processed acoustic data from active acoustic
+ICES. 2020. A metadata convention for processed acoustic data from active acoustic
 systems. Series of ICES Survey Protocols SISP 4-TG-AcMeta. 48 pp.
+// [Tim R: May need to update this citation when this git document gets published by ICES as part of the SISP series]
 
 Series Editor: Emory D. Anderson
 
 The material in this report may be reused for non-commercial purposes using the recommended citation. ICES may only grant usage rights of information, data, images, graphs, etc. of which it has ownership. For other third-party material cited in this report, you must contact the original copyright holder for permission. For citation of datasets or use of data to be included in other databases, please refer to the latest ICES data policy on ICES website. All extracts must be acknowledged. For other reproduction requests please contact the General Secretary.
 
 This document is the product of an Expert Group under the auspices of the International Council for the Exploration of the Sea and does not necessarily represent the view of the Council.
-
+// will these need to be updated?
 ISBN 978-87-7482-191-5 +
 ISSN 2304-6252
 
-(C) 2016 International Council for the Exploration of the Sea
+(C) 2020 International Council for the Exploration of the Sea
 
 :sectnums!:
 == Background and Terms of reference
@@ -97,7 +97,7 @@ Cruise metadata:: Attributes that describe the cruise from which the acoustic da
 
 Ship metadata:: Attributes that describe the ship from which acoustic data were collected. Metadata should provide information that uniquely identifies the ship and its basic specifications to enable an understanding of the type of ship and its purpose.
 
-Mooring metadata:: Attributes that describe the mooring from which acoustic data were collected.
+Platform metadata:: Attributes that describe the platform from which acoustic data were collected.
 
 Transect metadata:: Attributes that describe transect data. Transect metadata would normally apply to acoustic data from a moving platform.
 
@@ -152,7 +152,7 @@ Note for metadata versions prior to V1.10 the leading zeros in _minor_ should be
 |convention_reference a|
 Record the reference for this convention. Note that while the convention version label is included in the convention reference as per the example full entry below, the authoritative version label is given in the convention version attribute. Example of a full entry for this version is:
 
-"`ICES. 2016. A metadata convention for processed acoustic data from active acoustic systems, SISP 4 TG-AcMeta Version 1.10, ICES WGFAST Topic Group, TG-AcMeta. 47 pp.`"|S | | |M |1
+"`ICES. 2020. A metadata convention for processed acoustic data from active acoustic systems, TG-AcMeta Version 2.0, ICES WGFAST Topic Group, TG-AcMeta. 47 pp.`"|S | | |M |1
 |Uniform_resource_identifier |Uniform resource identifier (URI) that uniquely identifies the name and location of the metadata record. |S | | |O |1
 |===
 
@@ -235,31 +235,38 @@ http://seadatanet.maris2.nl/v_bodc_vocab/search.asp?name=(C381)%20Ports+Gazettee
 |ship_comments |Free text field for relevant information that might not be captured by the defined attributes |S | | |O |1
 |===
 
-=== Category. Mooring attributes
+
+
+=== Category. Platform attributes
 
 [cols="2,6,1,1,1,1,1",options="header"]
 |===
 |Attribute name |Definition |Data type |Units |Authority |Obligation |Maximum occurrences
-|mooring_description |Describe type of mooring that is hosting the acoustic instrumentation |S | | |MA |1
-|mooring_depth |Seafloor depth at mooring site |N |m | |MA |1
-|mooring_northlimit |The constant coordinate for the northernmost face or edge |N | |Dublin core* |MA |1
-|mooring_eastlimit |The constant coordinate for the easternmost face or edge |N | |Dublin core* |MA |1
-|mooring_southlimit |The constant coordinate for the southernmost face or edge |N | |Dublin core* |MA |1
-|mooring_westlimit |The constant coordinate for the westernmost face or edge |N | |Dublin core* |MA |1
-|mooring_uplimit |The constant coordinate for the uppermost face or edge in the vertical, z, dimension. |N | |Dublin core* |MA |1
-|mooring_downlimit |The constant coordinate for the lowermost face or edge in the vertical, z, dimension. |N | |Dublin core* |MA |1
-|mooring_units |The units unlabelled numeric values of mooring_northlimit, mooring_eastlimit, mooring_southlimit, mooring_westlimit. Units specified as appropriate to the projection. E.g. geographic coordinates specify 'signed decimal degrees', UTM specify 'm'. |S | |Dublin core* |MA |1
-|mooring_zunits |The units of unlabelled numeric values of mooring_uplimit, mooring_downlimit. SI units are 'm'. |S | |Dublin core* |MA |1
-|mooring_projection |The name of the projection used with any parameters required, such as ellipsoid parameters, datum, standard parallels and meridians, zone, etc |S | |Dublin core* |MA |1
-|mooring_deployment_date |Start time of mooring deployment in ISO 8601 format. For example, a local time of 18:00 on the 24^th^ of October 2008 would be represented as 2008-10-24T08:00:00Z +10 (local). |S | | |MA |1
-|mooring_retrieval_date |see mooring_deployment_date |S | | |MA |1
-|mooring_code |e.g. mooring ID |S | | |O |1
-|mooring_site_name |e.g. name of location where mooring is deployed |S | | |O |1
-|mooring_operator |Name of organisation which operates the mooring |S | | |MA |N
-|mooring_comments |Free text field for relevant information that might not be captured by the defined attributes |S | | |O |1
+|platform_class |Controlled vocabularly for class of plaform. (see http://vocab.ices.dk/?ref=311) |S | | |MA |1
+|platform_description |Free text field to describe the platform. This may include a description of the platform, its objectives, details about the cruise (if applicable) and other information relevant to the data being collected |S | | |MA |1
+|platform_depth |Seafloor depth at platform site |N |m | |MA |1
+|platform_northlimit |The constant coordinate for the northernmost face or edge |N | |Dublin core* |MA |1
+|platform_eastlimit |The constant coordinate for the easternmost face or edge |N | |Dublin core* |MA |1
+|platform_southlimit |The constant coordinate for the southernmost face or edge |N | |Dublin core* |MA |1
+|platform_westlimit |The constant coordinate for the westernmost face or edge |N | |Dublin core* |MA |1
+|platform_uplimit |The constant coordinate for the uppermost face or edge in the vertical, z, dimension. |N | |Dublin core* |MA |1
+|platform_downlimit |The constant coordinate for the lowermost face or edge in the vertical, z, dimension. |N | |Dublin core* |MA |1
+|platform_units |The units unlabelled numeric values of platform_northlimit, platform_eastlimit, platform_southlimit, platform_westlimit. Units specified as appropriate to the projection. E.g. geographic coordinates specify 'signed decimal degrees', UTM specify 'm'. |S | |Dublin core* |MA |1
+|platform_zunits |The units of unlabelled numeric values of platform_uplimit, platform_downlimit. SI units are 'm'. |S | |Dublin core* |MA |1
+|platform_projection |The name of the projection used with any parameters required, such as ellipsoid parameters, datum, standard parallels and meridians, zone, etc |S | |Dublin core* |MA |1
+|platform_deployment_date |Start time of platform deployment in ISO 8601 format. For example, a local time of 18:00 on the 24^th^ of October 2008 would be represented as 2008-10-24T08:00:00Z +10 (local). |S | | |MA |1
+|platform_retrieval_date |see platform_deployment_date |S | | |MA |1
+|platform_code |e.g. platform ID |S | | |O |1
+|platform_site_name |e.g. name of location where platform is deployed |S | | |O |1
+|platform_operator |Name of organisation which operates the platform |S | | |MA |N
+|platform_comments |Free text field for relevant information that might not be captured by the defined attributes |S | | |O |1
 |===
 
 +*+ Dublin core DCMI Bounding Box Encoding Scheme - see http://dublincore.org/documents/dcmi-box/index.shtml
+
+
+
+
 
 === Category: Transect attributes
 
@@ -697,6 +704,10 @@ Add:: Category: Metadata record: convention_version
 
 Revised convention version. Previous versions were using a decimal number series - e.g. version 1.01, 1.02 etc. limiting the minor number series to 99 revisions. This revision alters the convention to follow the more common convention in the computer world where the version number is described by two integers separated by a full stop. Thus following this convention our previous version 1.05 would now be version 1.5, that is the 5^th^ revision in version 1 series. This version 1.10 is the 10^th^ revision of the version 1 series.
 
-Revised:: Category: Data attributes: data_range_axis_interval to data_range_axis_interval_type for consistency with attribute for vertical dimeionsion: data_ping_axis_interval_type.
+Revised:: Category: Data attributes: data_range_axis_interval to data_range_axis_interval_type for consistency with attribute for vertical dimension: data_ping_axis_interval_type.
 
 Add:: Category: Data attributes: data_range_axis_interval_value
+
+*Version 2.0. 17^th^ Feburary 2020*
+
+Major revision. Added 'platform' category to allow long list of platform classes to be supported. These class types are defined by ICES controlled vocabulary. Mooring category attributes have been removed and can now be specified using the set of platform attributes.
