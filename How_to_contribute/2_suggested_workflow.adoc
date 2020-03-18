@@ -157,7 +157,7 @@ Now that the upstream repository is set, when the `ices-eg/wg_WGFAST` repository
 {empty} +
 
 
-=== Creating your branch
+=== Create your branch
 When working on a forked repository you should keep the `master` branch up to date and separate from your working branch. This allows you to mirror the upstream repository and reduce potential merge conflicts later. To create your own working branch, you "checkout" the branch. This command is also how you switch branches.
 
 *NAMING your branch* - You can name your branch anything you want, but please name it something descriptive. In the example below the branch is named with the author's initials and a SHORT description of the branch's purpose.
