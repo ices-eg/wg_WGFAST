@@ -11,7 +11,7 @@ ifdef::env-github[]
 endif::[]
 
 
-This directory contains the text and source files necessary to generate the https://github.com/ices-eg/wg_WGFAST/blob/master/AcMeta/acmeta.adoc[AcMeta convention document]. It is also the place where new versions of the convention are discussed and developed.
+This directory contains the text and source files necessary to generate the https://github.com/ices-eg/wg_WGFAST/blob/master/AcMeta/acmeta.adoc[metadata convention]. It is also the place where new versions of the convention are discussed and developed.
 
 Version 1.10 of the AcMeta convention (as ICES SISP 4-TG-AcMeta) is available https://www.ices.dk/sites/pub/Publication%20Reports/ICES%20Survey%20Protocols%20(SISP)/SISP-4%20A%20metadata%20convention%20for%20processed%20acoustic%20data%20from%20active%20acoustic%20systems.pdf[here]. Previous published versions were 1.0 (2013) and 1.05 (2014).
 
