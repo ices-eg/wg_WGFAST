@@ -1,0 +1,39 @@
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: asciidoctor/docker-asciidoctor
+    
+    steps:
+        
+    - name: install git
+      run: apk add --update git 
+        
+    - name: install asciidoctor-bibtex
+      run: gem install asciidoctor-bibtex
+      
+    - name: checkout 
+      uses: actions/checkout@master
+
+    - name: build AcMeta.adoc
+      run: asciidoctor -r asciidoctor-bibtex --backend html5 -a data-uri acmeta.adoc  
+      working-directory: AcMeta
+    
+    - name: move file to report folder
+      run: |
+        mkdir -p SISP_formatted
+        mv AcMeta/acmeta.html SISP_formatted/TG-AcMeta.html
+
+    - name: Git stuff
+      run: |
+        git config --local user.email "github@ices.dk"
+        git config --local user.name "ices-github-bot"
+        git status
+        git add SISP_formatted/TG-AcMeta.html
+        git commit --allow-empty -m "Triggered asciidoc build"
+        
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
