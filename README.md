@@ -6,10 +6,13 @@ http://www.ices.dk/community/groups/Pages/WGFAST.aspx
 
 This repository contains two conventions developed by the WGFAST:
 
-1) A convention to standardise [metadata protocols](AcMeta) for active acoustic systems  
-2) A convention for the storage of [sonar data](SONAR-netCDF4) in netCDF-4 format
+1) In [AcMeta](AcMeta): _A metadata convention for processed acoustic data from active acoustic systems_    
+2) In [SONAR-netCDF4](SONAR-netCDF4): _The SONAR-netCDF4 convention for sonar data_
 
 This repository also contains a directory of [help files](How_to_contribute) on how to contribute to both documents.
+
+An HTML preview of the current working draft of the metadata convention is [here](https://htmlpreview.github.io/?https://github.com/ices-gists/wg_WGFAST/blob/master/SISP_formatted/TG-AcMeta.html).
+
 
 ## Overview
 
