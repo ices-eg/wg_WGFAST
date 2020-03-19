@@ -38,7 +38,6 @@ jobs:
         mv SONAR-netCDF4/docs/crr341.html Formatted_docs/
 
     - name: Git stuff
-      if: success()
       run: |
         git config --local user.email "github@ices.dk"
         git config --local user.name "ices-github-bot"
@@ -49,6 +48,5 @@ jobs:
         
     - name: Push changes
       uses: ad-m/github-push-action@master
-      if: success()
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
