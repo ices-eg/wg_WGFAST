@@ -62,7 +62,7 @@ image:Brackets_GUI_new_branch.png[] +
 === Edit files
 Open a file and edit it. +
 
-To open the AsciiDoc live preview pane, click on the AsciiDoc extension on the right side of the screen. image:Brackets_AsciiDoc_icon.png[]. +
+To open the AsciiDoc live preview pane, click on the AsciiDoc extension on the right side of the screen. image:Brackets_Asciidoc_icon.png[] +
 The extension icon will only be present if an AsciiDoc document is open. +
 {empty} +
 
