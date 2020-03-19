@@ -23,17 +23,27 @@ jobs:
       run: asciidoctor -r asciidoctor-bibtex --backend html5 -a data-uri acmeta.adoc  
       working-directory: AcMeta
     
+    - name: build SONARnetCDF4.adoc
+      run: asciidoctor -r asciidoctor-bibtex --backend html5 -a data-uri crr341.adoc  
+      working-directory: SONAR-netCDF4/docs
+    
     - name: move AcMeta file to report folder
       run: |
         mkdir -p Formatted_docs
         mv AcMeta/acmeta.html Formatted_docs/TG-AcMeta.html
 
+    - name: move crr341 file to report folder
+      run: |
+        mkdir -p Formatted_docs
+        mv SONAR-netCDF4/docs/crr341.html Formatted_docs/
+        
     - name: Git stuff
       run: |
         git config --local user.email "github@ices.dk"
         git config --local user.name "ices-github-bot"
         git status
         git add Formatted_docs/TG-AcMeta.html
+        git add Formatted_docs/crr341.html
         git commit --allow-empty -m "Triggered asciidoc build"
         
     - name: Push changes
