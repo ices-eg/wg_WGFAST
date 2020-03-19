@@ -23,10 +23,6 @@ jobs:
       run: asciidoctor -r asciidoctor-bibtex --backend html5 -a data-uri acmeta.adoc  
       working-directory: AcMeta
     
-    - name: build SONARnetCDF4.adoc
-      run: asciidoctor -r asciidoctor-bibtex --backend html5 -a data-uri crr341.adoc  
-      working-directory: SONAR-netCDF4/docs
-
     - name: move AcMeta file to report folder
       run: |
         mkdir -p Formatted_docs
