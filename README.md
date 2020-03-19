@@ -8,10 +8,12 @@ This repository contains two conventions developed by the WGFAST:
 * AcMeta: _A metadata convention for processed acoustic data from active acoustic systems_
 * SONAR-netCDF4: _The SONAR-netCDF4 convention for sonar data_
 
-Previews of the latest working drafts are available ([AcMeta](https://htmlpreview.github.io/?https://github.com/ices-eg/wg_WGFAST/blob/master/Formatted_docs/TG-AcMeta.html); [SONAR-netCDF4](https://htmlpreview.github.io/?https://github.com/ices-eg/wg_WGFAST/blob/master/Formatted_docs/crr341.html) - ![](https://github.com/ices-eg/wg_WGFAST/workflows/BuildDocuments/badge.svg)), as well as the files that make up those documents ([AcMeta](AcMeta); [SONAR-netCDF4](SONAR-netCDF4))
+Previews of the latest working drafts are available ([AcMeta](https://htmlpreview.github.io/?https://github.com/ices-eg/wg_WGFAST/blob/master/Formatted_docs/TG-AcMeta.html); [SONAR-netCDF4](https://htmlpreview.github.io/?https://github.com/ices-eg/wg_WGFAST/blob/master/Formatted_docs/crr341.html)), as well as the files that make up those documents ([AcMeta](AcMeta); [SONAR-netCDF4](SONAR-netCDF4))
 
 This repository also contains a directory of [help files](How_to_contribute) on how to contribute to both documents.
 
+![](https://github.com/ices-eg/wg_WGFAST/workflows/BuildDocuments/badge.svg)
+ 
 ## Overview
 
 ICES Working Group on Fisheries Acoustics, Science and Technology (WGFAST) focuses on the development and application of science and technology used to observe the marine environment (i.e. acoustic and other sensors).
