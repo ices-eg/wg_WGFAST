@@ -305,7 +305,7 @@ The complex-valued backscatter data are converted into calibrated target strengt
 [stem]
 ++++
 \begin{equation}
-TS = 10 \log_{10}(P_{r}) + 40\log_{10}(r) + 2\alpha r - 10\log10_{10}( \frac{P_t\lambda^{2}}{16\pi^2}) - G - 40\log_{10}(\cos\gamma),
+TS = 10 \log_{10}(P_{r}) + 40\log_{10}(r) + 2\alpha r - 10\log_{10}\left( \frac{P_t\lambda^{2}}{16\pi^2}\right) - G - 40\log_{10}(\cos\gamma),
 \end{equation}
 ++++
 
@@ -327,7 +327,7 @@ The volume backscatter strength (Sv, citenp:[maclennan2002]) is derived from a s
 [stem]
 ++++
 \begin{equation}
-S_{v} = 10\log_{10}(P_{r}) + 20\log_{10}(r) + 2\alpha r - 10\log_{10}(\frac{P_t\lambda^{2}c\psi\tau_{e}}{32\pi^{2}}) - G - 40\log_{10}(\cos\gamma),
+S_{v} = 10\log_{10}(P_{r}) + 20\log_{10}(r) + 2\alpha r - 10\log_{10}\left(\frac{P_t\lambda^{2}c\psi\tau_{e}}{32\pi^{2}}\right) - G - 40\log_{10}(\cos\gamma),
 \end{equation}
 ++++
 
@@ -340,7 +340,7 @@ Type 2 conversion equations are intended for data recorded by Furuno omnisonars.
 [stem]
 ++++
 \begin{equation}
-TS = 20\log_{10}(\frac{A}{\sqrt{2}}) + 40\log_{10}(r) + 2\alpha r - (SL + K + \Delta G + G_{T}),
+TS = 20\log_{10}\left(\frac{A}{\sqrt{2}}\right) + 40\log_{10}(r) + 2\alpha r - (SL + K + \Delta G + G_{T}),
 \end{equation}
 ++++
 
@@ -353,11 +353,65 @@ The volume backscatter strength is derived from a similar equation:
 [stem]
 ++++
 \begin{equation}
-S_v = 20\log_{10}(\frac{A}{\sqrt{2}}) + 20\log_{10}(r) + 2\alpha r - 10\log_{10}( \frac{c\tau_e}{2}\Psi ) - (SL + K + \Delta G + G_T),
+S_v = 20\log_{10}\left(\frac{A}{\sqrt{2}}\right) + 20\log_{10}(r) + 2\alpha r - 10\log_{10}\left( \frac{c\tau_e}{2}\Psi \right) - (SL + K + \Delta G + G_T),
 \end{equation}
 ++++
 
 where _c_ is sound speed (sound_speed_indicative, m/s), latexmath:[\tau_e] is the effective pulse duration (transmit_duration_equivalent, s), and latexmath:[\Psi] is the equivalent beam angle (equivalent_beam_angle, sr). Considering the time-varied-gain (TVG) effect on the echo shape cite:[sawada1993], the replacement of _r_ by latexmath:[r - r_0], where latexmath:[r_0 = \frac{1}{4} c \tau_e], is recommended cite:[maclennan1986,furusawaRangeErrorsSound1999] for calculation of latexmath:[S_v].
+
+=== Type 3
+
+Type 3 conversion equations are intended for data produced by Simrad EK60, ES60, and ES70 echosounders.
+
+The backscatter power values are stored in the _backscatter_r_ variable with data type _short_ (16-bit signed integers) that are converted to logarithmic received power via:
+
+[stem]
+++++
+\begin{equation}
+P_r = \frac{10\log_{10}(2)}{256} P_c, 
+\end{equation}
+++++
+where latexmath:[P_c] is the compressed power value stored in the _backscatter_r_ variable and latexmath:[P_r] the logarithmic received power that is transformed into calibrated target strength via:
+
+[stem]
+++++
+\begin{equation}
+TS = P_r + 40\log_{10}(r) + 2\alpha r - 10\log_{10}\left( \frac{P_t\lambda^{2}}{16\pi^2} \right) - 2G_0,
+\end{equation}
+++++
+where latexmath:[r] is the range from the transducer to the target [m], latexmath:[\alpha] the acoustic absorption [dB m^-1^], latexmath:[P_t] the transmitted power setting (_transmit_power_ variable), latexmath:[\lambda] the acoustic wavelength [m], and latexmath:[G_0] the on-axis gain (variable _transducer_gain_). Volume backscatter strength is obtained from a similar equation:
+
+[stem]
+++++
+\begin{equation}
+S_v = P_r + 20\log_{10}(r) + 2\alpha r - 10\log_{10}\left(\frac{P_t \lambda^2 c \psi \tau}{32 \pi^2} \right) - 2G_0 - 2S_{a,corr},
+\end{equation}
+++++
+
+where latexmath:[c] is sound speed [m s^-1^], latexmath:[\psi] the equivalent beam angle (variable _equivalent_beam_angle_), latexmath:[\tau] the pulse duration (variable _transmit_duration_nominal_), and latexmath:[S_{a,corr}] a correction term (variable _sa_correction_).
+
+The range from the transducer to the target is given by:
+
+[stem]
+++++
+\begin{equation}
+
+\end{equation}
+++++
+
+.List of equation symbols and the matching SONAR-netCDF4 variable
+[[equationVariables]]
+[%autowidth,options="header",]
+|===
+|Symbol |Variable|Equation type
+a|latexmath:[P_c]|backscatter_r|all
+a|latexmath:[\tau]|transmit_duration_nominal|3
+a|latexmath:[\alpha]|Calculated from ...|
+|===
+
+=== Type 4
+
+Type 4 conversion equations are intended for data produced by Simrad EK80 and ES80 broadband echosounders.
 
 == Coordinate systems
 
@@ -380,19 +434,105 @@ The platform-heading variable (degrees clockwise from north) can be used to obta
 
 The orientation of the platform is represented using the _z_–_y_’–_x_” Tait-Bryan intrinsic rotation convention (https://en.wikipedia.org/wiki/Euler_angles[en.wikipedia.org/wiki/Euler_angles]), corresponding to yaw, pitch, and roll, respectively. Intrinsic means that rotations about the _y_-axis are measured after any rotation about the _z_-axis, and rotations about the _x_-axis are measured after rotations about the _y_-axis (for comparison, extrinsic angles are applied relative to a fixed-platform orientation). This is the most used rotation convention in the maritime field, and the main effect is that roll is measured relative to the plane tilted by the pitch angle.
 
-.Platform coordinate system. The arrows on the axes indicate the positive direction and the arrows around each axis indicate positive rotations (Hull drawing based on image from Simrad SN90 manual, redrawn with permission).
+.Platform (dot-dash lines) and indicative beam (solid lines) coordinate systems. The arrows on the axes indicate the positive direction and the circular arrows around each platform coordinate system axis indicates positive rotations (Hull drawing based on image from Simrad SN90 manual, redrawn with permission).
 [[coordinate_system_figure]]
-image::coordinateSystemFigure.svg[]
+image::coordinateSystemFigure.svg[align="center"]
 
 === Sonar beam coordinate system
 
-The coordinate system for beam direction uses the same convention as the platform coordinate system, but with the origin at the transducer. Sonar beams can be compensated or uncompensated for platform motion. If uncompensated, the sonar beam coordinate system follows the yaw, pitch, and roll of the platform. If beams are compensated, the sonar beam coordinate system is translated and rotated per ping so that the _y_-axis is always horizontal and the _z_-axis is always vertical. The _x_-axis is always parallel to the platform’s _x_-axis. The beam stabilisation variable indicates whether the beams are compensated or uncompensated.
+The sonar beam coordinate system origin and orientation is given by a set of rotations and translations from the platform coordinate system. These are:
+
+. transducer offset
+. transducer rotation
+. if motion compensated, pitch, roll, and yaw
+. sonar beam rotation
+
+The sonar beam coordinate systems (_x'_, _y'_, _z'_) are defined by per-beam rotations of the platform coordinate system (_x_, _y_, _z_). A translation may also occur if the origin of the sonar beam coordinate system differs from the platform coordinate system. The _z'_ axis is always the beam axis, with the origin at the transducer.
+
+The rotation is given by three rotation angles (latexmath:[\alpha, \beta, \gamma]), corresponding to a clockwise extrinsic z-x-z rotation of the platform coordinate system. That is, the beam coordinate system is the result of three rotations of the platform coordinate system, performed in this order:
+
+.  Rotate about the _z_-axis by latexmath:[\gamma]
+.  Rotate about the _x_-axis by latexmath:[\beta]
+.  Rotate about the _z_-axis by latexmath:[\alpha]
+
+The SONAR-netCD4 variable names for receive beam rotation angles are _rx_beam_rotation_alpha_, _rx_beam_rotation_beta_, and _rx_beam_rotation_gamma_. Translations are given by the _transducer_offset_x_, _transducer_offset_y_, and _transducer_offset_z_ variables. 
+
+Sonar beams can be compensated or uncompensated for platform motion. If compensated, the sonar beam coordinate system is taken to be relative to the platform coordinate system prior to the effect of any pitch and roll of the platform. If uncompensated, the true orientation of the beam coordinate system can be obtained by applying platform pitch and roll to the platform coordinate system and hence to the beam coordinate system. The _beam_stabilisation_ variable indicates whether the beams are compensated or uncompensated.
+
+==== Split-aperture coordinates
+
+Some sonar beams can estimate the arrival angle of echoes (<<Split-aperture beams>>). These angles are given as _minor_ and _major_ angles in the sonar beam coordinate system (<<split_aperture_angle_figure>>):
+
+* The _z'_ -axis is always the beam axis with the origin at the receive transducer,
+* The _minor_ arrival angle (latexmath:[\phi]) is given by the angle from the _z'_ axis, measured in the _x'_-_z'_ plane, and
+* The _major_ arrival angle (latexmath:[\theta]) is given by the angle from the _z'_ axis measured in the _y'_-_z'_ plane.
+
+Positive minor angles occur in the positive _x'_ plane and positive major angles occur in the positive _y'_ plane. 
+
+For conventional downward-looking echosounders mounted on a ship, without motion compensation, it is normal that the beam coordinate system is identical to the platform coordinate system (latexmath:[\alpha = \beta = \gamma = 0]), and hence the split-aperture minor angle is oriented alongships with positive angles towards the bow and the split-aperture major angle is oriented athwartships with positive angles to starboard. 
+
+.The split-aperture minor and major angles in the sonar beam coordinate system.
+[[split_aperture_angle_figure]]
+image::splitApertureAngles.svg[align="center"]
 
 === Coordinate systems offsets and rotations
 
 Several coordinate system offsets can be given in the Platform group. These allow for precise specification of the origin of sensors, such as the position and attitude sensors, and sonar transducer. The offset is a (x,y,z) tuple in the platform coordinate system. Offsets are to be interpreted as a vector that starts at the platform coordinate system origin and ends at the sensor position. For example, an offset of (1, 2, –3) indicates a position that is 1 m toward the bow, 2 m to starboard, and 3 m above the origin of the platform coordinate system.
 
 Some sensors (e.g. the attitude sensor) can have a rotation relative to the platform-coordinate system. This is represented as the extrinsic rotation required from the platform coordinate system’s _x_-, _y_-, and _z_-axes to arrive at the sensor’s _x_-, _y_-, and _z_-axes.
+
+== Split-aperture beams
+
+Some sonar beams can estimate the arrival angle of echoes using the split-aperture method and SONAR-netCDF4 supports several ways to provide such angles. The type of split-aperture beam data contained in a SONAR-netCDF4 file is given by the _beam_type_ variable in each <<sonarBeammodeTable,Beam_groupX>> subgroup. Split-aperture echo arrival angles are always given in the beam coordinate system (see <<Sonar beam coordinate system>>).
+
+When sub-beams from a split-aperture transducer are provided, it is also necessary to combine the them to give the power or amplitude of the echoes, as received by the combined beam. All known split-aperture systems achieve this by taking the average of the sub-beam values, noting that the sub-beam data are typically complex power or amplitude values.
+
+To allow for existing conventions on how the split-aperture angles are stored or derived (typically as phase angles between the split-aperture signals), angle sensitivities are given in variables _echoangle_major_sensitivity_ and _echoangle_minor_sensitivity_.
+
+=== Angles stored in file
+The calculation of the echo arrival angle is done by the sonar and the SONAR-netCDF4 file contains either physical arrival angles or phase angles. For the latter, the major (latexmath:[\theta]) and minor (latexmath:[\phi]) physical arrival angles are obtained by dividing by the major latexmath:[\eta_\theta] and minor latexmath:[\eta_\phi] angle sensitivities respectively. For consistency, when physical arrival angles are stored in the file, latexmath:[\eta_\theta] and latexmath:[\eta_\phi] should still be present and be set to 1.0.
+
+=== Angles not stored in file
+The sonar does not calculate the echo arrival angle - they are calculated from the split-aperture sub-beams, each of which are stored in the SONAR-netCDF4 files. Several types of sub-beam arrangements are supported (<<transducer_types>>) - the angle calculation methods for each type are given in the following sections. The sub-beams are stored as the _subbeam_ dimension in the backscatter variables in <<sonarBeammodeTable>>, in the same order as labelled in <<transducer_types>>.
+
+.The split-aperture transducer arrangements supported by SONAR-netCDF4 (A: 4 quadrants; B: 3 sub-beams; C; 3+1 sub-beams). The Cartesian coordinates show the orientation of the sonar beam coordinate system relative to the transducer sub-beams (note that the _z'_-axis points into the page). The numbers indicate the sub-beam labels for each type of transducer.
+[[transducer_types]]
+image::splitApertureTransducers.svg[align="center"]
+
+==== Four quadrants (type A)
+This arrangement has four equal quadrants in the transducer (<<transducer_types>>, part A) and the major (latexmath:[\theta]) and minor (latexmath:[\phi]) angles are calculated thus:
+
+[stem]
+++++
+\begin{equation}
+\theta = \frac{\arctan \left( \Im((y_2+y_3)^*), \Re(y_1+y_4) \right)}{\eta_\theta}\\
+\phi =   \frac{\arctan \left( \Im((y_1+y_2)^*), \Re(y_3+y_4) \right)}{\eta_\phi} 
+\end{equation}
+++++
+where latexmath:[\arctan] is the four-quadrant inverse tangent, latexmath:[y_x] the complex signal from quadrant latexmath:[x], * indicates the complex conjugate and latexmath:[\Re] and latexmath:[\Im] the real and imaginary parts of the complex numbered signals. The angle sensitivities are latexmath:[\eta_\theta] for the major axis and latexmath:[\eta_\phi] for the minor axis.
+
+
+==== Three or four sub-beams (type B and C)
+
+This arrangement has either three equal sub-beams (<<transducer_types>>, partB) or a centre sub-beam and three surrounding sub-beams. (<<transducer_types>>, part C). Type C can be treated the same as type B once the centre sub-beam signal is added to each of the outer sub-beam signals. The phase angles between two pairs of the three sub-beams are then given by cite:[bodholt2001, bjorno2017]:
+
+[stem]
+++++
+\begin{equation}
+\omega_{31} = \arctan \left( \Im((y_3+y_1)^*), \Re(y_3+y_1) \right) \\
+\omega_{32} = \arctan \left( \Im((y_3+y_2)^*), \Re(y_3+y_1) \right)
+\end{equation}
+++++
+where latexmath:[\arctan] is the four-quadrant inverse tangent, latexmath:[y_x] the complex signal from quadrant latexmath:[x], * indicates the complex conjugate and latexmath:[\Re] and latexmath:[\Im] the real and imaginary parts of the complex numbered signals. The major (latexmath:[\theta]) and minor (latexmath:[\phi]) angles are then:
+
+[stem]
+++++
+\begin{equation}
+\theta = \frac{1}{\sqrt{3}\eta_\theta} (\omega_{31} + \omega_{32})\\
+\phi = \frac{1}{\eta_\phi} (\omega_{32} - \omega_{31})\\
+\end{equation}
+++++
+where latexmath:[\eta_\theta] is the angle sensitivity for the major axis and latexmath:[\eta_\phi] the angle sensitivity for the minor axis.
 
 == Revision history
 
