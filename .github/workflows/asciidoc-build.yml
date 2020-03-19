@@ -26,7 +26,7 @@ jobs:
     - name: move AcMeta file to report folder
       run: |
         mkdir -p Formatted_docs
-        mv AcMeta/acmeta.html Formatted_docs
+        mv AcMeta/acmeta.html Formatted_docs/TG-AcMeta.html
 
     - name: Git stuff
       run: |
