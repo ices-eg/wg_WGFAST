@@ -1,0 +1,116 @@
+= How to contribute to the AcMeta and SONAR-netCDF4 documents
+Erin LaBrecque
+:revnumber: 0.02
+:revdate: 2020-03-18
+:imagesdir: images\
+:toc: preamble
+:toclevels: 4
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+
+[.text-center]
+*Welcome!*
+
+If you have experience with and are comfortable using Git and GitHub, skip this file and read through link:experienced_github_users.adoc[A quick workflow for experienced Git, GitHub, and Asciidoc users] to learn how to contribute to the WGFAST convention documents.
+
+[.text-center]
+The rest of you, do not panic! +
+
+Please keep reading. :smile:
+
+
+== Where do I start?
+=== Here
+We realize that learning Git workflows and commands is probably not what you thought of when you thought of contributing to the WGFAST conventions. Don't worry. We have created several help files to get you up and running with the least amount of friction. You concentrate on contributing to the WGFAST conventions and we will take care of the "Git-stuff".
+
+You might be thinking that using a Git workflow to edit the WGFAST conventions is overkill. The conventions are text documents, not software. Yes, Git is widely used in tech industries to track source code changes and develop software, and it has a lot of terminology that can be confusing if you are not familiar with it. But at its core, Git is an open-source and well developed _distributed version control system_ - it tracks all changes in a project from multiple contributors. That is why we are using it. +
+{empty} +
+
+.A few things to keep in mind:
+. You cannot delete, erase, destroy, implode, explode, or generally mess up the master documents. They are safe in the `ices-eg/wg_WGFAST` repository behind permissions you cannot change.
+. Do not be afraid to make mistakes in your repository. When you start learning Git, have fun with it - it is your repository to experiment with. We all blew up a few repos starting out. If you make a mistake that you cannot come back from, you can delete your repository and fork `ices-eg/wg_WGFAST` again.
+. Your terminal will not bite you. Unless you somehow get into your system's operating files (do not go there!), you cannot do too much damage at the command line.
+. If you do not want to work in a terminal you can use either the Atom or Brackets text editors/IDEs. Both have Git/GitHub integration and you can use a GUI for most Git commands.
+
+=== Next
+. Read the rest of this page. This is a README file. Most folders in the `ices-eg/wg_WFAST` repository has an associated README file with information about the other files in that folder.
+. Read through the  link:1_suggested_setup.adoc[Suggested setup to contribute to the ICES WGFAST convention documents].
+. Read through the link:Git_and_GitHub_terminology.adoc[Git and GitHub terminology] file. There also a graphic of the workflow in that file.
+. Read through the link:2_suggested_workflow.adoc[Suggested workflow to contribute to the ICES WGFAST convention documents].
+. Read the individual help files when needed.
+
+Links to all the help files are at the bottom of this document, or you can click on a document's link at the top of this page. +
+{empty} +
+
+=== The `ices-eg/wg_WGFAST` repository
+What is a Git repository? A repository is a permanent record of a project's development. +
+`wg_WGFAST` is a repository managed by `ices-eg` folks on GitHub.
+
+https://github.com/ices-eg[`ices-eg`] is the ICES Expert Groups' GitHub account. It is an account of "Workspaces for ICES expert groups to archive code and case-specific methods". https://github.com/ices-eg/wg_WGFAST[`wg_WGFAST`] is the repository for the working group on Fisheries Acoustics, Science and Technology.
+
+.There are five folders within the wg_WGFAST repository
+. `How_to_contribute`: Contains help files on how to contribute to the conventions. You are in this folder.
+. `AcMeta` - Contains the _A metadata convention for processed acoustic data from active acoustic systems_ document and supporting files.
+. `SONAR-netCDR` - Contains the `docs` subfolder with the _The SONAR-netCDF4 convention for sonar data, Version 1.1_ document and supporting files, and the `src` subfolder with MATLAB code.
+. `SISP_formatted` - Contains the latest HTML file of the metadata convention. You can view this file in your web browser by going https://htmlpreview.github.io/?https://github.com/ices-gists/wg_WGFAST/blob/master/SISP_formatted/TG-AcMeta.html[here].
+. `.github/workflows` - Contains the `.yml` for a GitHub Action to build the HTML and put it in `SISP_formatted`. Do not touch this file, please. +
+{empty} +
+
+
+=== Help
+If you still have questions about _how_ to contribute to the convention documents after reading through the help files in the "How to contribute" folder, please open an issue in the https://github.com/ices-eg/wg_WGFAST/issues[issue tracker] and submit your questions there. Mention `@erinann` in the issue.
+
+
+== Git and GitHub
+If you do not know what Git commits are, or if you think "forking a repository" refers to dueling with cutlery, do not worry. We will not make you a Git or GitHub expert, but we will get you sorted enough to know how to stage commits, push those commits to your remote repository, pull updates from an upstream repository, and submit pull requests in order to contribute to the convention documents.
+
+== AsciiDoc markup
+If you do not know what a markup language is (specifically AsciiDoc markup) or how to preview markup documents, do not worry. Again, we will not make you an expert in these things, but we will get you editing with as little pain as possible.
+
+CAUTION: Setting up live preview of AsciiDoc markup documents with a browser extension was not easy. Compiling the documents (also called "creating backends" (HTML, PDF, DocBook, etc.) on a computer was even harder. Unless you know Ruby and RVM and are deeply familiar with your operating system, do not try these things.
+
+TIP: In lieu of installing browser extensions, the Asciidoctor toolchain, and all the dependencies, we recommend using a text editor/IDE that can edit and provide live previews of AsciiDoc documents. *AsciidocFX*, *Atom*, or *Brackets* are three suggested text editors/IDEs.
+
+
+== AsciidocFX, Atom, Brackets text editors/IDEs
+AsciidocFX, Atom, and Brackets are text editors/IDEs that can read, edit, and live preview AsciiDoc documents. All three editors can interact with GitHub through a terminal or a terminal emulator or a GUI.
+
+NOTE: Previews of citations in AsciiDoc documents do not currently work in Atom or Brackets. Previews of math equation (LaTex math) in AsciiDoc documents does not currently work in Atom, but you can change the settings of the AsciiDoc preview pane in Brackets to preview math equations. +
+
+
+== Links To Help Files
+- link:1_suggested_setup.adoc[Suggested setup to contribute to the ICES WGFAST convention documents] +
+- link:2_suggested_workflow.adoc[Suggested workflow to contribute to the ICES WGFAST convention documents] +
+- link:3_github_help.adoc[GitHub help] +
+- link:4_git_help.adoc[Git help]  +
+- link:5_plain_text_editor_help.adoc[Text editors/IDEs help]  +
+- link:6_asciidoc_help.adoc[AsciiDoc markup help]  +
+- link:Git_and_GitHub_terminology.adoc[Git and GitHub terminology]
+- link:Atom_Git_GUI.adoc[How to use Git/GitHub GUI in Atom]
+- link:Brackets_Git_GUI.adoc[How to use Git/GitHub GUI in Brackets]
+- link:experienced_github_users.adoc[A quick workflow for experienced Git, GitHub, and Asciidoc users] +
+{empty} +
+
+NOTE: The help files are written in AsciiDoc (.adoc) markup. If you want to take a quick peek, click on the `Raw` button above. If you installed an AsciiDoc browser extension, make sure you turn it off to view the markup.
+
+{empty} +
+
+.Filename -> Document name
+[cols=2, width="90%", options = header]
+|=========
+|Filename |Document name
+|1_suggested_setup.adoc | Suggested setup to contribute to the ICES WGFAST conventions
+|2_suggested_workflow.adoc |Suggested workflow to contribute to the ICES WGFAST conventions
+|3_github_help.adoc | GitHub help
+|4_git_help.adoc | Git help
+|5_plain_text_editor_help.adoc |Text editors/IDEs help
+|6_asciidoc_help.adoc |AsciiDoc help
+|Git_and_GitHub_terminology.adoc| Git and GitHub terminology
+|Atom_Git_GUI.adoc |How to use Git/GitHub GUI in Atom
+|Brackets_Git_GUI.adoc | How to use Git/GitHub GUI in Brackets |experienced_github_users.adoc | A quick workflow for experienced Git, GitHub, and Asciidoc users
+|README.adoc |How to contribute to the AcMeta and SONAR-netCDF4 documents

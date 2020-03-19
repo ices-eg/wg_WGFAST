@@ -1,0 +1,61 @@
+= A quick workflow for experienced Git, GitHub, and Asciidoc users
+Erin LaBrecque
+:revnumber: 0.02
+:revdate: 2020-03-14
+:imagesdir: images\
+:toc: preamble
+:toclevels: 4
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+
+
+This is the general workflow to contribute to the WGFAST convention documents for those familiar with Git and GitHub.
+
+== Git Workflow
+.Fork-Branch-Pull Request
+. In GitHub, fork the `ices-eg\wg_WGFAST` repository to your own GitHub account.
+. Clone the forked repository to your local computer.
+. Create a branch for your edits and work in that branch. A good naming convention for your branch would be `xx_edits` where `xx` is your initials.
+. Edit the AsciiDoc files. Stage, commit, and push the edits to the working branch in your remote repository.
+. In GitHub, submit a pull request from your working branch to the master branch of the `ices-eg\wg_WGFAST` repository. +
+
+https://jarednielsen.com/learn-git-branch-workflow/[This] is a good blog post on the Git Fork-Branch-Pull Request workflow. (Hat tip: Wu-Jung Lee) +
+{empty} +
+
+*Please ask first* before starting on any significant edits, otherwise you risk spending a lot of time working on something that the convention coordinators might not want to merge into the project. You can contact the convention coordinators by opening an issue in the https://github.com/ices-eg/wg_WGFAST/issues[issue tracker].
+
+The https://www.sourcetreeapp.com/[Sourcetree] program for Windows and Mac is a useful tool for working with Git repositories. https://tortoisehg.bitbucket.io/[TortoiseHg] for Windows and Linux is another option. You can of course also use the Git command line interface.
+
+== AsciiDoc tools
+=== Real-time rendering of the document
+
+When editing the convention files, it is useful to see the rendered version of the documents as changes are made. Ways to achieve this are explained at https://asciidoctor.org/docs/editing-asciidoc-with-live-preview/[Editing AsciiDoc with Live Preview]. We find that
+https://github.com/asciidoctor/asciidoctor-browser-extension[Asciidoctor.js Live Preview] works well, but note that it does not currently do the bibliography in the AcMeta document.
+
+Three of the modern text editors/IDEs listed at https://asciidoctor.org/docs/editing-asciidoc-with-live-preview/[Editing AsciiDoc with Live Preview], AsciidocFX, Atom and Brackets, are explained in the link:plain_text_editor_help.adoc[Text editors/IDEs help] file.
+
+=== Off-line rendering of the document
+
+This requires installing AsciiDoctor onto your computer and can be somewhat complicated. Instructions are https://asciidoctor.org/docs/install-toolchain/[here]. Remember to also install the asciidoctor-bibtex extension. Once all installed, the conventions can be rendered in several formats with these commands.
+
+HTML files:: Generates one or more files (images are kept separate):
+
+ asciidoctor -r asciidoctor-bibtex acmeta.adoc
+
+HTML (single file):: For a single html file (including the images, which makes it easier to distribute):
+
+ asciidoctor -r asciidoctor-bibtex --backend html5 -a data-uri acmeta.adoc
+
+PDF:: Note that the asciidoctor-mathematical extension must be installed to get the mathematical equations correctly rendered:
+
+ asciidoctor-pdf -r asciidoctor-bibtex  acmeta.adoc
+
+Word (.docx):: First convert to docbook format, then install and use https://pandoc.org/[pandoc] to convert to Word:
+
+ asciidoctor -r asciidoctor-bibtex --backend docbook acmeta.adoc
+ pandoc --from docbook --to docx -o acmeta.docx acmeta.xml
