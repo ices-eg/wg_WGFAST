@@ -1,0 +1,54 @@
+= Suggested setup to contribute to the ICES WGFAST conventions
+Erin LaBrecque
+:revnumber: 0.02
+:revdate: 2020-03-18
+:imagesdir: images\
+:toc: preamble
+:toclevels: 4
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+
+These instructions are for contributors who have not used Git, GitHub, or AsciiDoc markup get started.
+
+If you have experience in Git and GitHub, skip the setup and workflow files and read through link:experienced_github_users.adoc[A quick workflow for experienced Git and GitHub users].
+
+== What have I gotten myself into?
+++++
+<img align="right" role="right" src="images\donotpanic.jpg" height="150" width="150"/>
+++++
+There is a lot of jargon surrounding Git and GitHub, but that is normal in any specialized field. Try explaining what you do to a five year old without using the terms, "backscatter", "decibel", and "transducer". Thankfully, you do not need to be an expert in multiple programming languages or fields of computer science to contribute to the WGFAST convention documents. You only need to be the fisheries acoustic expert that you are and to understand a few core concepts of Git and GitHub. These documents are here to help you with the latter. +
+
+== Software, accounts, and languages
+=== Software to install
+*Git* - A distributed version control system. +
+*AsciidocFX* or *Atom* or *Brackets* - Modern text editors/Integrated Development Environments (IDEs). AsciidocFX, Atom, and Brackets can open, edit, and live preview AsciiDoc files. +
+
+If you prefer to work online (in GitHub), you will not need a text editor. However, we suggest using a text editor if you are going to do more than fix a few spelling errors. +
+
+=== Account to create
+*GitHub* - A cloud-based hosting service used to manage Git repositories. +
+
+=== Markup languages to learn (only a little)
+*AsciiDoc* - extension `.adoc` +
+AsciiDoc is a popular and flexible plain text markup language. Both convention documents are written in (or being converted to) AsciiDoc markup. GitHub automatically renders `.adoc` files into HTML. If you are reading this file on GitHub, you are reading the HTML render of an AsciiDoc file. +
+
+*Markdown* - extension `.md` +
+Markdown is the most popular plain text markup language but it is not as flexible as AsciiDoc. You will see a couple documents in the `wg_WGFAST` repository with `.md` extensions (eg - `README.md`). These are written in Markdown. GitHub automatically renders Markdown files into HTML.
+
+AsciidocFX, Atom, and Brackets can open, edit, and live preview AsciiDoc and Markdown files. +
+
+== Suggested order of setup
+If you do not have any of the software or accounts listed in the section above, this is the most painless way to get started.
+
+1. Create a GitHub account. See the link:3_github_help.adoc[GitHub Help] file.
+2. Install Git. See the link:4_git_help.adoc[Git Help] file.
+3. Install AsciidocFX or Atom or Brackets and the necessary packages or extensions to read `.adoc` and `.md` files. See link:5_plane_text_editor_help.adoc[Text editors/IDEs help] file.
+4. Learn a little about AsciiDoc markup. See the link:asciidoc_help.adoc[AsciiDoc Help] file. +
+{empty} +
+
+Next: link:2_suggested_workflow.adoc[Suggested workflow to contribute to the ICES WGFAST convention documents]

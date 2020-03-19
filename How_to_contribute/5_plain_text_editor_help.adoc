@@ -1,0 +1,246 @@
+= Text editors/IDEs help
+Erin LaBrecque
+:revnumber: 0.02
+:revdate: 2020-03-16
+:imagesdir: images\
+:toc: preamble
+:toclevels: 4
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+
+These instructions are to help contributors install and use either AsciidocFX, Atom, or Brackets to edit the WGFAST convention documents.
+
+== Why use a text editor/IDE?
+There are three ways you can view and edit AsciiDoc documents. +
+
+. Install the Asciidoctor toolchain and all its dependencies to create backends (PDF, HTML, ePubs, Word docs, etc.). Requires https://www.ruby-lang.org/en/[Ruby]. You cannot see updates as you edit.
+. Install AsciiDoc browser extensions in Chrome, Firefox, or Opera and open files in your browser. Preview only. To see live updates you will have to install and set up a system monitor to watch for file changes.
+. Use a modern text editor/IDE that supports live preview and syntax highlighting of AsciiDoc documents. Syntax highlighting helps differentiate between markup commands and text.
+
+*Answer*: Installing and using a modern text editor/IDE is the easiest option to edit and preview AsciiDoc documents across multiple platforms! +
+{empty} +
+
+[TIP]
+====
+IDE = Integrated Development Environment +
+GUI = Graphical User Interface
+====
+{empty} +
+
+CAUTION: This document is not going to give you all the tips and tricks for each editor/IDE. It is only meant to help you choose an editor/IDE and to get started. Please refer to the manuals and online community help sections for in depth information on each program.
+
+== https://asciidocfx.com/[AsciidocFX]
+image:AsciidocFX_logo.png[width = 45, height = 45] +
+AsciidocFX is supported on macOS, Windows, and Linux.
+
+=== Installing AsciidocFX
+The easiest way to install AsciidocFX is to go to the installation section of the AsciidocFX website, download the installer for your system, and run it.
+
+https://www.asciidocfx.com/#truehow-to-install-asciidocfx[How to Install AsciidocFX]
+
+=== Integration with Git and GitHub
+There is no Git/GitHub GUI native to AsciidocFX, but there is a terminal emulator. This means that while working in AsciidocFX, you can open the terminal emulator and run Git commands. The terminal emulator will open in your current working directory.
+
+To change what terminal is used, update the settings in the `Settings -> Terminal Settings` tab (left side of the screen).
+
+TIP: Windows users, you might want to change the path from the Window's command prompt to the path for Git Bash. The path to Git Bash will depend on where you installed Git. The path to Git Bash under a default installation would be: `C:\Program Files\Git\bin\bash.exe`
+
+=== Panes
+image:AsciidocFX_panes.png[]
+
+TIP: The default editor theme has a white background. You can change the theme to "Dark" in the `Settings -> Editor Settings` tab.
+
+== https://atom.io/[Atom]
+image:Atom-logo.svg[width = 50, height = 50] +
+Atom is supported on macOS, Windows, and Linux.
+
+=== Installing Atom
+To install Atom, click the big, yellow "Download" button at https://atom.io/[Atom.io] and run the installer. If the operating system listed above the download button is not your operating system, you can find other builds and releases at https://github.com/atom/atom (scroll down). +
+
+==== Packages
+To preview AsciiDoc and Markdown documents you will have to install a few packages. +
+
+From the Welcome Page you can click on `Install a Package` or go to `File -> Settings` and click on `Install` at the bottom of the list of options.
+
+.Packages to install
+* asciidoc-assistant +
+ Installs the following packages:
+** asciidoc-image-helper +
+ Provides the ability to past images from the clipboard.
+** asciidoc-preview +
+ Shows an HTML preview for the AsciiDoc content in the current editor.
+** autocomplete-asciidoc +
+ AsciiDoc language autocompletions.
+** language-asciidoc +
+ Syntax highlighting and snippets for AsciiDoc.
+
+* Other packages you might want
+** markdown-preview-plus +
+ To show an HTML preview of Markdown (`.md`) documents.
+** atom-terminal +
+ Opens an external terminal in the current directory. +
+** terminal-tab
+ Opens a terminal pane within Atom in the current directory.
+
+_You do not need both `atom-terminal` and `terminal-tab`. One or the other will do._ +
+
+
+NOTE: If asciidoc-assistant failed to install any of its dependencies, you will have to install those package separately.
+
+==== Useful shortcuts
+* `Ctrl+Shift+P` (Linux/Windows) or `cmd+shift+P` (macOS). Opens the Command Pallet where you can find and run available commands.
+* `Ctrl+Shift+A` (Linux/Windows) or `cmd+shift+A` (macOS). Opens AsciiDoc live preview. +
+* `Ctrl+Shift+M` (Linux/Windows) or `cmd+shift+M` (macOS). Opens Markdown live preview. +
+{empty} +
+
+=== Panes
+Atom is a little friendlier in that it opens to a "Welcome Page" with links to help get you started. You can turn this option off by un-checking the box next to "Show Welcome Guide when opening Atom".
+
+image:Atom_panes_welcome.png[] +
+{empty} +
+
+
+image:Atom_panes_working.png[] +
+{empty} +
+
+=== Integration with Git and GitHub
+Atom comes bundled with a GUI for Git and GitHub. You have to supply your GitHub login credentials the first time you push commits to GitHub with the GUI. +
+
+To work in a terminal, you have to install an external package. There are a number of Atom packages that give you access to a terminal. The simplest is `atom-terminal` which opens your external terminal in the root directly of the project. `terminal-tab` opens a terminal within Atom that you can dock in different places, but the package can be a little flaky - closing the terminal by clicking the `x` to close the tab instead of exiting out of the terminal (typing `exit` at the command line) crashes Atom.
+
+Instructions for working with Git in a terminal are in the link:2_suggested_workflow.adoc[Suggested workflow to contribute to the ICES WGFAST convention documents] file.
+
+==== Git terminal from Atom
+1. Open the settings of the terminal package you installed and make sure the path to your terminal is correct.
+2. Open the terminal when you need to stage, commit, and push to GitHub.
+
+==== Git/GitHub GUI in Atom
+Please see link:Atom_Git_GUI.adoc[How to use Git/GitHub GUI in Atom]
+
+
+== http://brackets.io/[Brackets]
+image:Brackets_Icon.svg[width = 50, height = 50] +
+Brackets is supported on macOS, Windows, and Linux
+
+=== Install Brackets
+To install Brackets, click the big, blue "Download Brackets 1.14.1" button at http://backets.io/[Brackets.io] and run the installer. If the correct installer for your operating system does come up, you can find other builds and releases at https://github.com/adobe/brackets (scroll down). +
+
+==== Extensions
+To preview AsciiDoc and Markup documents and to interface with Git/GitHub, you have to install a few extensions using the Extension Manager. +
+Go to `File -> Extension Manager` or click on the Extension Manager button on the right. +
+
+.Extensions to install
+* AsciiDoc Preview +
+ Live preview of AsciiDoc documents.
+* Markdown Preview +
+ Live preview of Markdown documents.
+* Brackets-Git +
+ Integration of Git into Brackets.
+* Alice - Spell Checking +
+ Adds offline spell checking capabilities to Brackets.
+* Alice Dictionaries +
+ Provides dictionary data for the Alice spell checker. +
+{empty} +
+
+=== Panes
+image:Brackets_panes.png[] +
+
+* To enable the AsciiDoc or Markdown preview and Git extensions you have to select the respective icons on the right. The AsciiDoc and Markdown preview icons will only be available if an `.adoc` or `.md` file is open.
+* The AsciiDoc live preview pane can be float if you do not like its default location on the bottom of the screen.
+* There are four icons in the top-right of the AsciiDoc preview pane:
+** synchronization icon image:Brackets_ADPreview_arrow.png[]
+*** If auto-sync to the editing location is turned off, pressing this button will scroll the preview to the cursor's location in the source pane.
+** export to browser icon image:Brackets_ADPreview_export.png[]
+*** Exports the current preview to your browser. Live update is not available when the preview is in your browser.
+** settings icon image:Brackets_ADPreview_settings.png[]
+*** Auto-sync the preview to the source pane in the `Update` table and turn on math rendering in the `View` tab.
+** dock/undock icon image:Brackets_ADPreview_dock.png[]
+*** Docs the preview pane at the bottom of the screen or undocks it.
+
+_For more on the available features of of each extension, please visit their websites:_ +
+
+* https://github.com/asciidoctor/brackets-asciidoc-preview[AsciiDoc Preview]
+* https://github.com/brackets-userland/brackets-git[Brackets-Git]
+* https://github.com/JohnathonKoster/brackets-spellcheck[Alice - Spell Checking]
+
+
+=== Integration with Git and GitHub
+After installing the Brackets-Git extension, you can clone, branch, stage, commit, and push to your remote repository by using Git commands in a terminal or you can use the GUI.
+
+==== Git terminal from Brackets
+1. First make sure the path your terminal is correct. Go to `File -> Git Settings... -> Git Configuration`.
+2. Click on the Git icon on the right side, then click on the terminal icon in the Git pane to open your terminal.
+
+Instructions for working with Git in a terminal are in the link:2_suggested_workflow.adoc[Suggested workflow to contribute to the ICES WGFAST convention documents] file.
+
+==== Git/GitHub GUI in Brackets
+Please see link:Brackets_Git_GUI.adoc[How to use Git/GitHub GUI in Brackets]
+
+== Pro, Cons, Quirks
+.Windows only
+Various parts of the "How-to" documents were written using the three text editors/IDEs on a Dell XPS 15 (9560) with Microsoft Windows 10 Pro Build 18363, 32 GB RAM. +
+
+If anyone wants to update this section for macOS and Linux, please do!
+
+
+.Text Editors/IDEs Test - Windows
+[cols=4, width="100%", options = header]
+|====================
+|      | AsciidocFX | Atom | Brackets
+| *Pros*
+a|
+* Best live preview display
+* Easy link to browser preview
+* Pseudo terminal emulator for Git commands
+* Good integration of hotkeys for standard text formatting
+* Spell checker
+
+a|
+* Loads quickly
+* GitHub/Git integration and GUI without external packages
+* Git terminal (external package)
+* Easy to see staged changes in Git pane
+* Spell checker
+
+a|
+* Loads quickly
+* Live preview of math equations
+* GUI and terminal for Git (from Brackets-Git extension)
+* Synchronization of source pane and live preview pane is the best of the three editors/IDEs
+
+| *Cons*
+a|
+* VERY Slow to load
+* Uses a lot of memory
+* Not all the shortcuts work
+
+a|
+* No live preview for citations and math equations
+* Synchronizing the live preview pane to the source pane does not work well
+
+
+a|
+* No live preview for citations
+* AsciiDoc live preview pane only docks at the bottom of the screen (but it can float)
+* Markdown live preview pane cannot move
+
+
+| *Quirks*
+a|
+* Scrolling in the source pane jumps no matter what scroll rate is set
+* Sometimes you have to restart the program for settings to update
+
+a|
+* Closing the terminal from the Terminal-tab package can crash Atom if you do not exit the terminal first
+
+
+a|
+* Lots of pop-up boxes when using the GUI to push to a remote repository. It is somewhat annoying to keep clicking `OK`
+* Potential issues with initially finding GitHub credentials (might be a Window problem)
+* No internal spell checker - you have to install an extension with limited configurations
+|====================
