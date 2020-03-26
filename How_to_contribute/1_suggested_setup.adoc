@@ -51,4 +51,5 @@ If you do not have any of the software or accounts listed in the section above, 
 4. Learn a little about AsciiDoc markup. See the link:asciidoc_help.adoc[AsciiDoc Help] file. +
 {empty} +
 
+
 Next: link:2_suggested_workflow.adoc[Suggested workflow to contribute to the ICES WGFAST convention documents]
