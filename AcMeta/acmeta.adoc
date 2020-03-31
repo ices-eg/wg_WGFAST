@@ -65,7 +65,7 @@ In many cases the cost of collecting acoustic data is significant and adhering t
 
 == Global attributes
 
-The metadata attribute fields in this document build on existing conventions and are presented following the netCDF (network Common Data Format) cite:[rew1990,unidata2017] format of global attributes. The global attributes describe the overall contents of the file and allow for data discovery. Global attributes can be thought of as conveying five kinds of information:
+The metadata attribute fields in this document build on existing conventions and are presented following the NetCDF (Network Common Data Format) cite:[rew1990,unidata2017] format of global attributes. The global attributes describe the overall contents of the file and allow for data discovery. Global attributes can be thought of as conveying five kinds of information:
 
 * What: What are the data in the dataset?
 * Where: The spatial coverage of the data.
