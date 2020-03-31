@@ -17,7 +17,7 @@ endif::[]
 These are basic instructions on how to use the Git/GitHub GUI in Brackets.
 
 
-If you want more detailed information on how to use Brackets to manage your Git repositories on GitHub, http://practicalseries.com/1002-vcs/index.html#js--000000[this] is a nice online .
+If you want more detailed information on how to use Brackets to manage your Git repositories on GitHub, http://practicalseries.com/1002-vcs/index.html#js--000000[this] is a nice online reference.
 
 == Git/GitHub GUI in Brackets
 1. Make sure the https://github.com/brackets-userland/brackets-git[Git extension] for Brackets is installed. +
