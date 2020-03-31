@@ -85,13 +85,13 @@ There is no constraint on the addition of extra metadata attributes to fully des
 
 This document describes a metadata convention for processed acoustic data. It is assumed that appropriate data and metadata management of unprocessed acoustic data files will be in place, discussion of which is beyond the scope of this document.
 
-Processed acoustic data and metadata may be held in a variety of formats including, but not limited to, relational databases, Extensible Markup Language (XML), JavaScript Object Notation (JSON), Network Common Data Form (netCDF) and Hierarchical Data Format (HDF). Storage of the data and associated metadata is a question of implementation and is not mandated or defined by this document. When choosing a data format some key considerations are ease of data exchange, visibility of data and metadata, and potential for automated harvesting of metadata. It is recommended that guidance and assistance from metadata experts is sought when realizing this metadata convention in a specific implementation format.
+Processed acoustic data and metadata may be held in a variety of formats including, but not limited to, relational databases, Extensible Markup Language (XML), JavaScript Object Notation (JSON), Network Common Data Form (NetCDF) and Hierarchical Data Format (HDF). Storage of the data and associated metadata is a question of implementation and is not mandated or defined by this document. When choosing a data format some key considerations are ease of data exchange, visibility of data and metadata, and potential for automated harvesting of metadata. It is recommended that guidance and assistance from metadata experts is sought when realizing this metadata convention in a specific implementation format.
 
 == Summary of metadata categories
 
 Metadata Record:: Uniform resource identifier (URI) that uniquely identifies the metadata record.
 
-Mission metadata:: Metadata that gives a high level description of the overarching initiative (e.g. mission, project, ocean observing system) under which the acoustic data were collected.
+Mission metadata:: Metadata that gives a high-level description of the overarching initiative (e.g. mission, project, ocean observing system) under which the acoustic data were collected.
 
 Cruise metadata:: Attributes that describe the cruise from which the acoustic data were acquired. Metadata should provide information that readily enables the cruise to be identified and be aware of cruise objectives, other instrumentation, and data acquired.
 
@@ -333,11 +333,11 @@ http://seadatanet.maris2.nl/v_bodc_vocab/search.asp?name=(C381)%20Ports+Gazettee
 Date of calibration in ISO 8601 format including local time zone.
 
 For example, a local time of 18:00 on the 24^th^ of October 2008 would be represented as 2008-10-24T08:00:00Z +10 (local).|S | | |M |1
-|calibration_aquisition_method |Describe the method used to acquire calibration data. (see <<list_calibration_method>>, Standard lists) |S | | |M |1
-|calibration_processing_method |Describe method of processing that was used to generate calibration offsets. |S | | |M |1
+|calibration_acquisition_method |Describe the method used to acquire calibration data. (see <<list_calibration_method>>, Standard lists) |S | | |M |1
+|calibration_processing_method |Describe method of processing that was used to generate calibration offsets (e.g. Section ‘4.1.2.3 On-axis calibration’ from Demer, D., Berger, L., Bernasconi, M., Bethke, E., Boswell, K., Chu, D., Domokos, R., et al. 2015. Calibration of acoustic instruments. ICES Cooperative Research Report No. 326. 133 pp.). |S | | |M |1
 |calibration_accuracy_estimate |Estimate of calibration accuracy. Include a description and units so that it is clear what this estimate means (e.g. estimate might be expressed in dB or as a percentage). |S | | |M |1
 |calibration_report |URL or references to external documents which give a full account of calibration processing and results may be appropriate |S | | |M |1
-|calibration_comments |Free text field to for relevant information that might not be captured by the defined attributes |S | | |O |1
+|calibration_comments |Free text field for relevant information that might not be captured by the defined attributes |S | | |O |1
 |===
 
 === Category: Data acquisition attributes
@@ -345,7 +345,7 @@ For example, a local time of 18:00 on the 24^th^ of October 2008 would be repres
 [cols="2,6,1,1,1,1,1",options="header"]
 |===
 |Attribute name |Definition |Data type |Units |Authority |Obligation |Maximum occurrences
-|data_aquisition_software_name |Name of software that controls echosounder and its data logging |S | | |R |1
+|data_acquisition_software_name |Name of software that controls echosounder and its data logging |S | | |R |1
 |data_acquisition_software_version |Version of software that controls echosounder and its data logging |S | | |R |1
 |data_acquisition_stored_data_format |Name of the format in which data is stored. For example Simrad raw format, HAC. |S | | |M |1
 |data_acquisition_ping_duty_cycle |Free text field to describe ping duty cycle. For a ship system this may be continuous pinging at a certain rate. For a mooring this may describe the duty cycle. For example 10 minutes pinging at 1 ping per second, followed by 50 minute sleep mode. |S | | |M |1
@@ -370,11 +370,13 @@ See also pages 63, 64 of Demer, D. A., Berger, L., Bernasconi, M., Bethke, E., B
 |data_processing_on_axis_gain |Total system gain value when calibration sphere is on-axis. This term accounts for whole of system calibration including the power source, the transducer directivity multiplied by its efficiency, and any other gains or losses through the echosounder system including the transducer cable. It is commonly denoted as Go in the sonar equation. Echoview software refers to it as the Transducer Peak Gain and EK60 systems refer to it as 'Ek60TransducerGain'. Simrad refers to this as Transducer Gain with symbol 'G' in their EK60 manual. Note: manufacturers of other echosounders may express calibration in different terms and users are encouraged to propose new attributes be added to this metadata convention that will meet their specific needs. In the meantime additional or different calibration parameters can be described in the data_processing_comments field as appropriate. Alternatively a superset of discrete calibration parameters specific to the particular system can be added to the metadata record. |N | | |M |N
 |data_processing_on_axis_gain_units |Units for the data_processing_on_axis_gain attribute. Units may be in dB for some systems (e.g. Simrad) but on other instruments may be dimensionless numeric values |S | | |M |1
 |data_processing_Sacorrection |S~A~ correction value (Simrad transceivers) |N |dB | |O |1
-|data_processing_absorption |Absorption of sound by seawater value. Leave blank if absorption profile was used and give appropriate description in the data_processing_absorption_description field |N |dBm^-1^ | |R |1
+|data_processing_absorption |Absorption of sound by seawater value. Leave blank if absorption profile was used and give appropriate description in the data_processing_absorption_description field |N |dB m^-1^ | |R |1
 |data_processing_absorption_description |Describe (i) equation used to calculate absorption, (ii) source of input data into absorption calculation (e.g. model, XBT, CTD), (iii) arithmetic or geometric mean of depth-absorption profile or nominal value applied to entire data set. e.g. (i) Equation: Francois and Garrison 1982, (ii) WOCE98 model, (iii) nominal value for entire data set. |S | | |R |1
-|data_processing_soundspeed |Sound speed used by transceiver. Leave blank if sound speed profile was used and give appropriate description in the data_process_soundspeed_description field |N |ms^-1^ | |R |1
+|data_processing_soundspeed |Sound speed used by transceiver. Leave blank if sound speed profile was used and give appropriate description in the data_process_soundspeed_description field |N |m s^-1^ | |R |1
 |data_processing_soundspeed_description |Describe (i) equation used to calculate sound speed, (ii) source of input data into sound speed calculation (e.g. model, XBT, CTD), (iii) arithmetic or geometric mean of depth-absorption profile or nominal value applied to entire data set. e.g. (i) Equation: Mackenzie 1981, (ii) WOCE98 model, (iii) nominal value for entire data set. |S | | |R |1
 |data_processing_transducer_psi |Transducer equivalent beam angle, expressed as latexmath:[10 \log_{10}(\psi)], where latexmath:[\psi] has units of steradians. |N |dB | |M |1
+|data_processing_motion_correction |Attribute to check transducer motion correction is applied or not. Controlled vocabulary is '`Yes`' if correction has been applied and '`No`' if not. |S | | |MA |1
+|data_processing_motion_correction_description |The reference for transducer motion correction if applied (e.g. Dunford, A. J. 2005. Correcting echo-integration data for transducer motion. The Journal of the Acoustical Society of America, 118: 2121-2123). |S | | |MA |1
 |data_processing_comments |Free text field for relevant information that might not be captured by the defined attributes |S | | |O |1
 |===
 
@@ -398,7 +400,7 @@ Non-GCMD keywords may be used at your discretion, but consideration should be gi
  |S | |NACDD |M |N
 |references |Published or web-based references that describe the data or the methods used to produce the data. If available, DOI's (Digital Object Identifiers) should be given. |S | |CF |M |N
 |doi |Digital Object Identifier (DOI) for project documentation |S | |IDF |O |N
-|citation |The citation to be used in publications using the dataset should follow the format:"ProjectName. [year-of-data-download], [Title], [Data access URL], accessed [date-of-access]". Manually generated attribute. |S | |IMOS |M |N
+|citation |The citation to be used in publications using the dataset should follow the format: "ProjectName. [year-of-data-download], [Title], [Data access URL], accessed [date-of-access]". Manually generated attribute. |S | |IMOS |M |N
 |license |Describe the restrictions to data access and distribution. For example visit Australian National Data Service website AusGoal licensing framework (http://www.ands.org.au/publishing/licensing.html) which incorporates Creative Commons licences (http://creativecommons.org/). |S | |NACDD |M |1
 |author_email |Email address of the person responsible for the creation of the dataset |S | |IMOS |M |N
 |author |Name of the person responsible for the creation of the dataset |S | |IMOS |M |N
@@ -439,7 +441,7 @@ see also citenp:[maclennan2002]|S | | |M |
 |data_ping_axis_interval_type a|
 Ping-axis interval by which data have been binned.
 
-Controlled vocabulary include:
+Controlled vocabulary includes:
 
 * Time based intervals
 +
@@ -455,7 +457,7 @@ User-defined interval types can be used if not on controlled vocabulary list.|S 
 |data_ping_axis_interval_origin |
 Location of ping axis interval value in the ping axis interval.
 
-Controlled vocabulary include:
+Controlled vocabulary includes:
 
 Start
 
@@ -492,7 +494,7 @@ Notes:
 If ping axis interval values vary within each dataset they cannot be specified as a single number in this metadata record. Leave this record blank if this is the case. Note that it would be usual for the ping axis interval information to be stored at the same level as the data itself. |N | | |MA |1
 |data_range_axis_interval_type |Range-axis interval by which data has been binned.
 
-Controlled vocabulary include:
+Controlled vocabulary includes:
 
 Range (metres)
 
@@ -504,7 +506,7 @@ User-defined interval type can be used if not on controlled vocabulary list.
 |data_range_axis_interval_origin |
 Location of ping axis range value in the range axis interval.
 
-Controlled vocabulary include:
+Controlled vocabulary includes:
 
 Start
 
@@ -515,9 +517,9 @@ End
 |data_range_axis_interval_value |
 Numeric value for data range axis interval according to its specified type, e.g.
 
-data_range_axis_interval_type: Distance (metres)
+data_range_axis_interval_type: Range (metres)
 
-data_range_axis_interval_value: 1000
+data_range_axis_interval_value: 10
 
 SI units are 'm'
 
@@ -549,7 +551,7 @@ http://en.wikipedia.org/wiki/Climate_and_Forecast_Metadata_Conventions
 |NACDD |NetCDF Attribute Convention for Dataset Discovery |http://www.unidata.ucar.edu/software/netcdf-java/formats/DataDiscoveryAttConvention.html
 |Dublin Core |The Dublin Core Metadata Initiative (DCMI)  |http://dublincore.org/
 |IMOS |Integrated Marine Observing System |http://imos.org.au/fileadmin/user_upload/shared/emii/IMOS_netCDF_usermanual_v1.2.pdf
-|BASOOP |IMOS Bio-acoustic Ships of opportunity |http://imos.org.au/fileadmin/user_upload/shared/SOOP/plugin-SOOP-BA_NetCDF_manual_v1.1.pdf
+|BASOOP |IMOS Bio-acoustic Ships of opportunity |http://imos.org.au/fileadmin/user_upload/shared/SOOP/BASOOP/SOOP-BA_NetCDF_Conventions_Version_2.2.pdf
 |Udunits |UniData units software |http://www.unidata.ucar.edu/software/udunits
 |ISO8601 |ISO standard for dates |http://www.iso.org/iso/home/standards/iso8601.htm
 |MMI |MMI Platform Ontology |http://mmi.svn.sourceforge.net/svnroot/mmi/mmisw/platform.owl
@@ -583,7 +585,7 @@ http://en.wikipedia.org/wiki/Climate_and_Forecast_Metadata_Conventions
 [%autowidth]
 |===
 |Hull, keel
-|Hull, lowered keel
+|Hull, drop keel
 |Hull, blister
 |Hull, gondola
 |Towed, shallow
@@ -598,9 +600,9 @@ http://en.wikipedia.org/wiki/Climate_and_Forecast_Metadata_Conventions
 |===
 |Type |Comments
 |Single-beam |Single beam
-|Single-beam, split-aperture |Single beam transducer with elements divided into groups to provide information on the direction of arrival of echoes. Typically four equal quadrants but other groupings are possible.
+|Single-beam, split-aperture |Single beam transducer with elements divided into groups to provide information on the direction of arrival of echoes. Typically four equal sectors but other groupings are possible.
 |Multi-beam |Multiple single beams.
-|Multi-beam, split-aperture |Multiple single beams with elements divided into groups to provide information on the direction of arrival of echoes. Typically four equal quadrants per beam but other groupings are possible.
+|Multi-beam, split-aperture |Multiple single beams with elements divided into groups to provide information on the direction of arrival of echoes. Typically four equal sectors per beam but other groupings are possible.
 |===
 
 === Category: Calibration attributes: calibration_aquisition_method [[list_calibration_method]]
