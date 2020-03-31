@@ -1041,7 +1041,7 @@ ISSN 1017-6195</p>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;frequency = unlimited</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;frequency = unlimited</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Can be of fixed or unlimited length, as appropriate.</p></td>
 </tr>
@@ -1186,11 +1186,6 @@ ISSN 1017-6195</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;MRU</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MRU attitude sensor count</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Coordinate variables</em></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>Variables</em></p></td>
@@ -1704,6 +1699,9 @@ ISSN 1017-6195</p>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:units = "nanoseconds since 1601-01-01 00:00:00Z"</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:coordinates = "time latitude longitude"</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>Variables</em></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -1726,6 +1724,9 @@ ISSN 1017-6195</p>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:long_name = "latitude"</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:coordinates = "time latitude longitude"</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;double :_FillValue = Double.NaN</p></td>
 </tr>
 <tr>
@@ -1746,6 +1747,9 @@ ISSN 1017-6195</p>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:long_name = "longitude"</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:coordinates = "time latitude longitude"</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;double :_FillValue = Double.NaN</p></td>
 </tr>
 <tr>
@@ -1763,6 +1767,9 @@ ISSN 1017-6195</p>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:long_name = "Platform heading(true)"</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:coordinates = "time latitude longitude"</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;float course_over_ground(time)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">a platform course is the cardinal direction along which the platform is to be steered</p></td>
@@ -1775,6 +1782,9 @@ ISSN 1017-6195</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:long_name = "degree"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:coordinates = "time latitude longitude"</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;float speed_over_ground(time)</p></td>
@@ -1794,6 +1804,9 @@ ISSN 1017-6195</p>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;float :valid_min = 0.0</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:coordinates = "time latitude longitude"</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;float speed_relative(time)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MA</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Platform speed relative to water.</p></td>
@@ -1811,6 +1824,9 @@ ISSN 1017-6195</p>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;float :valid_min = 0.0</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:coordinates = "time latitude longitude"</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;float height_above_reference_ellipsoid(time)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MA</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Height of the platform reference point above the WGS-84 ellipsoid</p></td>
@@ -1823,6 +1839,9 @@ ISSN 1017-6195</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:long_name = "height_above_reference_ellipsoid"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:coordinates = "time latitude longitude"</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;float altitude(time)</p></td>
@@ -1839,6 +1858,9 @@ ISSN 1017-6195</p>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:long_name = "altitude"</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:coordinates = "time latitude longitude"</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;float distance(time)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Distance travelled by the platform from an arbitrary location.</p></td>
@@ -1851,6 +1873,9 @@ ISSN 1017-6195</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;float :valid_min = 0.0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:coordinates = "time latitude longitude"</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>Subgroups</em></p></td>
@@ -2001,7 +2026,7 @@ ISSN 1017-6195</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Vector of datafile names that were used to generate the data in this SONAR-netCDF4 file.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:long_name = "Source filenames"</p></td>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:long_name = "Source filenames"</p></td>
 </tr>
 </tbody>
 </table>
@@ -2081,7 +2106,7 @@ ISSN 1017-6195</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Beam type. Split aperture indicates a beam that can detect the arrival angle of echoes, while single beam cannot.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">&#160;&#160;&#160;&#160;byte enum conversion_equation_t  {type_1 = 1, type_2 = 2, type_3 = 3, type_4 = 4}</p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">&#160;&#160;&#160;&#160;byte enum conversion_equation_t {type_1 = 1, type_2 = 2, type_3 = 3, type_4 = 4}</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The type of equation used to convert backscatter measurements into volume backscattering and target strength.</p></td>
 </tr>
 <tr>
@@ -2089,13 +2114,11 @@ ISSN 1017-6195</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type of transmit pulse. CW = continuous wave – a pulse nominally of one frequency, LFM = linear frequency modulation – a pulse which varies from transmit_frequency_start to transmit_frequency_stop in a linear manner over the nominal pulse duration (transmit_duration_nominal), HFM = hyperbolic frequency modulation – a pulse which varies from transmit_frequency_start to transmit_frequency_stop in a hyperbolic manner over the nominal pulse duration (transmit_duration_nominal).</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;float(*) sample_t</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">&#160;&#160;&#160;&#160;float(*) sample_t</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Variable length vector used to store ragged arrays of backscatter data. Data type can be varied to suit data storage needs.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;float(*) angle_t</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">&#160;&#160;&#160;&#160;float(*) angle_t</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Variable length vector used to store ragged arrays of split-aperture angles. Data type can varied to suit data storage needs.</p></td>
 </tr>
 <tr>
@@ -2163,10 +2186,10 @@ ISSN 1017-6195</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;subbeam</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The number of sub-beams in these beams</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of sub-beams in these beams.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;ping_time = unlimited</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;ping_time = unlimited</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Can be of fixed or unlimited length, as appropriate.</p></td>
 </tr>
@@ -2209,6 +2232,9 @@ ISSN 1017-6195</p>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:units = "nanoseconds since 1601-01-01 00:00:00Z"</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:coordinates = "ping_time platform_latitude platform_longitude"</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>Variables</em></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -2222,8 +2248,7 @@ ISSN 1017-6195</p>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:long_name = "Raw backscatter measurements (imaginary part)"</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:units = "as appropriate"</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:units = "as appropriate"</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Use units appropriate for the data.</p></td>
 </tr>
 <tr>
@@ -2235,8 +2260,7 @@ ISSN 1017-6195</p>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:long_name = "Raw backscatter measurements (real part)"</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:units = "as appropriate"</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:units = "as appropriate"</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Use units appropriate for the data.</p></td>
 </tr>
 <tr>
@@ -2245,13 +2269,13 @@ ISSN 1017-6195</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Electrical phase angle of the incoming echoes at time ping_time relative to the direction of each beam. Only required if the beam_type variable for this ping_time is set to split_aperture_angles.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:long_name = "Echo arrival angle in the major beam coordinate"</p></td>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:long_name = "Echo arrival angle in the major beam coordinate"</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:units = "arc_degree"</p></td>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:units = "arc_degree"</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;float :valid_range = -180.0, 180.0</p></td>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;float :valid_range = −180.0, 180.0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;angle_t echoangle_minor(ping_time, beam)</p></td>
@@ -2259,13 +2283,13 @@ ISSN 1017-6195</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Electrical phase angle of the incoming echoes at time ping_time relative to the direction of each beam. Only required if the beam_type variable for this ping_time is set to split_aperture_angles.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:long_name = "Echo arrival angle in the minor beam coordinate"</p></td>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:long_name = "Echo arrival angle in the minor beam coordinate"</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:units = "arc_degree"</p></td>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:units = "arc_degree"</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;float :valid_range = -180.0, 180.0</p></td>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;float :valid_range = −180.0, 180.0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;float echoangle_major_sensitivity(beam)</p></td>
@@ -2273,13 +2297,13 @@ ISSN 1017-6195</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Scaling factor to convert electrical arrival angles into physical angles. Only required if beam_type is not set to single.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:long_name = "Major angle scaling factor"</p></td>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:long_name = "Major angle scaling factor"</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:units = "1"</p></td>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:units = "1"</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;float :valid_min = 0.0</p></td>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;float :valid_min = 0.0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;float echoangle_minor_sensitivity(beam)</p></td>
@@ -2287,13 +2311,13 @@ ISSN 1017-6195</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Scaling factor to convert electrical arrival angles into physical angles. Only required if beam_type is not set to single.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:long_name = "Minor angle scaling factor"</p></td>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:long_name = "Minor angle scaling factor"</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:units = "1"</p></td>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:units = "1"</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;float :valid_min = 0.0</p></td>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;float :valid_min = 0.0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;float beamwidth_receive_major(ping_time, beam)</p></td>
@@ -2444,12 +2468,15 @@ ISSN 1017-6195</p>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:long_name = "Beam stabilisation applied (or not)"</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:coordinates = "ping_time platform_latitude platform_longitude"</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;beam_t beam_type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type of split-aperture beam (or not).</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:long_name = "Type of beam"</p></td>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:long_name = "Type of beam"</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;float equivalent_beam_angle(ping_time, beam)</p></td>
@@ -2483,17 +2510,18 @@ ISSN 1017-6195</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Settings of any processing that is applied prior to recording backscatter data that may prevent the calculation of calibrated backscatter. A value of 0 always indicates no such processing.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:flag_meanings</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:flag_meanings</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Space-separated list of non-quantitative processing setting words or phrases. The first item must always be the no non-quantitative processing setting and subsequent items as appropriate to the sonar and data(e.g. ”no_non_quantitative_processing simrad_noise_filter_weak simrad_noise_filter_medium simrad_noise_filter_strong”).</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;short :flag_values</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;short :flag_values</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">List of unique values (e.g. 0, 1, 3, 4) that indicate different non-quantitative processing settings that could be present in the sonar data. Must have the same number of values as settings given in the flag_meanings attribute.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:long_name = "Presence or not of non-quantitative processing applied to the backscattering data (sonar specific)"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:coordinates = "ping_time platform_latitude platform_longitude"</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;float receiver_sensitivity(ping_time, beam)</p></td>
@@ -2521,6 +2549,9 @@ ISSN 1017-6195</p>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;float :valid_min = 0.0</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:coordinates = "ping_time platform_latitude platform_longitude"</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;float sample_time_offset(ping_time, tx_beam)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Time offset applied to sample time-stamps and intended for applying a range correction (e.g. as caused by signal processing delays). Positive values reduce the calculated range to a sample. The range of a given sample at index sample_index and if a constant sound speed is applied is given by range= sound_speed_at_transducer*(blanking_interval+sample_index*sample_interval - sample_time_offset)/2</p></td>
@@ -2537,10 +2568,10 @@ ISSN 1017-6195</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:long_name = ""</p></td>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:long_name = ""</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:units = ""</p></td>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:units = ""</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;float blanking_interval(ping_time, beam)</p></td>
@@ -2566,6 +2597,9 @@ ISSN 1017-6195</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:units = "dB"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:coordinates = "ping_time platform_latitude platform_longitude"</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;float transducer_gain(ping_time, beam)</p></td>
@@ -2680,7 +2714,7 @@ ISSN 1017-6195</p>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:units = "dB re 1 μPa at 1m"</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;transmit_t transmit_type(ping_time)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;transmit_t transmit_type(ping_time, tx_beam)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type of transmit pulse.</p></td>
 </tr>
@@ -2710,6 +2744,9 @@ ISSN 1017-6195</p>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:long_name = "Active MRU sensor index"</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:coordinates = "ping_time platform_latitude platform_longitude"</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;int active_position_sensor(ping_time)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MA</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Indicate the index of the position sensor used at the time of the ping to compute the platform position.</p></td>
@@ -2719,6 +2756,9 @@ ISSN 1017-6195</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:long_name = "Active position sensor index"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:coordinates = "ping_time platform_latitude platform_longitude"</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;float sound_speed_at_transducer(ping_time)</p></td>
@@ -2738,6 +2778,9 @@ ISSN 1017-6195</p>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:standard_name = "speed_of_sound_in_sea_water"</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:coordinates = "ping_time platform_latitude platform_longitude"</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;double platform_latitude(ping_time)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Latitude of the platform reference point in WGS-84 reference system at the time of the ping.</p></td>
@@ -2753,6 +2796,9 @@ ISSN 1017-6195</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:long_name = "latitude"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:coordinates = "ping_time platform_latitude platform_longitude"</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;double :_FillValue = Double.NaN</p></td>
@@ -2775,6 +2821,9 @@ ISSN 1017-6195</p>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:long_name = "longitude"</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:coordinates = "ping_time platform_latitude platform_longitude"</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;double :_FillValue = Double.NaN</p></td>
 </tr>
 <tr>
@@ -2795,12 +2844,12 @@ ISSN 1017-6195</p>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;float :valid_range = 0, 360.0</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:coordinates = "ping_time platform_latitude platform_longitude"</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;float platform_pitch(ping_time)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Platform pitch at the time of the ping.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:crs = "VCS"</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:standard_name = "platform_pitch_angle"</p></td>
@@ -2815,12 +2864,12 @@ ISSN 1017-6195</p>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;float :valid_range = −90.0, 90.0</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:coordinates = "ping_time platform_latitude platform_longitude"</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;float platform_roll(ping_time)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Platform roll at the time of the ping.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:crs = "VCS"</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:standard_name = "platform_roll_angle"</p></td>
@@ -2830,6 +2879,9 @@ ISSN 1017-6195</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:long_name = "roll angle"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:coordinates = "ping_time platform_latitude platform_longitude"</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;float platform_vertical_offset(ping_time)</p></td>
@@ -2843,6 +2895,9 @@ ISSN 1017-6195</p>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:units = "m"</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:coordinates = "ping_time platform_latitude platform_longitude"</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;float tx_transducer_depth(ping_time)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Tx transducer depth below waterline at time of the ping (distance are positives downwards). This variable can be recomputed in most cases by applying lever arm and rotation matrix taking into account for roll and pitch, platform_vertical_offset but can also take into account for drop keel position</p></td>
@@ -2854,6 +2909,9 @@ ISSN 1017-6195</p>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:units = "m"</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:coordinates = "ping_time platform_latitude platform_longitude"</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;&#160;&#160;float waterline_to_chart_datum(ping_time)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Vertical translation vector at the time of the ping matching the distance from the water line to the chart data reference (typically Lowest Astronomical Tide or Mean Sea Level). This variable is the vector obtains by adding the tide, the dynamic draught at the time of the ping and allow to position samples in an absolute referential.</p></td>
@@ -2863,6 +2921,9 @@ ISSN 1017-6195</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:units = "m"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:coordinates = "ping_time platform_latitude platform_longitude"</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:vertical_coordinate_reference_system = "MSL depth"</p></td>
@@ -3774,7 +3835,7 @@ ylabel('Power (dB)')</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 1.8<br>
-Last updated 2020-03-19 12:41:06 UTC
+Last updated 2020-03-31 15:36:38 UTC
 </div>
 </div>
 <link rel="stylesheet" href="highlight/styles/github.min.css">
