@@ -1,5 +1,5 @@
 = A metadata convention for processed acoustic data from active acoustic systems
-ICES WGFAST Topic Group, TG-AcMeta
+ICES WGFAST Topic Group, TG-AcMet
 :revnumber: 2.0
 :revdate: 15 March 2020
 :toc: left
