@@ -65,7 +65,7 @@ In many cases the cost of collecting acoustic data is significant and adhering t
 
 == Global attributes
 
-The metadata attribute fields in this document build on existing conventions and are presented following the netCDF (network Common Data Format) cite:[rew1990,unidata2017] format of global attributes. The global attributes describe the overall contents of the file and allow for data discovery. Global attributes can be thought of as conveying five kinds of information:
+The metadata attribute fields in this document build on existing conventions and are presented following the NetCDF (Network Common Data Format) cite:[rew1990,unidata2017] format of global attributes. The global attributes describe the overall contents of the file and allow for data discovery. Global attributes can be thought of as conveying five kinds of information:
 
 * What: What are the data in the dataset?
 * Where: The spatial coverage of the data.
@@ -85,7 +85,7 @@ There is no constraint on the addition of extra metadata attributes to fully des
 
 This document describes a metadata convention for processed acoustic data. It is assumed that appropriate data and metadata management of unprocessed acoustic data files will be in place, discussion of which is beyond the scope of this document.
 
-Processed acoustic data and metadata may be held in a variety of formats including, but not limited to, relational databases, Extensible Markup Language (XML), JavaScript Object Notation (JSON), Network Common Data Form (netCDF) and Hierarchical Data Format (HDF). Storage of the data and associated metadata is a question of implementation and is not mandated or defined by this document. When choosing a data format some key considerations are ease of data exchange, visibility of data and metadata, and potential for automated harvesting of metadata. It is recommended that guidance and assistance from metadata experts is sought when realizing this metadata convention in a specific implementation format.
+Processed acoustic data and metadata may be held in a variety of formats including, but not limited to, relational databases, Extensible Markup Language (XML), JavaScript Object Notation (JSON), Network Common Data Form (NetCDF) and Hierarchical Data Format (HDF). Storage of the data and associated metadata is a question of implementation and is not mandated or defined by this document. When choosing a data format some key considerations are ease of data exchange, visibility of data and metadata, and potential for automated harvesting of metadata. It is recommended that guidance and assistance from metadata experts is sought when realizing this metadata convention in a specific implementation format.
 
 == Summary of metadata categories
 
@@ -333,8 +333,8 @@ http://seadatanet.maris2.nl/v_bodc_vocab/search.asp?name=(C381)%20Ports+Gazettee
 Date of calibration in ISO 8601 format including local time zone.
 
 For example, a local time of 18:00 on the 24^th^ of October 2008 would be represented as 2008-10-24T08:00:00Z +10 (local).|S | | |M |1
-|calibration_aquisition_method |Describe the method used to acquire calibration data. (see <<list_calibration_method>>, Standard lists) |S | | |M |1
-|calibration_processing_method |Describe method of processing that was used to generate calibration offsets. |S | | |M |1
+|calibration_acquisition_method |Describe the method used to acquire calibration data. (see <<list_calibration_method>>, Standard lists) |S | | |M |1
+|calibration_processing_method |Describe method of processing that was used to generate calibration offsets (e.g. Section ‘4.1.2.3 On-axis calibration’ from Demer, D., Berger, L., Bernasconi, M., Bethke, E., Boswell, K., Chu, D., Domokos, R., et al. 2015. Calibration of acoustic instruments. ICES Cooperative Research Report No. 326. 133 pp.). |S | | |M |1
 |calibration_accuracy_estimate |Estimate of calibration accuracy. Include a description and units so that it is clear what this estimate means (e.g. estimate might be expressed in dB or as a percentage). |S | | |M |1
 |calibration_report |URL or references to external documents which give a full account of calibration processing and results may be appropriate |S | | |M |1
 |calibration_comments |Free text field to for relevant information that might not be captured by the defined attributes |S | | |O |1
@@ -345,7 +345,7 @@ For example, a local time of 18:00 on the 24^th^ of October 2008 would be repres
 [cols="2,6,1,1,1,1,1",options="header"]
 |===
 |Attribute name |Definition |Data type |Units |Authority |Obligation |Maximum occurrences
-|data_aquisition_software_name |Name of software that controls echosounder and its data logging |S | | |R |1
+|data_acquisition_software_name |Name of software that controls echosounder and its data logging |S | | |R |1
 |data_acquisition_software_version |Version of software that controls echosounder and its data logging |S | | |R |1
 |data_acquisition_stored_data_format |Name of the format in which data is stored. For example Simrad raw format, HAC. |S | | |M |1
 |data_acquisition_ping_duty_cycle |Free text field to describe ping duty cycle. For a ship system this may be continuous pinging at a certain rate. For a mooring this may describe the duty cycle. For example 10 minutes pinging at 1 ping per second, followed by 50 minute sleep mode. |S | | |M |1
@@ -359,6 +359,8 @@ For example, a local time of 18:00 on the 24^th^ of October 2008 would be repres
 |Attribute name |Definition |Data type |Units |Authority |Obligation |Maximum occurrences
 |data_processing_software_name |Name of software that was used to process raw acoustic data |S | | |M |N
 |data_processing_software_version |Version of software that was used to process raw acoustic data |S | | |M |N
+|data_processing_motion_correction  |Attribute to check transducer motion correction is applied or not. Controlled vocabulary is '`Yes`' if correction has been applied and '`No`' if not.|S | | |MA |1
+|data_processing_motion_correction_description |The reference for transducer motion correction if applied (e.g. Dunford, A. J. 2005. Correcting echo-integration data for transducer motion. The Journal of the Acoustical Society of America, 118: 2121-2123 ).|S | | |MA |1
 |data_processing_triwave_correction |Applies to Simrad ES60 and ES70 echosounders only. Simrad ES60/70 echosounders have an error function embedded in the raw data that overlays addition of to the data of a triangle wave of +/- 0.5dB peak to peak and period of 2720 pings. A utility (ES60adjust) to correct for this error can be found at https://bitbucket.org/gjm/calibration-code/wiki/Home. Controlled vocabulary is '`Yes`' if error has been corrected and '`No`' if not.
 
 See also pages 63, 64 of Demer, D. A., Berger, L., Bernasconi, M., Bethke, E., Boswell, K., Chu, D., and Domokos, R. et al. 2015. Calibration of acoustic instruments. ICES Cooperative Research Report No.326: 133 pp.|S | | |MA |1
@@ -515,9 +517,9 @@ End
 |data_range_axis_interval_value |
 Numeric value for data range axis interval according to its specified type, e.g.
 
-data_range_axis_interval_type: Distance (metres)
+data_range_axis_interval_type: Range (metres)
 
-data_range_axis_interval_value: 1000
+data_range_axis_interval_value: 10
 
 SI units are 'm'
 
@@ -549,7 +551,7 @@ http://en.wikipedia.org/wiki/Climate_and_Forecast_Metadata_Conventions
 |NACDD |NetCDF Attribute Convention for Dataset Discovery |http://www.unidata.ucar.edu/software/netcdf-java/formats/DataDiscoveryAttConvention.html
 |Dublin Core |The Dublin Core Metadata Initiative (DCMI)  |http://dublincore.org/
 |IMOS |Integrated Marine Observing System |http://imos.org.au/fileadmin/user_upload/shared/emii/IMOS_netCDF_usermanual_v1.2.pdf
-|BASOOP |IMOS Bio-acoustic Ships of opportunity |http://imos.org.au/fileadmin/user_upload/shared/SOOP/plugin-SOOP-BA_NetCDF_manual_v1.1.pdf
+|BASOOP |IMOS Bio-acoustic Ships of opportunity |http://imos.org.au/fileadmin/user_upload/shared/SOOP/BASOOP/SOOP-BA_NetCDF_Conventions_Version_2.2.pdf
 |Udunits |UniData units software |http://www.unidata.ucar.edu/software/udunits
 |ISO8601 |ISO standard for dates |http://www.iso.org/iso/home/standards/iso8601.htm
 |MMI |MMI Platform Ontology |http://mmi.svn.sourceforge.net/svnroot/mmi/mmisw/platform.owl
@@ -583,7 +585,7 @@ http://en.wikipedia.org/wiki/Climate_and_Forecast_Metadata_Conventions
 [%autowidth]
 |===
 |Hull, keel
-|Hull, lowered keel
+|Hull, drop keel
 |Hull, blister
 |Hull, gondola
 |Towed, shallow
