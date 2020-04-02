@@ -1,5 +1,4 @@
-
-This Appendix was reproduced with permission from the https://www.echoview.com/[Echoview] help https://support.echoview.com/WebHelp/Echoview.htm[file].
+This Appendix was reproduced from the Echoview(R) https://support.echoview.com/WebHelp/Echoview.htm[help file] with permission from https://www.echoview.com/[Echoview Software] Pty Ltd, Australia.
 
 [discrete]
 === About transducer geometry
