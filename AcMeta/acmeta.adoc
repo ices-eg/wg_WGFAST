@@ -714,7 +714,7 @@ The ICES Data Centre (Hjalte Parner, Nils Olav Handegard) are constructing an Ac
 Revised convention version. Previous versions were using a decimal number series - e.g. version 1.01, 1.02 etc. limiting the minor number series to 99 revisions. This revision alters the convention to follow the more common convention in the computer world where the version number is described by two integers separated by a full stop. Thus following this convention our previous version 1.05 would now be version 1.5, that is the 5^th^ revision in version 1 series. This version 1.10 is the 10^th^ revision of the version 1 series.
 
 |2.0 |17 Feburary 2020 a|
-Major revision. Moved to GitHub and available on ICES WGFAST GitHub https://github.com/ices-eg/wg_WGFAST[site] for user input. 
+Major revision. Moved to GitHub and available on ICES WGFAST GitHub https://github.com/ices-eg/wg_WGFAST[site] for user input.
 
 ** Add Category:
 *** Platform attributes: to allow long list of platform classes to be supported. These class types are defined by ICES controlled vocabulary
