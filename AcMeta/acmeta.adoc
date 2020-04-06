@@ -377,7 +377,7 @@ See also pages 63-64 of Demer, D. A., Berger, L., Bernasconi, M., Bethke, E., Bo
 |data_processing_transducer_beam_angle_major |Major beam opening used for data processing, also referred to athwartship angle. See <<beamGeometry>> for description of beam geometry conventions |N |degrees | |MA |1
 |data_processing_transducer_beam_angle_minor |Minor beam opening used for data processing, also referred to alongship angle. See <<beamGeometry>> for description of beam geometry conventions |N |degrees | |MA |1
 |data_processing_motion_correction |Attribute to check transducer motion correction is applied or not. Controlled vocabulary is '`Yes`' if correction has been applied and '`No`' if not. |S | | |MA |1
-|data_processing_motion_correction_description |The reference for transducer motion correction if applied (e.g. Dunford, A. J. 2005. Correcting echo-integration data for transducer motion. The Journal of the Acoustical Society of America, 118: 2121-2123). |S | | |MA |1
+|data_processing_motion_correction_description |A reference for commonly used transducer motion correction if applied is (e.g. Dunford, A. J. 2005. Correcting echo-integration data for transducer motion. The Journal of the Acoustical Society of America, 118: 2121-2123). |S | | |MA |1
 |data_processing_comments |Free text field for relevant information that might not be captured by the defined attributes |S | | |O |1
 |===
 
