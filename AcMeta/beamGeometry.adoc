@@ -1,18 +1,19 @@
+:xrefstyle: short
 
 This Appendix was reproduced from the Echoview(R) https://support.echoview.com/WebHelp/Echoview.htm[help file] with permission from https://www.echoview.com/[Echoview Software] Pty Ltd, Australia.
 
-Echoview uses three axes in describing beam geometry: beam axis, minor axis and major axis. Range from the transducer is measured along the beam axis and position in the beam is measured from the beam axis (along the minor and major axes). Minor and major are axis naming conventions, and different manufacturers have adopted different naming conventions for the two axes. Equivalent axis terminology for leading brands of echosounders are:
+Three axes for describing beam geometry are beam axis, minor axis and major axis (<<beam_geometry_figure>>). Range from the transducer is measured along the beam axis and position in the beam is measured from the beam axis (along the minor and major axes). Minor and major are axis naming conventions, and different manufacturers have adopted different naming conventions for the two axes. Equivalent axis terminology for leading brands of echosounders are:
 
 [cols=",,",options="header",]
 |===
-|*Manufacturer* |*Preferred Minor Axis Terminology* |*Preferred Major Axis Terminology*
+|*Manufacturer* |*Preferred minor axis terminology* |*Preferred major axis terminology*
 |BioSonics |Minor |Major
 |HTI |Up-down |Left-right
 |Simrad |Alongship or Longitudinal |Athwartship or Transversal
 |Precision Acoustic Systems |y |x
 |===
 
-Figure 1 below illustrates the axis system. 
-
-image:image2.png[]
+.Illustrates the beam geometry and axis system.
+[[beam_geometry_figure]]
+image::image2.svg[align="center"]
 

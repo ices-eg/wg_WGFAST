@@ -1,3 +1,5 @@
+:xrefstyle: short
+
 This Appendix was reproduced from the Echoview(R) https://support.echoview.com/WebHelp/Echoview.htm[help file] with permission from https://www.echoview.com/[Echoview Software] Pty Ltd, Australia.
 
 [discrete]
@@ -12,23 +14,25 @@ Transducer geometry refers to the configurable location and orientation of trans
 [discrete]
 ==== Overview of transducer geometry
 
-Each transducer may be located in space and oriented as desired. Illustrated below is a schematic displaying the relative positions in space of a reference point, a GPS antenna and a transducer with non-vertical orientation.
+Each transducer may be located in space and oriented as desired. Illustrated in <<transducer_orientation_conventions_figure>> is a schematic display of relative platform system reference point, a GPS antenna and a transducer.
 
-image:image1.gif[]
+.Illustrates platform and indicative transdcer beam coordinate systems.
+[[transducer_orientation_conventions_figure]]
+image::image1.svg[align="center"]
 
 [discrete]
 ===== Platform system reference point
 
-Transducers are always associated with a platform. The system reference point of the platform is at (0,0,0) by definition and defines the position of the platform in the real world (that is, the platform is considered to be, in the real world, wherever it's reference point is).
+Transducers are always associated with a platform (<<transducer_orientation_conventions_figure>>). The system reference point of the platform is at (0, 0, 0) by definition and defines the position of the platform in the real world (that is, the platform is considered to be, in the real world, wherever it's reference point is).
 
-Please note that the positive Z direction is downwards when the X-Y plane is horizontal (considered to be on a rigid platform that does not pitch and roll).
+Please note that the positive Z direction is downwards and the X-Y plane is horizontal (considered to be on a rigid platform that does not pitch and roll).
 
-For many applications, such as a typical ship based echo-integration survey with multiple downward looking transducers, the only aspect of transducer geometry required is the definition of transducer depth (draft, shown in figure above), if desired. Other applications, such as multiple frequency target strength techniques, surveys with non-vertical transducers, and applications that require the position of samples to be precisely located in the world.
+For many applications, such as a typical ship based echo-integration survey with multiple downward looking transducers, the only aspect of transducer geometry required is the definition of transducer depth (draft, shown in <<transducer_orientation_conventions_figure>>), if desired. Other applications, such as multiple frequency target strength techniques, surveys with non-vertical transducers, and applications that require the position of samples to be precisely located in the world.
 
 [discrete]
 ==== About transducer location
 
-Locations are all defined relative to a system reference point detailed in the above  section. The coordinate system utilises three axes (X, Y and Z) and their orientation depends upon whether the platform is fixed or mobile.
+Locations are all defined relative to a system reference point (<<transducer_orientation_conventions_figure>>). The coordinate system utilises three axes (X, Y and Z) and their orientation depends upon whether the platform is fixed or mobile.
 
 [discrete]
 ===== Fixed platform
