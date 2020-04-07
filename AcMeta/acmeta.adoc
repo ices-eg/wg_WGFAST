@@ -675,7 +675,7 @@ bibliography::[]
 
 == Revisions
 
-[cols="1,2,7",options="header"]
+[cols="1,2,5",options="header"]
 |===
 |Version |Date |Changes
 |1.04 |21 August 2014 a|
