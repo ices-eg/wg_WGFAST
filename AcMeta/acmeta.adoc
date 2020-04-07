@@ -675,7 +675,7 @@ bibliography::[]
 
 == Revisions
 
-[cols="1,1,5",options="header"]
+[cols="1,2,7",options="header"]
 |===
 |Version |Date |Changes
 |1.04 |21 August 2014 a|
@@ -683,11 +683,11 @@ bibliography::[]
 Altered obligations on attributes from Mandatory (M) or Mandatory if Applicable (MA) to recommended pass:[(R)] for ship_breadth, ship_tonnage, ship_engine_power, ship_noise_design and ship_acknowledgements.
 
 ** Add Category:
-*** Metadata record: Convention
-*** Data attributes:  which describe the data type being stored and its dimensions (i.e. cell size)
+*** *Metadata record*: Convention
+*** *Data attributes*:  which describe the data type being stored and its dimensions (i.e. cell size)
 
 ** Revised Category:
-*** Data processing attributes: data_processing_transceiver_gain to data_processing_on_axis_gain and data_processing_transceiver_gain_units to data_processing_on_axis_gain_units
+*** *Data processing attributes*: data_processing_transceiver_gain to data_processing_on_axis_gain and data_processing_transceiver_gain_units to data_processing_on_axis_gain_units
 
 ** Minor edits to:
 *** Improve readability in "`Purpose of this document`" section
@@ -697,14 +697,14 @@ Altered obligations on attributes from Mandatory (M) or Mandatory if Applicable 
 The ICES Data Centre (Hjalte Parner, Nils Olav Handegard) are constructing an Acoustic Trawl Survey database with the intention of implementing the ICES Acoustic Metadata Standard. Through this process a number of new and existing attribute fields were discussed. This revision documents the consequent changes that were made as described below.
 
 ** Add Category: 
-*** Cruise attributes: cruise_summary_report
-*** Ship attributes: ship_platform_code and ship_platform_class using ICES database
-*** Data processing attributes: data_processing_triwave_correction
-*** Metadata record: convention_version
-*** Data attributes: data_range_axis_interval_value
+*** *Cruise attributes*: cruise_summary_report
+*** *Ship attributes*: ship_platform_code and ship_platform_class using ICES database
+*** *Data processing attributes*: data_processing_triwave_correction
+*** *Metadata record*: convention_version
+*** *Data attributes*: data_range_axis_interval_value
 
 ** Revised Category:
-*** Data attributes: data_range_axis_interval to data_range_axis_interval_type for consistency with attribute for vertical dimension: data_ping_axis_interval_type
+*** *Data attributes*: data_range_axis_interval to data_range_axis_interval_type for consistency with attribute for vertical dimension: data_ping_axis_interval_type
 
 ** Minor edits to:
 *** Wording of Category Mooring: mooring_uplimit, mooring_downlimit, mooring_z_units
@@ -717,11 +717,12 @@ Revised convention version. Previous versions were using a decimal number series
 Major revision. Moved to GitHub and available on ICES WGFAST GitHub https://github.com/ices-eg/wg_WGFAST[site] for user input.
 
 ** Add Category:
-*** Platform attributes: to allow long list of platform classes to be supported. These class types are defined by ICES controlled vocabulary
-*** Data processing attributes: data_processing_motion_correction and data_processing_motion_correction_description
+*** *Ship attributes*: ship_home_port
+*** *Platform attributes*: to allow long list of platform classes to be supported. These class types are defined by ICES controlled vocabulary
+*** *Data processing attributes*: data_processing_transducer_beam_angle_major, data_processing_transducer_beam_angle_minor, data_processing_motion_correction, and data_processing_motion_correction_description
 
 ** Remove Category:
-*** Mooring attributes: have been removed and can now be specified using the set of platform attributes
+*** *Mooring attributes*: have been removed and can now be specified using the set of platform attributes
 
 ** Minor edits to:
 *** Improve appendix sections 'Transducer orientation conventions' and 'Beam geometry'.
