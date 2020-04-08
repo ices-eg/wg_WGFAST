@@ -77,7 +77,7 @@ All fields should be human-readable and can be of either '`character`' or '`nume
 
 Wherever possible, the global attributes are based on established authorities. In some instances the metadata attribute may cite other authorities, while other metadata attributes may be unique to this metadata convention. Where they exist, the relevant authority is cited for each of the attribute fields. A table of the various metadata authorities is given in <<metadataAuthorities>>.
 
-The metadata attributes are grouped according to logical categories. This is done to help both author and reader navigate the metadata record, but it is important to note that this does not describe a formal hierarchical structure. The metadata record of this convention is effectively a continuous list. Thus each global attribute must have a unique name for it to be unambiguously identified. Attribute names that are sourced from existing authorities are by necessity identical to that used by the authority in order to facilitate automatic harvesting of metadata. To ensure uniqueness, non-authoritative attributes are prefixed with the category name of this metadata convention. White spaces or blank characters are not allowed in attribute names as these are not supported by some of the established authorities (e.g. CF, the NetCDF Climate and Forecast Metadata Convention) and the underscore '`_`' character is used instead. Specific categories of ship and mooring attributes have been developed for this current version of the metadata convention. Further development of metadata attribute fields for other acoustic systems (e.g. autonomous underwater vehicles, gliders, towed bodies, acoustic lenses, and parametric arrays) can be developed as required, following the form of existing conventions used in this document.
+The metadata attributes are grouped according to logical categories (<<metadata_categories_figure>>). This is done to help both author and reader navigate the metadata record, but it is important to note that this does not describe a formal hierarchical structure. The metadata record of this convention is effectively a continuous list. Thus each global attribute must have a unique name for it to be unambiguously identified. Attribute names that are sourced from existing authorities are by necessity identical to that used by the authority in order to facilitate automatic harvesting of metadata. To ensure uniqueness, non-authoritative attributes are prefixed with the category name of this metadata convention. White spaces or blank characters are not allowed in attribute names as these are not supported by some of the established authorities (e.g. CF, the NetCDF Climate and Forecast Metadata Convention) and the underscore '`_`' character is used instead. Specific categories of ship and mooring attributes have been developed for this current version of the metadata convention. Further development of metadata attribute fields for other acoustic systems (e.g. autonomous underwater vehicles, gliders, towed bodies, acoustic lenses, and parametric arrays) can be developed as required, following the form of existing conventions used in this document.
 
 There is no constraint on the addition of extra metadata attributes to fully describe a dataset. Such extra attributes would be a super-set of the attributes of this convention and might be specific to a particular institution but their presence would not violate this convention.
 
@@ -89,7 +89,13 @@ Processed acoustic data and metadata may be held in a variety of formats includi
 
 == Summary of metadata categories
 
-Metadata Record:: Uniform resource identifier (URI) that uniquely identifies the metadata record.
+This section briefly outlines the grouping and hierarchical structure of metadata attributes used in this document.
+
+.Graphical abstract illustration of metadata categories. See text below for more information.
+[[metadata_categories_figure]]
+image::metadata_categories.svg[width=680,height=480,align="center"]
+
+Metadata record:: Uniform resource identifier (URI) that uniquely identifies the metadata record.
 
 Mission metadata:: Metadata that gives a high-level description of the overarching initiative (e.g. mission, project, ocean observing system) under which the acoustic data were collected.
 
@@ -328,14 +334,15 @@ For example, a local time of 18:00 on the 24^th^ of October 2008 would be repres
 [cols="2,6,1,1,1,1,1",options="header"]
 |===
 |Attribute name |Definition |Data type |Units |Authority |Obligation |Maximum occurrences
+|calibration |Attribute to define processed acoustic data is calibrated or not. Controlled vocabulary is '`Yes`' if data is calibrated and '`No`' if not (see <<list_calibration_method>>, for standard list of methods used for the calibration of acoustic instruments) |S | | |M |1
 |calibration_date a|
 Date of calibration in ISO 8601 format including local time zone.
 
-For example, a local time of 18:00 on the 24^th^ of October 2008 would be represented as 2008-10-24T08:00:00Z +10 (local).|S | | |M |1
-|calibration_acquisition_method |Describe the method used to acquire calibration data. (see <<list_calibration_method>>, Standard lists) |S | | |M |1
-|calibration_processing_method |Describe method of processing that was used to generate calibration offsets (e.g. Section ‘4.1.2.3 On-axis calibration’ from Demer, D., Berger, L., Bernasconi, M., Bethke, E., Boswell, K., Chu, D., Domokos, R., et al. 2015. Calibration of acoustic instruments. ICES Cooperative Research Report No. 326. 133 pp.). |S | | |M |1
-|calibration_accuracy_estimate |Estimate of calibration accuracy. Include a description and units so that it is clear what this estimate means (e.g. estimate might be expressed in dB or as a percentage). |S | | |M |1
-|calibration_report |URL or references to external documents which give a full account of calibration processing and results may be appropriate |S | | |M |1
+For example, a local time of 18:00 on the 24^th^ of October 2008 would be represented as 2008-10-24T08:00:00Z +10 (local).|S | | |MA |1
+|calibration_acquisition_method |Describe the method used to acquire calibration data (see <<list_calibration_method>>, Standard lists) |S | | |MA |1
+|calibration_processing_method |Describe method of processing that was used to generate calibration offsets (e.g. Section ‘4.1.2.3 On-axis calibration’ from Demer, D., Berger, L., Bernasconi, M., Bethke, E., Boswell, K., Chu, D., Domokos, R., et al. 2015. Calibration of acoustic instruments. ICES Cooperative Research Report No. 326. 133 pp.). |S | | |MA |1
+|calibration_accuracy_estimate |Estimate of calibration accuracy. Include a description and units so that it is clear what this estimate means (e.g. estimate might be expressed in dB or as a percentage). |S | | |MA |1
+|calibration_report |URL or references to external documents which give a full account of calibration processing and results may be appropriate |S | | |MA |1
 |calibration_comments |Free text field for relevant information that might not be captured by the defined attributes |S | | |O |1
 |===
 
@@ -369,14 +376,14 @@ See also pages 63-64 of Demer, D. A., Berger, L., Bernasconi, M., Bethke, E., Bo
 |data_processing_on_axis_gain |Total system gain value when calibration sphere is on-axis. This term accounts for whole of system calibration including the power source, the transducer directivity multiplied by its efficiency, and any other gains or losses through the echosounder system including the transducer cable. It is commonly denoted as G~o~ in the sonar equation. Echoview software refers to it as the Transducer Peak Gain and EK60 systems refer to it as 'Ek60TransducerGain'. Simrad refers to this as Transducer Gain with symbol 'G' in their EK60 manual. Note: manufacturers of other echosounders may express calibration in different terms and users are encouraged to propose new attributes be added to this metadata convention that will meet their specific needs. In the meantime additional or different calibration parameters can be described in the data_processing_comments field as appropriate. Alternatively a superset of discrete calibration parameters specific to the particular system can be added to the metadata record. |N | | |M |N
 |data_processing_on_axis_gain_units |Units for the data_processing_on_axis_gain attribute. Units may be in dB for some systems (e.g. Simrad) but on other instruments may be dimensionless numeric values |S | | |M |1
 |data_processing_Sacorrection |Area backscattering coefficient s~a~ (m^2^ m^-2^) correction factor (Simrad transceivers) |N |dB | |O |1
-|data_processing_absorption |Absorption of sound by seawater value. Leave blank if absorption profile was used and give appropriate description in the data_processing_absorption_description field |N |dB m^-1^ | |R |1
+|data_processing_absorption |Absorption coefficient value of sound in seawater. Leave blank if absorption profile was used and give appropriate description in the data_processing_absorption_description field |N |dB m^-1^ | |R |1
 |data_processing_absorption_description |Describe (i) equation used to calculate absorption, (ii) source of input data into absorption calculation (e.g. model, XBT, CTD), (iii) arithmetic or geometric mean of depth-absorption profile or nominal value applied to entire data set. e.g. (i) Equation: Francois and Garrison 1982, (ii) WOCE98 model, (iii) nominal value for entire data set. |S | | |R |1
-|data_processing_soundspeed |Sound speed used by transceiver. Leave blank if sound speed profile was used and give appropriate description in the data_process_soundspeed_description field |N |m s^-1^ | |R |1
+|data_processing_soundspeed |Sound speed value used by transceiver. Leave blank if sound speed profile was used and give appropriate description in the data_process_soundspeed_description field |N |m s^-1^ | |R |1
 |data_processing_soundspeed_description |Describe (i) equation used to calculate sound speed, (ii) source of input data into sound speed calculation (e.g. model, XBT, CTD), (iii) arithmetic or geometric mean of depth-absorption profile or nominal value applied to entire data set. e.g. (i) Equation: Mackenzie 1981, (ii) WOCE98 model, (iii) nominal value for entire data set. |S | | |R |1
 |data_processing_transducer_psi |Transducer equivalent two-way beam angle, expressed as latexmath:[10 \log_{10}(\psi)], where latexmath:[\psi] has units of steradians. |N |dB | |M |1
 |data_processing_transducer_beam_angle_major |Major beam opening used for data processing, also referred to athwartship angle. See <<beamGeometry>> for description of beam geometry conventions |N |degrees | |MA |1
 |data_processing_transducer_beam_angle_minor |Minor beam opening used for data processing, also referred to alongship angle. See <<beamGeometry>> for description of beam geometry conventions |N |degrees | |MA |1
-|data_processing_motion_correction |Attribute to check transducer motion correction is applied or not. Controlled vocabulary is '`Yes`' if correction has been applied and '`No`' if not. |S | | |MA |1
+|data_processing_motion_correction |Attribute to define transducer motion correction is applied or not. Controlled vocabulary is '`Yes`' if correction has been applied and '`No`' if not. |S | | |MA |1
 |data_processing_motion_correction_description |A reference for commonly used transducer motion correction if applied is (e.g. Dunford, A. J. 2005. Correcting echo-integration data for transducer motion. The Journal of the Acoustical Society of America, 118: 2121-2123). |S | | |MA |1
 |data_processing_comments |Free text field for relevant information that might not be captured by the defined attributes |S | | |O |1
 |===
