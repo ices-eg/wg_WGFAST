@@ -247,7 +247,8 @@ For example, a local time of 18:00 on the 24^th^ of October 2008 would be repres
 [cols="2,6,1,1,1,1,1",options="header"]
 |===
 |Attribute name |Definition |Data type |Units |Authority |Obligation |Maximum occurrences
-|platform_class |Controlled vocabularly for class of plaform (see http://vocab.ices.dk/?ref=311[here]) |S | | |MA |1
+|platform_sampling_design |Active acoustic systems are always associated with a platform. Controlled vocabulary for defining sampling design of a platform is 'Mobile' or 'Fixed' |S | | |M |1
+|platform_class |Controlled vocabularly for class of plaform (see ICES controlled vocabulary http://vocab.ices.dk/?ref=311[here]) |S | | |MA |1
 |platform_description |Free text field to describe the platform. This may include a description of the platform, its objectives, details about the cruise (if applicable) and other information relevant to the data being collected |S | | |MA |1
 |platform_depth |Seafloor depth at platform site |N |m | |MA |1
 |platform_northlimit |The constant coordinate for the northernmost face or edge |N | |Dublin core* |MA |1
