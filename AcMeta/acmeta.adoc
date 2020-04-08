@@ -93,7 +93,7 @@ This section briefly outlines the grouping and hierarchical structure of metadat
 
 .Graphical abstract illustration of metadata categories. See text below for more information.
 [[metadata_categories_figure]]
-image::metadata_categories.svg[width=880,height=680,align="center"]
+image::metadata_categories.svg[width=930,height=730,align="center"]
 
 Metadata record:: Uniform resource identifier (URI) that uniquely identifies the metadata record.
 
