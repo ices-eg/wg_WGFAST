@@ -17,7 +17,7 @@ endif::[]
 These are basic instructions on how to use the Git/GitHub GUI in Brackets.
 
 
-If you want more detailed information on how to use Brackets to manage your Git repositories on GitHub, http://practicalseries.com/1002-vcs/index.html#js--000000[this] is a nice online .
+If you want more detailed information on how to use Brackets to manage your Git repositories on GitHub, http://practicalseries.com/1002-vcs/index.html#js--000000[this] is a nice online reference.
 
 == Git/GitHub GUI in Brackets
 1. Make sure the https://github.com/brackets-userland/brackets-git[Git extension] for Brackets is installed. +
@@ -62,7 +62,7 @@ image:Brackets_GUI_new_branch.png[] +
 === Edit files
 Open a file and edit it. +
 
-To open the AsciiDoc live preview pane, click on the AsciiDoc extension on the right side of the screen. image:Brackets_AsciiDoc_icon.png[]. +
+To open the AsciiDoc live preview pane, click on the AsciiDoc extension on the right side of the screen. image:Brackets_AsciiDoc_icon.png[] +
 The extension icon will only be present if an AsciiDoc document is open. +
 {empty} +
 
