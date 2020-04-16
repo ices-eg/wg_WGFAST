@@ -581,10 +581,14 @@ Major revision. Moved to GitHub and available on ICES WGFAST GitHub https://gith
 ** Add Category:
 *** *Ship attributes*: ship_home_port
 *** *Platform attributes*: to allow long list of platform classes to be supported. These class types are defined by ICES controlled vocabulary
+*** *Calibration attributes*: calibration
 *** *Data processing attributes*: data_processing_transducer_beam_angle_major, data_processing_transducer_beam_angle_minor, data_processing_motion_correction, and data_processing_motion_correction_description
 
 ** Remove Category:
 *** *Mooring attributes*: have been removed and can now be specified using the set of platform attributes
+
+** Revised Category Obligation:
+*** *Calibration attributes*: altered obligations of calibration_date, calibration_acquisition_method, calibration_processing_method, calibration_accuracy_estimate, and calibration_report from Mandatory (M) or Mandatory if Applicable (MA)
 
 ** Minor edits to:
 *** Improve appendix sections 'Transducer orientation conventions' and 'Beam geometry'.
@@ -736,6 +740,3 @@ include::beamGeometry.adoc[]
 |Sigurður Þór Jónsson |Hafro |Iceland |sigurdur@hafro.is
 |Brent Wood |NIWA |New Zealand |brent.wood@niwa.co.nz
 |===
-
-:sectnums!:
-
