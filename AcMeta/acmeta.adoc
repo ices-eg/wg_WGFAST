@@ -590,6 +590,10 @@ Major revision. Moved to GitHub and available on ICES WGFAST GitHub https://gith
 *** Improve appendix sections 'Transducer orientation conventions' and 'Beam geometry'.
 |===
 
+== Acknowledgements
+
+Jens Rasmussen, Marine Scotland Science, Marine Laboratory, is thanked for his review on earlier version of this document.
+
 
 [appendix]
 == Metadata authorities [[metadataAuthorities]]
@@ -726,8 +730,6 @@ include::beamGeometry.adoc[]
 |Sigurður Þór Jónsson |Hafro |Iceland |sigurdur@hafro.is
 |Brent Wood |NIWA |New Zealand |brent.wood@niwa.co.nz
 |===
-
-Jens Rasmussen, Marine Scotland Science, Marine Laboratory, is thanked for his review of this document.
 
 :sectnums!:
 == References
