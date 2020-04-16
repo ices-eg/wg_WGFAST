@@ -63,6 +63,12 @@ This convention was developed for processed acoustic data, but has relevance for
 
 In many cases the cost of collecting acoustic data is significant and adhering to this metadata convention will facilitate the discovery, reuse, and exchange of processed acoustic data while ensuring its longevity.
 
+== Implementation of metadata convention
+
+This document describes a metadata convention for processed acoustic data. It is assumed that appropriate data and metadata management of unprocessed acoustic data files will be in place, discussion of which is beyond the scope of this document.
+
+Processed acoustic data and metadata may be held in a variety of formats including, but not limited to, relational databases, Extensible Markup Language (XML), JavaScript Object Notation (JSON), NetCDF and Hierarchical Data Format (HDF). Storage of the data and associated metadata is a question of implementation and is not mandated or defined by this document. When choosing a data format some key considerations are ease of data exchange, visibility of data and metadata, and potential for automated harvesting of metadata. It is recommended that guidance and assistance from metadata experts is sought when realizing this metadata convention in a specific implementation format.
+
 == Global attributes
 
 The metadata attribute fields in this document build on existing conventions and are presented following the Network Common Data Format (NetCDF) cite:[rew1990,unidata2017] format of global attributes. The global attributes describe the overall contents of the file and allow for data discovery. Global attributes can be thought of as conveying five kinds of information:
@@ -80,12 +86,6 @@ Wherever possible, the global attributes are based on established authorities. I
 The metadata attributes are grouped according to logical categories (<<metadata_categories_figure>>). This is done to help both author and reader navigate the metadata record, but it is important to note that this does not describe a formal hierarchical structure. The metadata record of this convention is effectively a continuous list. Thus each global attribute must have a unique name for it to be unambiguously identified. Attribute names that are sourced from existing authorities are by necessity identical to that used by the authority in order to facilitate automatic harvesting of metadata. To ensure uniqueness, non-authoritative attributes are prefixed with the category name of this metadata convention. White spaces or blank characters are not allowed in attribute names as these are not supported by some of the established authorities (e.g. CF, the NetCDF Climate and Forecast Metadata Convention) and the underscore '`_`' character is used instead. Following the form of existing conventions, specific category of platform attributes has been developed for this current version of the metadata convention to support development of metadata attribute fields for other acoustic systems (e.g. autonomous underwater vehicles, gliders, towed bodies, acoustic lenses, and parametric arrays).
 
 There is no constraint on the addition of extra metadata attributes to fully describe a dataset. Such extra attributes would be a super-set of the attributes of this convention and might be specific to a particular institution but their presence would not violate this convention.
-
-== Implementation of metadata convention
-
-This document describes a metadata convention for processed acoustic data. It is assumed that appropriate data and metadata management of unprocessed acoustic data files will be in place, discussion of which is beyond the scope of this document.
-
-Processed acoustic data and metadata may be held in a variety of formats including, but not limited to, relational databases, Extensible Markup Language (XML), JavaScript Object Notation (JSON), NetCDF and Hierarchical Data Format (HDF). Storage of the data and associated metadata is a question of implementation and is not mandated or defined by this document. When choosing a data format some key considerations are ease of data exchange, visibility of data and metadata, and potential for automated harvesting of metadata. It is recommended that guidance and assistance from metadata experts is sought when realizing this metadata convention in a specific implementation format.
 
 == Summary of metadata categories
 
