@@ -1,63 +1,67 @@
+:xrefstyle: short
 
-This Appendix was reproduced with permission from the Echoview 5.1 help file (see also http://www.echoview.com[www.echoview.com]).
+This Appendix was reproduced from the Echoview(R) https://support.echoview.com/WebHelp/Echoview.htm[help file] with permission from https://www.echoview.com/[Echoview Software] Pty Ltd, Australia.
 
-*About transducer geometry*
+[discrete]
+=== About transducer geometry
 
-Transducer geometry in Echoview refers to the configurable location and orientation of http://support.echoview.com/WebHelp/Reference/Glossary.htm#Transducer[transducers]. This page covers:
+Transducer geometry refers to the configurable location and orientation of transducers. This Appendix covers:
 
 * Overview of transducer geometry
 * About transducer location
 * About transducer orientation
 
-For information about how transducer geometry affects displayed data and exports, see http://support.echoview.com/WebHelp/Using_Echoview/What_is_effected_by_transducer_geometry.htm[What is affected by transducer geometry].
+[discrete]
+==== Overview of transducer geometry
 
-*Overview of transducer geometry*
+Each transducer may be located in space and oriented as desired. Illustrated in <<transducer_orientation_conventions_figure>> is a schematic display of relative platform system reference point, a GPS antenna and a transducer.
 
-Each transducer may be located in space and oriented as desired. Illustrated below is a schematic displaying the relative positions in space of a reference point, a GPS antenna and a transducer with non-vertical orientation. How to define location and orientation for each transducer is described below.
+.Illustrates platform and indicative transdcer beam coordinate systems.
+[[transducer_orientation_conventions_figure]]
+image::image1.svg[align="center"]
 
-image:image1.png[]
+[discrete]
+===== Platform system reference point
 
-Transducers are always associated with a http://support.echoview.com/WebHelp/Reference/Glossary.htm#Platform[platform]. The reference point of the platform is at (0,0,0) by definition and defines the position of the platform in the real world (that is, the platform is considered to be, in the real world, wherever it's reference point is).
+Transducers are always associated with a platform (<<transducer_orientation_conventions_figure>>). The system reference point of the platform is at (0, 0, 0) by definition and defines the position of the platform in the real world (that is, the platform is considered to be, in the real world, wherever it's reference point is).
 
-The position of the reference point is not explicitly entered in Echoview, but all other positions are entered relative to it, wherever it may be.
+Please note that the positive Z direction is downwards and the X-Y plane is horizontal (considered to be on a rigid platform that does not pitch and roll).
 
-Please note that the positive Z direction is downwards when the X-Y plane is horizontal (considered to be on a rigid platform that does not pitch and roll).
+For many applications, such as a typical ship based echo-integration survey with multiple downward looking transducers, the only aspect of transducer geometry required is the definition of transducer depth (draft, shown in <<transducer_orientation_conventions_figure>>), if desired. Other applications, such as multiple frequency target strength techniques, surveys with non-vertical transducers, and applications that require the position of samples to be precisely located in the world.
 
-For many applications, such as a typical ship based echo integration survey with multiple downward looking transducers, the only aspect of transducer geometry required is the definition of transducer depth (http://support.echoview.com/WebHelp/Using_Echoview/About_transducer_draft.htm[draft]), if desired. Other applications, such as multiple frequency TS techniques, surveys with non-vertical transducers, and applications that require the position of samples to be precisely located in the world, Echoview's transducer geometry settings allow full specification of the transducer set up.
+[discrete]
+==== About transducer location
 
-Echoview transducer geometry settings allow enough information to be stored about the location and orientation of transducers and GPS antennas to determine the geographic coordinates of any sample or single target in the acoustic beam - given the assumption of a stable platform with no pitch and no roll. In Echoview, some data formats may support roll data or roll and pitch data. For further information regarding relevant data formats and the effects of using roll and pitch data see http://support.echoview.com/WebHelp/Files,_filesets_and_variables/Variables/About_roll_data.htm[About roll data] and http://support.echoview.com/WebHelp/Files,_filesets_and_variables/Variables/About_pitch_data.htm[About pitch data].
+Locations are all defined relative to a system reference point (<<transducer_orientation_conventions_figure>>). The coordinate system utilises three axes (X, Y and Z) and their orientation depends upon whether the platform is fixed or mobile.
 
-Note: Transducer geometry calculations are not used in Echoview for calculating the geographic position of lines (and hence bathymetric data). Bottom picks are assumed to be at the position of the GPS antenna even if the beam is pointing at some angle to the vertical and the transducer is offset from the Reference point.
+[discrete]
+===== Fixed platform
 
-*About transducer location*
-
-The relative location of the water level and GPS antenna and the location of each transducer are defined on the http://support.echoview.com/WebHelp/Windows_and_Dialog_Boxes/Dialog_Boxes/Transducer_Properties_dialog_box.htm#Location_page[Location page] of the http://support.echoview.com/WebHelp/Windows_and_Dialog_Boxes/Dialog_Boxes/Transducer_Properties_dialog_box.htm[Transducer Properties dialog box].
-
-Locations are all defined relative to a system reference point. The system reference point may be any point defined relative to the transducer platform (it is not defined explicitly in Echoview, the locations of transducers, GPS antenna and water level are defined relative to it).
-
-The coordinate system utilises three axes (X, Y and Z) and their orientation depends upon whether the platform is fixed or mobile.
-
-*Fixed Platform*
-
-The location of the system reference point is specified in geographic coordinates (latitude, longitude and altitude).
+The platform system reference point (0, 0, 0) is in a platform space where:
 
 * The X axis is defined to run south-north (positive northwards, negative southwards)
 * The Y axis is defined to run west-east (positive eastwards, negative westwards)
 * The Z axis is defined to run vertically (positive downwards, negative upward)
 
-*Mobile Platform*
+The geographic location for the platform system reference point is to a specified latitude, longitude and altitude. Positive altitude is upwards.
 
-The geographic location (latitude, longitude and altitude) of the GPS antenna is measured by a Global Positioning System (GPS) device. The location of the GPS antenna relative to the system reference point is specified in X, Y, Z coordinates (m). Hence the geographic location of the system reference point and the location of the face of each transducer can be determined in geographic coordinates (latitude, longitude and altitude) from the known position of the GPS antenna.
+[discrete]
+===== Mobile platform
+
+The platform system reference point (0, 0, 0) is in a platform space where:
 
 * The X axis is defined to run alongship (positive towards the bow, negative towards the stern)
 * The Y axis is defined to run athwartship (positive towards starboard, negative towards port)
 * The Z axis is considered to run vertically (positive downwards, negative upwards)
 
-To determine the geographic location of a sample point or a single target in geographic coordinates it is also necessary to define the orientation of the transducer.
+The geographic location for the platform system reference point (X = 0, Y = 0) is the latitude and longitude of the GPS antenna as measured by a Global Positioning System (GPS) device. The location of the GPS antenna relative to the system reference point is specified in X, Y coordinates in meters. The altitude of the system reference point (Z = 0) may be specified. Positive altitude is upwards.
 
-*About transducer orientation*
+To determine the geographic location of a sample point or a single target in geographic coordinates it is also necessary to define the orientation of the transducer as detailed in the following section.
 
-Transducers are not only located, but also oriented - that is, they point somewhere. Like location, orientation requires three parameters to be specified, in this case angles rather than coordinates. The orientation for each transducer is defined on the http://support.echoview.com/WebHelp/Windows_and_Dialog_Boxes/Dialog_Boxes/Transducer_Properties_dialog_box.htm#Orientation_page[Orientation page] of the http://support.echoview.com/WebHelp/Windows_and_Dialog_Boxes/Dialog_Boxes/Transducer_Properties_dialog_box.htm[TransducerProperties dialog box].
+[discrete]
+==== About transducer orientation
+
+Transducers are not only located, but also oriented - that is, they point somewhere. Like location, orientation requires three parameters to be specified, in this case angles rather than coordinates. 
 
 The X-Y-Z axes as defined above are taken as a reference for orientation. In summary:
 
@@ -76,9 +80,10 @@ a|*For mobile platforms:*
 * The Z axis runs up-down
 |===
 
-Two angles are used to define the direction in which the acoustic axis is pointing (either elevation and azimuth angles or alongship and athwartship angles). A third angle called the rotation defines the direction of the http://support.echoview.com/WebHelp/Reference/Glossary.htm#Minor-axis[minor axis] of the transducer relative to a vertical plane passing through the http://support.echoview.com/WebHelp/Reference/Glossary.htm#beam_axis[beam axis]. The rotation of the transducer can only be determined after the definition of the beam direction.
+Two angles are used to define the direction in which the acoustic axis is pointing (either elevation and azimuth angles or alongship and athwartship angles). A third angle called the rotation defines the direction of the minor axis of the transducer relative to a vertical plane passing through the https://support.echoview.com/WebHelp/Using_Echoview/About_beam_geometry.htm[beam axis]. The rotation of the transducer can only be determined after the definition of the beam direction.
 
-*Elevation and Azimuth*
+[discrete]
+===== Elevation and Azimuth angles
 
 The angles are defined as follows:
 
@@ -107,7 +112,8 @@ Valid range is 0° to 360° .
 
 If the elevation is 0° or 180° then Azimuth is equivalent to a rotation.
 
-*Along and Athwartship (Mobile Platform only)*
+[discrete]
+===== Along- and Athwartship angles (mobile platform only)
 
 The angles are defined as follows:
 
@@ -139,9 +145,10 @@ Valid range is -180° to 180° .
 
 *Note:* Not all combinations of Alongship and Athwartship angle are valid. If one angle defines a downward pointing beam (-90° to 90°) and the other an upward pointing beam (-180° to -90° or 90° to 180°)  they cannot be describing the same direction!
 
-*Rotation*
+[discrete]
+===== Rotation
 
-* *Rotation* is the angle between the positive http://support.echoview.com/WebHelp/Reference/Glossary.htm#Minor-axis[minor-axis] of the transducer and the vertical plane running through the beam axis (measured in the clockwise direction as seen from the transducer).
+* *Rotation* is the angle between the positive minor-axis of the transducer and the vertical plane running through the beam axis (measured in the clockwise direction as seen from the transducer).
 
 Valid range is 0° to 360°.
 [%autowidth]
@@ -150,9 +157,10 @@ Valid range is 0° to 360°.
 |180° |a downward pointing positive minor-axis
 |===
 
-*In Summary*
+[discrete]
+===== In Summary
 
-To determine the three coordinates defining the beam orientation do the following:
+To determine the three coordinates defining the beam orientation, do the following:
 
 . Determine the pointing direction of the beam axis
 +
@@ -184,4 +192,4 @@ alongship = 0° , athwartship = -45° , rotation = 90°
 
 * You may define the pointing direction of the transducer with whichever pair of angles is most convenient for your application but the rotation angle will be the same, whichever pair of angles you choose to define the pointing direction.
 
-* For a transducer with an elevation of 0° (that is, vertically downward pointing), the azimuth angle is logically equivalent to the transducer rotation. Echoview does not adjust the rotation angle on the dialog if you specify an azimuth without any elevation. We recommend, for clarity, that you do not use a non-zero azimuth with a zero elevation.
+* For a transducer with an elevation of 0° (that is, vertically downward pointing), the azimuth angle is logically equivalent to the transducer rotation.
