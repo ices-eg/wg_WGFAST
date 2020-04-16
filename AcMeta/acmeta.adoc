@@ -606,43 +606,6 @@ Some temporary citations cite:[simmonds2005,foote1987] because of a bug in ascii
 bibliography::[]
 
 [appendix]
-== Metadata authorities [[metadataAuthorities]]
-
-.Authorities for various metadata attribute fields used in this convention or used for general reference.
-
-[%autowidth]
-|===
-
-|NetCDF |https://www.unidata.ucar.edu/software/netcdf/[Network Common Data Form]
-
-|NUG |https://www.unidata.ucar.edu/software/netcdf/documentation/NUG/[NetCDF User's Guide]
-
-|COARDS |https://ferret.pmel.noaa.gov/noaa_coop/coop_cdf_profile.html[Cooperative Ocean/Atmosphere Research Data Service]
-
-|CF |http://cfconventions.org/[NetCDF Climate and Forecast (CF) Metadata Convention]
-
-|NACDD |https://www.unidata.ucar.edu/software/netcdf-java/current/metadata/DataDiscoveryAttConvention.html[NetCDF Attribute Convention for Dataset Discovery]
-
-|Dublin Core |https://www.dublincore.org/[The Dublin Core Metadata Initiative (DCMI)]
-
-|IMOS |http://content.aodn.org.au/Documents/IMOS/Conventions/IMOS_NetCDF_Conventions.pdf[Integrated Marine Observing System]
-
-|BASOOP |http://imos.org.au/facilities/shipsofopportunity/bioacoustic/[IMOS Bio-Acoustic Ships of opportunity]
-
-|OceanSITES |http://www.oceansites.org/index.html[An international network of time series observing sites]
-
-|UDUNITS |https://www.unidata.ucar.edu/software/udunits/[UniData Units Software]
-
-|ISO8601 |https://www.iso.org/iso-8601-date-and-time-format.html[ISO standard for dates]
-
-|MMI |https://mmisw.org/ont/mmi/platform[Marine Metadata Interoperability Platform Ontology]
-
-|IDF |http://www.doi.org/[International DOI Foundation]
-
-|SeaDataNet |http://www.seadatanet.org/[Pan-European infrastructure for ocean and marine data management]
-|===
-
-[appendix]
 == Standard lists for controlled vocabulary [[listControlledVocab]]
 
 
@@ -701,6 +664,43 @@ bibliography::[]
 |Seafloor reflection |
 |Nominal |For example, As per manufacturer's nominal specification
 |Intership |For example, comparison between echo integration from two ships in the same regions either as a relative difference, or comparing results from an uncalibrated ship to those from a calibrated ship.
+|===
+
+[appendix]
+== Metadata authorities [[metadataAuthorities]]
+
+.Authorities for various metadata attribute fields used in this convention or used for general reference.
+
+[%autowidth]
+|===
+
+|NetCDF |https://www.unidata.ucar.edu/software/netcdf/[Network Common Data Form]
+
+|NUG |https://www.unidata.ucar.edu/software/netcdf/documentation/NUG/[NetCDF User's Guide]
+
+|COARDS |https://ferret.pmel.noaa.gov/noaa_coop/coop_cdf_profile.html[Cooperative Ocean/Atmosphere Research Data Service]
+
+|CF |http://cfconventions.org/[NetCDF Climate and Forecast (CF) Metadata Convention]
+
+|NACDD |https://www.unidata.ucar.edu/software/netcdf-java/current/metadata/DataDiscoveryAttConvention.html[NetCDF Attribute Convention for Dataset Discovery]
+
+|Dublin Core |https://www.dublincore.org/[The Dublin Core Metadata Initiative (DCMI)]
+
+|IMOS |http://content.aodn.org.au/Documents/IMOS/Conventions/IMOS_NetCDF_Conventions.pdf[Integrated Marine Observing System]
+
+|BASOOP |http://imos.org.au/facilities/shipsofopportunity/bioacoustic/[IMOS Bio-Acoustic Ships of opportunity]
+
+|OceanSITES |http://www.oceansites.org/index.html[An international network of time series observing sites]
+
+|UDUNITS |https://www.unidata.ucar.edu/software/udunits/[UniData Units Software]
+
+|ISO8601 |https://www.iso.org/iso-8601-date-and-time-format.html[ISO standard for dates]
+
+|MMI |https://mmisw.org/ont/mmi/platform[Marine Metadata Interoperability Platform Ontology]
+
+|IDF |http://www.doi.org/[International DOI Foundation]
+
+|SeaDataNet |http://www.seadatanet.org/[Pan-European infrastructure for ocean and marine data management]
 |===
 
 [appendix]
