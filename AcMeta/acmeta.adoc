@@ -594,6 +594,12 @@ Major revision. Moved to GitHub and available on ICES WGFAST GitHub https://gith
 
 Jens Rasmussen, Marine Scotland Science, Marine Laboratory, is thanked for his review on earlier version of this document.
 
+== References
+
+Some temporary citations cite:[simmonds2005,foote1987] because of a bug in asciidoctor, whereby citations inside tables are not seen (https://github.com/asciidoctor/asciidoctor-bibtex/issues/39).
+
+
+bibliography::[]
 
 [appendix]
 == Metadata authorities [[metadataAuthorities]]
@@ -732,9 +738,4 @@ include::beamGeometry.adoc[]
 |===
 
 :sectnums!:
-== References
 
-Some temporary citations cite:[simmonds2005,foote1987] because of a bug in asciidoctor, whereby citations inside tables are not seen (https://github.com/asciidoctor/asciidoctor-bibtex/issues/39).
-
-
-bibliography::[]
