@@ -588,7 +588,7 @@ Major revision. Moved to GitHub and available on ICES WGFAST GitHub https://gith
 *** *Mooring attributes*: have been removed and can now be specified using the set of platform attributes
 
 ** Revised Category Obligation:
-*** *Calibration attributes*: altered obligations of calibration_date, calibration_acquisition_method, calibration_processing_method, calibration_accuracy_estimate, and calibration_report from Mandatory (M) or Mandatory if Applicable (MA)
+*** *Calibration attributes*: altered obligations of calibration_date, calibration_acquisition_method, calibration_processing_method, calibration_accuracy_estimate, and calibration_report from Mandatory (M) to Mandatory if Applicable (MA)
 
 ** Minor edits to:
 *** Improve appendix sections 'Transducer orientation conventions' and 'Beam geometry'.
