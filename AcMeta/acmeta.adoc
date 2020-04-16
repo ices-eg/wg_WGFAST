@@ -535,6 +535,62 @@ Notes:
 If range axis interval values vary within each dataset they cannot be specified as a single number in this metadata record. Leave this record blank if this is the case. Note that it would be usual for the range axis interval information to be stored at the same level as the data itself.|N | | |MA |1
 |===
 
+== Revision history
+
+[cols="1,2,5",options="header"]
+|===
+|Version |Date |Changes
+|1.04 |21 August 2014 a|
+
+Altered obligations on attributes from Mandatory (M) or Mandatory if Applicable (MA) to recommended pass:[(R)] for ship_breadth, ship_tonnage, ship_engine_power, ship_noise_design and ship_acknowledgements.
+
+** Add Category:
+*** *Metadata record*: Convention
+*** *Data attributes*:  which describe the data type being stored and its dimensions (i.e. cell size)
+
+** Revised Category:
+*** *Data processing attributes*: data_processing_transceiver_gain to data_processing_on_axis_gain and data_processing_transceiver_gain_units to data_processing_on_axis_gain_units
+
+** Minor edits to:
+*** Improve readability in "`Purpose of this document`" section
+
+
+|1.10 |10 May 2016 a|
+The ICES Data Centre (Hjalte Parner, Nils Olav Handegard) are constructing an Acoustic Trawl Survey database with the intention of implementing the ICES Acoustic Metadata Standard. Through this process a number of new and existing attribute fields were discussed. This revision documents the consequent changes that were made as described below.
+
+** Add Category: 
+*** *Cruise attributes*: cruise_summary_report
+*** *Ship attributes*: ship_platform_code and ship_platform_class using ICES database
+*** *Data processing attributes*: data_processing_triwave_correction
+*** *Metadata record*: convention_version
+*** *Data attributes*: data_range_axis_interval_value
+
+** Revised Category:
+*** *Data attributes*: data_range_axis_interval to data_range_axis_interval_type for consistency with attribute for vertical dimension: data_ping_axis_interval_type
+
+** Minor edits to:
+*** Wording of Category Mooring: mooring_uplimit, mooring_downlimit, mooring_z_units
+*** Wording of Category Transect: transect_uplimit, transect_downlimit, transect_z_units
+*** Wording of Category Dataset: uplimit, downlimit and z_units
+
+Revised convention version. Previous versions were using a decimal number series - e.g. version 1.01, 1.02 etc. limiting the minor number series to 99 revisions. This revision alters the convention to follow the more common convention in the computer world where the version number is described by two integers separated by a full stop. Thus following this convention our previous version 1.05 would now be version 1.5, that is the 5^th^ revision in version 1 series. This version 1.10 is the 10^th^ revision of the version 1 series.
+
+|2.0 |17 Feburary 2020 a|
+Major revision. Moved to GitHub and available on ICES WGFAST GitHub https://github.com/ices-eg/wg_WGFAST[site] for user input.
+
+** Add Category:
+*** *Ship attributes*: ship_home_port
+*** *Platform attributes*: to allow long list of platform classes to be supported. These class types are defined by ICES controlled vocabulary
+*** *Data processing attributes*: data_processing_transducer_beam_angle_major, data_processing_transducer_beam_angle_minor, data_processing_motion_correction, and data_processing_motion_correction_description
+
+** Remove Category:
+*** *Mooring attributes*: have been removed and can now be specified using the set of platform attributes
+
+** Minor edits to:
+*** Improve appendix sections 'Transducer orientation conventions' and 'Beam geometry'.
+|===
+
+
 [appendix]
 == Metadata authorities [[metadataAuthorities]]
 
@@ -680,58 +736,3 @@ Some temporary citations cite:[simmonds2005,foote1987] because of a bug in ascii
 
 
 bibliography::[]
-
-== Revisions
-
-[cols="1,2,5",options="header"]
-|===
-|Version |Date |Changes
-|1.04 |21 August 2014 a|
-
-Altered obligations on attributes from Mandatory (M) or Mandatory if Applicable (MA) to recommended pass:[(R)] for ship_breadth, ship_tonnage, ship_engine_power, ship_noise_design and ship_acknowledgements.
-
-** Add Category:
-*** *Metadata record*: Convention
-*** *Data attributes*:  which describe the data type being stored and its dimensions (i.e. cell size)
-
-** Revised Category:
-*** *Data processing attributes*: data_processing_transceiver_gain to data_processing_on_axis_gain and data_processing_transceiver_gain_units to data_processing_on_axis_gain_units
-
-** Minor edits to:
-*** Improve readability in "`Purpose of this document`" section
-
-
-|1.10 |10 May 2016 a|
-The ICES Data Centre (Hjalte Parner, Nils Olav Handegard) are constructing an Acoustic Trawl Survey database with the intention of implementing the ICES Acoustic Metadata Standard. Through this process a number of new and existing attribute fields were discussed. This revision documents the consequent changes that were made as described below.
-
-** Add Category: 
-*** *Cruise attributes*: cruise_summary_report
-*** *Ship attributes*: ship_platform_code and ship_platform_class using ICES database
-*** *Data processing attributes*: data_processing_triwave_correction
-*** *Metadata record*: convention_version
-*** *Data attributes*: data_range_axis_interval_value
-
-** Revised Category:
-*** *Data attributes*: data_range_axis_interval to data_range_axis_interval_type for consistency with attribute for vertical dimension: data_ping_axis_interval_type
-
-** Minor edits to:
-*** Wording of Category Mooring: mooring_uplimit, mooring_downlimit, mooring_z_units
-*** Wording of Category Transect: transect_uplimit, transect_downlimit, transect_z_units
-*** Wording of Category Dataset: uplimit, downlimit and z_units
-
-Revised convention version. Previous versions were using a decimal number series - e.g. version 1.01, 1.02 etc. limiting the minor number series to 99 revisions. This revision alters the convention to follow the more common convention in the computer world where the version number is described by two integers separated by a full stop. Thus following this convention our previous version 1.05 would now be version 1.5, that is the 5^th^ revision in version 1 series. This version 1.10 is the 10^th^ revision of the version 1 series.
-
-|2.0 |17 Feburary 2020 a|
-Major revision. Moved to GitHub and available on ICES WGFAST GitHub https://github.com/ices-eg/wg_WGFAST[site] for user input.
-
-** Add Category:
-*** *Ship attributes*: ship_home_port
-*** *Platform attributes*: to allow long list of platform classes to be supported. These class types are defined by ICES controlled vocabulary
-*** *Data processing attributes*: data_processing_transducer_beam_angle_major, data_processing_transducer_beam_angle_minor, data_processing_motion_correction, and data_processing_motion_correction_description
-
-** Remove Category:
-*** *Mooring attributes*: have been removed and can now be specified using the set of platform attributes
-
-** Minor edits to:
-*** Improve appendix sections 'Transducer orientation conventions' and 'Beam geometry'.
-|===
