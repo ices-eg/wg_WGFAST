@@ -30,4 +30,4 @@ For guidance on Git, GitHub, and AsciiDoc syntax, as well as the suggested Git w
 
 
 == Preview of the current working draft
-The current working draft of the metadata convention is in the `SISP_formatted` folder as an HTML file. To view the file in your web browser, please go https://htmlpreview.github.io/?https://github.com/ices-eg/wg_WGFAST/blob/master/SISP_formatted/TG-AcMeta.html[here].
+The current working draft of the metadata convention is in the `SISP_formatted` folder as an HTML file. To view the file in your web browser, please go The current working draft of the metadata convention is in the `SISP_formatted` folder as an HTML file. To view the file in your web browser, please go (https://htmlpreview.github.io/?https://github.com/ices-eg/wg_WGFAST/blob/master/Formatted_docs/TG-AcMeta.html)[here].
