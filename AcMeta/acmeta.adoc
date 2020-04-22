@@ -63,6 +63,12 @@ This convention was developed for processed acoustic data, but has relevance for
 
 In many cases the cost of collecting acoustic data is significant and adhering to this metadata convention will facilitate the discovery, reuse, and exchange of processed acoustic data while ensuring its longevity.
 
+== Implementation of metadata convention
+
+This document describes a metadata convention for processed acoustic data. It is assumed that appropriate data and metadata management of unprocessed acoustic data files will be in place, discussion of which is beyond the scope of this document.
+
+Processed acoustic data and metadata may be held in a variety of formats including, but not limited to, relational databases, Extensible Markup Language (XML), JavaScript Object Notation (JSON), NetCDF and Hierarchical Data Format (HDF). Storage of the data and associated metadata is a question of implementation and is not mandated or defined by this document. When choosing a data format some key considerations are ease of data exchange, visibility of data and metadata, and potential for automated harvesting of metadata. It is recommended that guidance and assistance from metadata experts is sought when realizing this metadata convention in a specific implementation format.
+
 == Global attributes
 
 The metadata attribute fields in this document build on existing conventions and are presented following the Network Common Data Format (NetCDF) cite:[rew1990,unidata2017] format of global attributes. The global attributes describe the overall contents of the file and allow for data discovery. Global attributes can be thought of as conveying five kinds of information:
@@ -80,12 +86,6 @@ Wherever possible, the global attributes are based on established authorities. I
 The metadata attributes are grouped according to logical categories (<<metadata_categories_figure>>). This is done to help both author and reader navigate the metadata record, but it is important to note that this does not describe a formal hierarchical structure. The metadata record of this convention is effectively a continuous list. Thus each global attribute must have a unique name for it to be unambiguously identified. Attribute names that are sourced from existing authorities are by necessity identical to that used by the authority in order to facilitate automatic harvesting of metadata. To ensure uniqueness, non-authoritative attributes are prefixed with the category name of this metadata convention. White spaces or blank characters are not allowed in attribute names as these are not supported by some of the established authorities (e.g. CF, the NetCDF Climate and Forecast Metadata Convention) and the underscore '`_`' character is used instead. Following the form of existing conventions, specific category of platform attributes has been developed for this current version of the metadata convention to support development of metadata attribute fields for other acoustic systems (e.g. autonomous underwater vehicles, gliders, towed bodies, acoustic lenses, and parametric arrays).
 
 There is no constraint on the addition of extra metadata attributes to fully describe a dataset. Such extra attributes would be a super-set of the attributes of this convention and might be specific to a particular institution but their presence would not violate this convention.
-
-== Implementation of metadata convention
-
-This document describes a metadata convention for processed acoustic data. It is assumed that appropriate data and metadata management of unprocessed acoustic data files will be in place, discussion of which is beyond the scope of this document.
-
-Processed acoustic data and metadata may be held in a variety of formats including, but not limited to, relational databases, Extensible Markup Language (XML), JavaScript Object Notation (JSON), NetCDF and Hierarchical Data Format (HDF). Storage of the data and associated metadata is a question of implementation and is not mandated or defined by this document. When choosing a data format some key considerations are ease of data exchange, visibility of data and metadata, and potential for automated harvesting of metadata. It is recommended that guidance and assistance from metadata experts is sought when realizing this metadata convention in a specific implementation format.
 
 == Summary of metadata categories
 
@@ -535,42 +535,75 @@ Notes:
 If range axis interval values vary within each dataset they cannot be specified as a single number in this metadata record. Leave this record blank if this is the case. Note that it would be usual for the range axis interval information to be stored at the same level as the data itself.|N | | |MA |1
 |===
 
-[appendix]
-== Metadata authorities [[metadataAuthorities]]
+== Revision history
 
-.Authorities for various metadata attribute fields used in this convention or used for general reference.
+[cols="1,2,5",options="header"]
+|===
+|Version |Date |Changes
+|1.04 |21 August 2014 a|
 
-[%autowidth]
+Altered obligations on attributes from Mandatory (M) or Mandatory if Applicable (MA) to recommended pass:[(R)] for ship_breadth, ship_tonnage, ship_engine_power, ship_noise_design and ship_acknowledgements.
+
+** Add Category:
+*** *Metadata record*: Convention
+*** *Data attributes*:  which describe the data type being stored and its dimensions (i.e. cell size)
+
+** Revised Category:
+*** *Data processing attributes*: data_processing_transceiver_gain to data_processing_on_axis_gain and data_processing_transceiver_gain_units to data_processing_on_axis_gain_units
+
+** Minor edits to:
+*** Improve readability in "`Purpose of this document`" section
+
+
+|1.10 |10 May 2016 a|
+The ICES Data Centre (Hjalte Parner, Nils Olav Handegard) are constructing an Acoustic Trawl Survey database with the intention of implementing the ICES Acoustic Metadata Standard. Through this process a number of new and existing attribute fields were discussed. This revision documents the consequent changes that were made as described below.
+
+** Add Category: 
+*** *Cruise attributes*: cruise_summary_report
+*** *Ship attributes*: ship_platform_code and ship_platform_class using ICES database
+*** *Data processing attributes*: data_processing_triwave_correction
+*** *Metadata record*: convention_version
+*** *Data attributes*: data_range_axis_interval_value
+
+** Revised Category:
+*** *Data attributes*: data_range_axis_interval to data_range_axis_interval_type for consistency with attribute for vertical dimension: data_ping_axis_interval_type
+
+** Minor edits to:
+*** Wording of Category Mooring: mooring_uplimit, mooring_downlimit, mooring_z_units
+*** Wording of Category Transect: transect_uplimit, transect_downlimit, transect_z_units
+*** Wording of Category Dataset: uplimit, downlimit and z_units
+
+Revised convention version. Previous versions were using a decimal number series - e.g. version 1.01, 1.02 etc. limiting the minor number series to 99 revisions. This revision alters the convention to follow the more common convention in the computer world where the version number is described by two integers separated by a full stop. Thus following this convention our previous version 1.05 would now be version 1.5, that is the 5^th^ revision in version 1 series. This version 1.10 is the 10^th^ revision of the version 1 series.
+
+|2.0 |17 Feburary 2020 a|
+Major revision. Moved to GitHub and available on ICES WGFAST GitHub https://github.com/ices-eg/wg_WGFAST[site] for user input.
+
+** Add Category:
+*** *Ship attributes*: ship_home_port
+*** *Platform attributes*: to allow long list of platform classes to be supported. These class types are defined by ICES controlled vocabulary
+*** *Calibration attributes*: calibration
+*** *Data processing attributes*: data_processing_transducer_beam_angle_major, data_processing_transducer_beam_angle_minor, data_processing_motion_correction, and data_processing_motion_correction_description
+
+** Remove Category:
+*** *Mooring attributes*: have been removed and can now be specified using the set of platform attributes
+
+** Revised Category Obligation:
+*** *Calibration attributes*: altered obligations of calibration_date, calibration_acquisition_method, calibration_processing_method, calibration_accuracy_estimate, and calibration_report from Mandatory (M) to Mandatory if Applicable (MA)
+
+** Minor edits to:
+*** Improve appendix sections 'Transducer orientation conventions' and 'Beam geometry'.
 |===
 
-|NetCDF |https://www.unidata.ucar.edu/software/netcdf/[Network Common Data Form]
+== Acknowledgements
 
-|NUG |https://www.unidata.ucar.edu/software/netcdf/documentation/NUG/[NetCDF User's Guide]
+Jens Rasmussen, Marine Scotland Science, Marine Laboratory, is thanked for his review on earlier version of this document.
 
-|COARDS |https://ferret.pmel.noaa.gov/noaa_coop/coop_cdf_profile.html[Cooperative Ocean/Atmosphere Research Data Service]
+== References
 
-|CF |http://cfconventions.org/[NetCDF Climate and Forecast (CF) Metadata Convention]
+Some temporary citations cite:[simmonds2005,foote1987] because of a bug in asciidoctor, whereby citations inside tables are not seen (https://github.com/asciidoctor/asciidoctor-bibtex/issues/39).
 
-|NACDD |https://www.unidata.ucar.edu/software/netcdf-java/current/metadata/DataDiscoveryAttConvention.html[NetCDF Attribute Convention for Dataset Discovery]
 
-|Dublin Core |https://www.dublincore.org/[The Dublin Core Metadata Initiative (DCMI)]
-
-|IMOS |http://content.aodn.org.au/Documents/IMOS/Conventions/IMOS_NetCDF_Conventions.pdf[Integrated Marine Observing System]
-
-|BASOOP |http://imos.org.au/facilities/shipsofopportunity/bioacoustic/[IMOS Bio-Acoustic Ships of opportunity]
-
-|OceanSITES |http://www.oceansites.org/index.html[An international network of time series observing sites]
-
-|UDUNITS |https://www.unidata.ucar.edu/software/udunits/[UniData Units Software]
-
-|ISO8601 |https://www.iso.org/iso-8601-date-and-time-format.html[ISO standard for dates]
-
-|MMI |https://mmisw.org/ont/mmi/platform[Marine Metadata Interoperability Platform Ontology]
-
-|IDF |http://www.doi.org/[International DOI Foundation]
-
-|SeaDataNet |http://www.seadatanet.org/[Pan-European infrastructure for ocean and marine data management]
-|===
+bibliography::[]
 
 [appendix]
 == Standard lists for controlled vocabulary [[listControlledVocab]]
@@ -634,6 +667,43 @@ If range axis interval values vary within each dataset they cannot be specified 
 |===
 
 [appendix]
+== Metadata authorities [[metadataAuthorities]]
+
+.Authorities for various metadata attribute fields used in this convention or used for general reference.
+
+[%autowidth]
+|===
+
+|NetCDF |https://www.unidata.ucar.edu/software/netcdf/[Network Common Data Form]
+
+|NUG |https://www.unidata.ucar.edu/software/netcdf/documentation/NUG/[NetCDF User's Guide]
+
+|COARDS |https://ferret.pmel.noaa.gov/noaa_coop/coop_cdf_profile.html[Cooperative Ocean/Atmosphere Research Data Service]
+
+|CF |http://cfconventions.org/[NetCDF Climate and Forecast (CF) Metadata Convention]
+
+|NACDD |https://www.unidata.ucar.edu/software/netcdf-java/current/metadata/DataDiscoveryAttConvention.html[NetCDF Attribute Convention for Dataset Discovery]
+
+|Dublin Core |https://www.dublincore.org/[The Dublin Core Metadata Initiative (DCMI)]
+
+|IMOS |http://content.aodn.org.au/Documents/IMOS/Conventions/IMOS_NetCDF_Conventions.pdf[Integrated Marine Observing System]
+
+|BASOOP |http://imos.org.au/facilities/shipsofopportunity/bioacoustic/[IMOS Bio-Acoustic Ships of opportunity]
+
+|OceanSITES |http://www.oceansites.org/index.html[An international network of time series observing sites]
+
+|UDUNITS |https://www.unidata.ucar.edu/software/udunits/[UniData Units Software]
+
+|ISO8601 |https://www.iso.org/iso-8601-date-and-time-format.html[ISO standard for dates]
+
+|MMI |https://mmisw.org/ont/mmi/platform[Marine Metadata Interoperability Platform Ontology]
+
+|IDF |http://www.doi.org/[International DOI Foundation]
+
+|SeaDataNet |http://www.seadatanet.org/[Pan-European infrastructure for ocean and marine data management]
+|===
+
+[appendix]
 == Transducer orientation conventions [[transducerOrientationConventions]]
 
 include::transducerOrientationConventions.adoc[]
@@ -669,69 +739,4 @@ include::beamGeometry.adoc[]
 |Chris Taylor |NOAA |USA |Chris.Taylor@noaa.gov
 |Sigurður Þór Jónsson |Hafro |Iceland |sigurdur@hafro.is
 |Brent Wood |NIWA |New Zealand |brent.wood@niwa.co.nz
-|===
-
-Jens Rasmussen, Marine Scotland Science, Marine Laboratory, is thanked for his review of this document.
-
-:sectnums!:
-== References
-
-Some temporary citations cite:[simmonds2005,foote1987] because of a bug in asciidoctor, whereby citations inside tables are not seen (https://github.com/asciidoctor/asciidoctor-bibtex/issues/39).
-
-
-bibliography::[]
-
-== Revisions
-
-[cols="1,2,5",options="header"]
-|===
-|Version |Date |Changes
-|1.04 |21 August 2014 a|
-
-Altered obligations on attributes from Mandatory (M) or Mandatory if Applicable (MA) to recommended pass:[(R)] for ship_breadth, ship_tonnage, ship_engine_power, ship_noise_design and ship_acknowledgements.
-
-** Add Category:
-*** *Metadata record*: Convention
-*** *Data attributes*:  which describe the data type being stored and its dimensions (i.e. cell size)
-
-** Revised Category:
-*** *Data processing attributes*: data_processing_transceiver_gain to data_processing_on_axis_gain and data_processing_transceiver_gain_units to data_processing_on_axis_gain_units
-
-** Minor edits to:
-*** Improve readability in "`Purpose of this document`" section
-
-
-|1.10 |10 May 2016 a|
-The ICES Data Centre (Hjalte Parner, Nils Olav Handegard) are constructing an Acoustic Trawl Survey database with the intention of implementing the ICES Acoustic Metadata Standard. Through this process a number of new and existing attribute fields were discussed. This revision documents the consequent changes that were made as described below.
-
-** Add Category: 
-*** *Cruise attributes*: cruise_summary_report
-*** *Ship attributes*: ship_platform_code and ship_platform_class using ICES database
-*** *Data processing attributes*: data_processing_triwave_correction
-*** *Metadata record*: convention_version
-*** *Data attributes*: data_range_axis_interval_value
-
-** Revised Category:
-*** *Data attributes*: data_range_axis_interval to data_range_axis_interval_type for consistency with attribute for vertical dimension: data_ping_axis_interval_type
-
-** Minor edits to:
-*** Wording of Category Mooring: mooring_uplimit, mooring_downlimit, mooring_z_units
-*** Wording of Category Transect: transect_uplimit, transect_downlimit, transect_z_units
-*** Wording of Category Dataset: uplimit, downlimit and z_units
-
-Revised convention version. Previous versions were using a decimal number series - e.g. version 1.01, 1.02 etc. limiting the minor number series to 99 revisions. This revision alters the convention to follow the more common convention in the computer world where the version number is described by two integers separated by a full stop. Thus following this convention our previous version 1.05 would now be version 1.5, that is the 5^th^ revision in version 1 series. This version 1.10 is the 10^th^ revision of the version 1 series.
-
-|2.0 |17 Feburary 2020 a|
-Major revision. Moved to GitHub and available on ICES WGFAST GitHub https://github.com/ices-eg/wg_WGFAST[site] for user input.
-
-** Add Category:
-*** *Ship attributes*: ship_home_port
-*** *Platform attributes*: to allow long list of platform classes to be supported. These class types are defined by ICES controlled vocabulary
-*** *Data processing attributes*: data_processing_transducer_beam_angle_major, data_processing_transducer_beam_angle_minor, data_processing_motion_correction, and data_processing_motion_correction_description
-
-** Remove Category:
-*** *Mooring attributes*: have been removed and can now be specified using the set of platform attributes
-
-** Minor edits to:
-*** Improve appendix sections 'Transducer orientation conventions' and 'Beam geometry'.
 |===
