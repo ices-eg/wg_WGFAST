@@ -450,8 +450,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel1">
 <li><a href="#_background_and_terms_of_reference">Background and Terms of reference</a></li>
 <li><a href="#_purpose_of_this_document">1. Purpose of this document</a></li>
-<li><a href="#_global_attributes">2. Global attributes</a></li>
-<li><a href="#_implementation_of_metadata_convention">3. Implementation of metadata convention</a></li>
+<li><a href="#_implementation_of_metadata_convention">2. Implementation of metadata convention</a></li>
+<li><a href="#_global_attributes">3. Global attributes</a></li>
 <li><a href="#_summary_of_metadata_categories">4. Summary of metadata categories</a></li>
 <li><a href="#_description_of_metadata_category_table_headers">5. Description of metadata category table headers</a></li>
 <li><a href="#_definition_of_attributes_for_active_acoustic_metadata">6. Definition of attributes for active acoustic metadata</a>
@@ -471,20 +471,21 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_category_data_attributes">6.13. Category: Data attributes</a></li>
 </ul>
 </li>
-<li><a href="#metadataAuthorities">Appendix A: Metadata authorities</a></li>
-<li><a href="#listControlledVocab">Appendix B: Standard lists for controlled vocabulary</a>
+<li><a href="#_revision_history">7. Revision history</a></li>
+<li><a href="#_acknowledgements">8. Acknowledgements</a></li>
+<li><a href="#_references">9. References</a></li>
+<li><a href="#listControlledVocab">Appendix A: Standard lists for controlled vocabulary</a>
 <ul class="sectlevel2">
-<li><a href="#list_mission_attributes">B.1. Category: Mission attributes: mission_platform; Ship attributes: ship_type</a></li>
-<li><a href="#list_instrument_attributes">B.2. Category: Instrument attributes: instrument_transducer_location</a></li>
-<li><a href="#list_intrument_beam_type">B.3. Category: Instrument attributes: instrument_transducer_beam_type</a></li>
-<li><a href="#list_calibration_method">B.4. Category: Calibration attributes: calibration_aquisition_method</a></li>
+<li><a href="#list_mission_attributes">A.1. Category: Mission attributes: mission_platform; Ship attributes: ship_type</a></li>
+<li><a href="#list_instrument_attributes">A.2. Category: Instrument attributes: instrument_transducer_location</a></li>
+<li><a href="#list_intrument_beam_type">A.3. Category: Instrument attributes: instrument_transducer_beam_type</a></li>
+<li><a href="#list_calibration_method">A.4. Category: Calibration attributes: calibration_aquisition_method</a></li>
 </ul>
 </li>
+<li><a href="#metadataAuthorities">Appendix B: Metadata authorities</a></li>
 <li><a href="#transducerOrientationConventions">Appendix C: Transducer orientation conventions</a></li>
 <li><a href="#beamGeometry">Appendix D: Beam geometry</a></li>
 <li><a href="#_list_of_participants">Appendix E: List of participants</a></li>
-<li><a href="#_references">References</a></li>
-<li><a href="#_revisions">Revisions</a></li>
 </ul>
 </div>
 </div>
@@ -559,7 +560,18 @@ ISSN 2304-6252</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_global_attributes">2. Global attributes</h2>
+<h2 id="_implementation_of_metadata_convention">2. Implementation of metadata convention</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This document describes a metadata convention for processed acoustic data. It is assumed that appropriate data and metadata management of unprocessed acoustic data files will be in place, discussion of which is beyond the scope of this document.</p>
+</div>
+<div class="paragraph">
+<p>Processed acoustic data and metadata may be held in a variety of formats including, but not limited to, relational databases, Extensible Markup Language (XML), JavaScript Object Notation (JSON), NetCDF and Hierarchical Data Format (HDF). Storage of the data and associated metadata is a question of implementation and is not mandated or defined by this document. When choosing a data format some key considerations are ease of data exchange, visibility of data and metadata, and potential for automated harvesting of metadata. It is recommended that guidance and assistance from metadata experts is sought when realizing this metadata convention in a specific implementation format.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_global_attributes">3. Global attributes</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The metadata attribute fields in this document build on existing conventions and are presented following the Network Common Data Format (NetCDF) (<a href="#rew1990">Rew and Davis&#44; 1990</a>; <a href="#unidata2017">Unidata&#44; 2017</a>) format of global attributes. The global attributes describe the overall contents of the file and allow for data discovery. Global attributes can be thought of as conveying five kinds of information:</p>
@@ -584,27 +596,16 @@ ISSN 2304-6252</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>All fields should be human-readable and can be of either &#8216;character&#8217; or &#8216;numeric&#8217; type. Where applicable, metadata attribute definitions will state that controlled vocabulary should be used. Use of controlled vocabulary aids consistency, accuracy, interoperability, and data discovery. Standard lists for controlled vocabulary developed specifically for this metadata convention are given in <a href="#listControlledVocab">Appendix B</a>. If the appropriate words are not present in the standard list users should provide their own terminology. The standard lists can be extended according to user feedback to accommodate new terminologies in future versions of this metadata convention.</p>
+<p>All fields should be human-readable and can be of either &#8216;character&#8217; or &#8216;numeric&#8217; type. Where applicable, metadata attribute definitions will state that controlled vocabulary should be used. Use of controlled vocabulary aids consistency, accuracy, interoperability, and data discovery. Standard lists for controlled vocabulary developed specifically for this metadata convention are given in <a href="#listControlledVocab">Appendix A</a>. If the appropriate words are not present in the standard list users should provide their own terminology. The standard lists can be extended according to user feedback to accommodate new terminologies in future versions of this metadata convention.</p>
 </div>
 <div class="paragraph">
-<p>Wherever possible, the global attributes are based on established authorities. In some instances the metadata attribute may cite other authorities, while other metadata attributes may be unique to this metadata convention. Where they exist, the relevant authority is cited for each of the attribute fields. A table of the various metadata authorities is given in <a href="#metadataAuthorities">Appendix A</a>.</p>
+<p>Wherever possible, the global attributes are based on established authorities. In some instances the metadata attribute may cite other authorities, while other metadata attributes may be unique to this metadata convention. Where they exist, the relevant authority is cited for each of the attribute fields. A table of the various metadata authorities is given in <a href="#metadataAuthorities">Appendix B</a>.</p>
 </div>
 <div class="paragraph">
 <p>The metadata attributes are grouped according to logical categories (<a href="#metadata_categories_figure">Figure 1</a>). This is done to help both author and reader navigate the metadata record, but it is important to note that this does not describe a formal hierarchical structure. The metadata record of this convention is effectively a continuous list. Thus each global attribute must have a unique name for it to be unambiguously identified. Attribute names that are sourced from existing authorities are by necessity identical to that used by the authority in order to facilitate automatic harvesting of metadata. To ensure uniqueness, non-authoritative attributes are prefixed with the category name of this metadata convention. White spaces or blank characters are not allowed in attribute names as these are not supported by some of the established authorities (e.g. CF, the NetCDF Climate and Forecast Metadata Convention) and the underscore &#8216;_&#8217; character is used instead. Following the form of existing conventions, specific category of platform attributes has been developed for this current version of the metadata convention to support development of metadata attribute fields for other acoustic systems (e.g. autonomous underwater vehicles, gliders, towed bodies, acoustic lenses, and parametric arrays).</p>
 </div>
 <div class="paragraph">
 <p>There is no constraint on the addition of extra metadata attributes to fully describe a dataset. Such extra attributes would be a super-set of the attributes of this convention and might be specific to a particular institution but their presence would not violate this convention.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_implementation_of_metadata_convention">3. Implementation of metadata convention</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>This document describes a metadata convention for processed acoustic data. It is assumed that appropriate data and metadata management of unprocessed acoustic data files will be in place, discussion of which is beyond the scope of this document.</p>
-</div>
-<div class="paragraph">
-<p>Processed acoustic data and metadata may be held in a variety of formats including, but not limited to, relational databases, Extensible Markup Language (XML), JavaScript Object Notation (JSON), NetCDF and Hierarchical Data Format (HDF). Storage of the data and associated metadata is a question of implementation and is not mandated or defined by this document. When choosing a data format some key considerations are ease of data exchange, visibility of data and metadata, and potential for automated harvesting of metadata. It is recommended that guidance and assistance from metadata experts is sought when realizing this metadata convention in a specific implementation format.</p>
 </div>
 </div>
 </div>
@@ -948,7 +949,7 @@ ISSN 2304-6252</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mission_platform</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Platform type (see <a href="#list_mission_attributes">Section B.1</a>, Standard lists)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Platform type (see <a href="#list_mission_attributes">Section A.1</a>, Standard lists)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">S</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -1239,7 +1240,7 @@ ISSN 2304-6252</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ship_type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Describe type of ship that is hosting the acoustic instrumentation. (See first three rows in <a href="#list_mission_attributes">Section B.1</a>, Standard lists)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Describe type of ship that is hosting the acoustic instrumentation. (See first three rows in <a href="#list_mission_attributes">Section A.1</a>, Standard lists)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">S</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -1794,7 +1795,7 @@ ISSN 2304-6252</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">instrument_transducer_location</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Location of installed transducer. Refer to <a href="#list_instrument_attributes">Section B.2</a> for a list of standard transducer locations.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Location of installed transducer. Refer to <a href="#list_instrument_attributes">Section A.2</a> for a list of standard transducer locations.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">S</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -1821,7 +1822,7 @@ ISSN 2304-6252</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">instrument_transducer_beam_type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">For example 'single-beam, split-aperture'. See controlled vocabulary table for transducer types in <a href="#list_intrument_beam_type">Section B.3</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For example 'single-beam, split-aperture'. See controlled vocabulary table for transducer types in <a href="#list_intrument_beam_type">Section A.3</a>.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">S</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -1992,7 +1993,7 @@ ISSN 2304-6252</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">calibration</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Attribute to define processed acoustic data is calibrated or not. Controlled vocabulary is &#8216;Yes&#8217; if data is calibrated and &#8216;No&#8217; if not (see <a href="#list_calibration_method">Section B.4</a>, for standard list of methods used for the calibration of acoustic instruments)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Attribute to define processed acoustic data is calibrated or not. Controlled vocabulary is &#8216;Yes&#8217; if data is calibrated and &#8216;No&#8217; if not (see <a href="#list_calibration_method">Section A.4</a>, for standard list of methods used for the calibration of acoustic instruments)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">S</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -2015,7 +2016,7 @@ ISSN 2304-6252</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">calibration_acquisition_method</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Describe the method used to acquire calibration data (see <a href="#list_calibration_method">Section B.4</a>, Standard lists)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Describe the method used to acquire calibration data (see <a href="#list_calibration_method">Section A.4</a>, Standard lists)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">S</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -2827,7 +2828,401 @@ ISSN 2304-6252</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="metadataAuthorities">Appendix A: Metadata authorities</h2>
+<h2 id="_revision_history">7. Revision history</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 12.5%;">
+<col style="width: 25%;">
+<col style="width: 62.5%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Version</th>
+<th class="tableblock halign-left valign-top">Date</th>
+<th class="tableblock halign-left valign-top">Changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.04</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">21 August 2014</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Altered obligations on attributes from Mandatory (M) or Mandatory if Applicable (MA) to recommended (R) for ship_breadth, ship_tonnage, ship_engine_power, ship_noise_design and ship_acknowledgements.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Add Category:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Metadata record</strong>: Convention</p>
+</li>
+<li>
+<p><strong>Data attributes</strong>:  which describe the data type being stored and its dimensions (i.e. cell size)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Revised Category:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Data processing attributes</strong>: data_processing_transceiver_gain to data_processing_on_axis_gain and data_processing_transceiver_gain_units to data_processing_on_axis_gain_units</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Minor edits to:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Improve readability in &#8220;Purpose of this document&#8221; section</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10 May 2016</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The ICES Data Centre (Hjalte Parner, Nils Olav Handegard) are constructing an Acoustic Trawl Survey database with the intention of implementing the ICES Acoustic Metadata Standard. Through this process a number of new and existing attribute fields were discussed. This revision documents the consequent changes that were made as described below.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Add Category:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Cruise attributes</strong>: cruise_summary_report</p>
+</li>
+<li>
+<p><strong>Ship attributes</strong>: ship_platform_code and ship_platform_class using ICES database</p>
+</li>
+<li>
+<p><strong>Data processing attributes</strong>: data_processing_triwave_correction</p>
+</li>
+<li>
+<p><strong>Metadata record</strong>: convention_version</p>
+</li>
+<li>
+<p><strong>Data attributes</strong>: data_range_axis_interval_value</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Revised Category:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Data attributes</strong>: data_range_axis_interval to data_range_axis_interval_type for consistency with attribute for vertical dimension: data_ping_axis_interval_type</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Minor edits to:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Wording of Category Mooring: mooring_uplimit, mooring_downlimit, mooring_z_units</p>
+</li>
+<li>
+<p>Wording of Category Transect: transect_uplimit, transect_downlimit, transect_z_units</p>
+</li>
+<li>
+<p>Wording of Category Dataset: uplimit, downlimit and z_units</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Revised convention version. Previous versions were using a decimal number series - e.g. version 1.01, 1.02 etc. limiting the minor number series to 99 revisions. This revision alters the convention to follow the more common convention in the computer world where the version number is described by two integers separated by a full stop. Thus following this convention our previous version 1.05 would now be version 1.5, that is the 5<sup>th</sup> revision in version 1 series. This version 1.10 is the 10<sup>th</sup> revision of the version 1 series.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">17 Feburary 2020</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Major revision. Moved to GitHub and available on ICES WGFAST GitHub <a href="https://github.com/ices-eg/wg_WGFAST">site</a> for user input.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Add Category:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Ship attributes</strong>: ship_home_port</p>
+</li>
+<li>
+<p><strong>Platform attributes</strong>: to allow long list of platform classes to be supported. These class types are defined by ICES controlled vocabulary</p>
+</li>
+<li>
+<p><strong>Calibration attributes</strong>: calibration</p>
+</li>
+<li>
+<p><strong>Data processing attributes</strong>: data_processing_transducer_beam_angle_major, data_processing_transducer_beam_angle_minor, data_processing_motion_correction, and data_processing_motion_correction_description</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Remove Category:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Mooring attributes</strong>: have been removed and can now be specified using the set of platform attributes</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Revised Category Obligation:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Calibration attributes</strong>: altered obligations of calibration_date, calibration_acquisition_method, calibration_processing_method, calibration_accuracy_estimate, and calibration_report from Mandatory (M) to Mandatory if Applicable (MA)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Minor edits to:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Improve appendix sections 'Transducer orientation conventions' and 'Beam geometry'.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_acknowledgements">8. Acknowledgements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Jens Rasmussen, Marine Scotland Science, Marine Laboratory, is thanked for his review on earlier version of this document.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_references">9. References</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Some temporary citations (<a href="#simmonds2005">Simmonds and MacLennan&#44; 2005</a>; <a href="#foote1987">Foote <em>et al.</em>&#44; 1987</a>) because of a bug in asciidoctor, whereby citations inside tables are not seen (<a href="https://github.com/asciidoctor/asciidoctor-bibtex/issues/39" class="bare">https://github.com/asciidoctor/asciidoctor-bibtex/issues/39</a>).</p>
+</div>
+<div class="paragraph">
+<p><a id="demer2015calibration"></a>Demer, D. A., Berger, L., Bernasconi, M., Bethke, E., Boswell, K., Chu, D., Domokos, R., <em>et al.</em> 2015. Calibration of acoustic instruments. ICES CRR No. 326. International Council for the Exploration of the Sea (ICES).</p>
+</div>
+<div class="paragraph">
+<p><a id="dublincore2004"></a>Dublin Core. 2004. Dublin Core Metadata Initiative. <a href="http://dublincore.org/documents/2004/09/10/library-application-profile/" class="bare">http://dublincore.org/documents/2004/09/10/library-application-profile/</a>.</p>
+</div>
+<div class="paragraph">
+<p><a id="foote1987"></a>Foote, K. G., Knudsen, H. P., Vestnes, G., MacLennan, D. N., and Simmonds, E. J. 1987. Calibration of Acoustic Instruments for Fish Density Estimation: A Practical Guide. ICES CRR No. 144.</p>
+</div>
+<div class="paragraph">
+<p><a id="maclennan2002"></a>MacLennan, D. N., Fernandes, P., and Dalen, J. 2002. A Consistent Approach to Definitions and Symbols in Fisheries Acoustics. ICES Journal of Marine Science, 59: 365–369.</p>
+</div>
+<div class="paragraph">
+<p><a id="mitson1995"></a>Mitson, R. B. 1995. Underwater Noise of Research Vessels. ICES Cooperative Research Report No. 209.</p>
+</div>
+<div class="paragraph">
+<p><a id="rew1990"></a>Rew, R., and Davis, G. 1990. NetCDF: An Interface for Scientific Data Access. IEEE Computer Graphics and Applications, 10: 76–82.</p>
+</div>
+<div class="paragraph">
+<p><a id="simmonds2005"></a>Simmonds, J., and MacLennan, D. 2005. Fisheries Acoustics. Theory and Practice. Blackwell Science, Oxford.</p>
+</div>
+<div class="paragraph">
+<p><a id="unidata2017"></a>Unidata. 2017. Network Common Data Form (netCDF) Version 4. UCAR/Unidata.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="listControlledVocab">Appendix A: Standard lists for controlled vocabulary</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="list_mission_attributes">A.1. Category: Mission attributes: mission_platform; Ship attributes: ship_type</h3>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ship, research</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ship, fishing</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ship, other</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Buoy, moored</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Buoy, drifting</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Glider</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Underwater vehicle, autonomous, motorised</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Underwater vehicle, towed</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Underwater vehicle, autonomous, glider</p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>Controlled vocabulary sources from Marine Metadata Interoperability (<a href="https://marinemetadata.org/">MMI</a>) project and <a href="https://mmisw.org/ont/mmi/platform">MMI Platform Ontology</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="list_instrument_attributes">A.2. Category: Instrument attributes: instrument_transducer_location</h3>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hull, keel</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hull, drop keel</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hull, blister</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hull, gondola</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Towed, shallow</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Towed, deep</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Towed, deep, trawl net attached</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ship, pole</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="list_intrument_beam_type">A.3. Category: Instrument attributes: instrument_transducer_beam_type</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Single-beam</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Single beam</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Single-beam, split-aperture</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Single beam transducer with elements divided into groups to provide information on the direction of arrival of echoes. Typically four equal sectors but other groupings are possible.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multi-beam</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiple single beams.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multi-beam, split-aperture</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiple single beams with elements divided into groups to provide information on the direction of arrival of echoes. Typically four equal sectors per beam but other groupings are possible.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="list_calibration_method">A.4. Category: Calibration attributes: calibration_aquisition_method</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Method</th>
+<th class="tableblock halign-left valign-top">Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Standard sphere, in-situ</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>As per citenp:[foote1987,demer2015calibration,simmonds2005]</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Standard sphere, tank</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Standard sphere, other</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reciprocity</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hydrophone</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Seafloor reflection</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nominal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For example, As per manufacturer&#8217;s nominal specification</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Intership</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For example, comparison between echo integration from two ships in the same regions either as a relative difference, or comparing results from an uncalibrated ship to those from a calibrated ship.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="metadataAuthorities">Appendix B: Metadata authorities</h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all fit-content">
 <caption class="title">Table 1. Authorities for various metadata attribute fields used in this convention or used for general reference.</caption>
@@ -2894,173 +3289,6 @@ ISSN 2304-6252</p>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="listControlledVocab">Appendix B: Standard lists for controlled vocabulary</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="list_mission_attributes">B.1. Category: Mission attributes: mission_platform; Ship attributes: ship_type</h3>
-<table class="tableblock frame-all grid-all fit-content">
-<colgroup>
-<col>
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ship, research</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ship, fishing</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ship, other</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Buoy, moored</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Buoy, drifting</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Glider</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Underwater vehicle, autonomous, motorised</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Underwater vehicle, towed</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Underwater vehicle, autonomous, glider</p></td>
-</tr>
-</tbody>
-</table>
-<div class="ulist">
-<ul>
-<li>
-<p>Controlled vocabulary sources from Marine Metadata Interoperability (<a href="https://marinemetadata.org/">MMI</a>) project and <a href="https://mmisw.org/ont/mmi/platform">MMI Platform Ontology</a>.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="list_instrument_attributes">B.2. Category: Instrument attributes: instrument_transducer_location</h3>
-<table class="tableblock frame-all grid-all fit-content">
-<colgroup>
-<col>
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Hull, keel</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Hull, drop keel</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Hull, blister</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Hull, gondola</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Towed, shallow</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Towed, deep</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Towed, deep, trawl net attached</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ship, pole</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="list_intrument_beam_type">B.3. Category: Instrument attributes: instrument_transducer_beam_type</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 66.6667%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Comments</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Single-beam</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Single beam</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Single-beam, split-aperture</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Single beam transducer with elements divided into groups to provide information on the direction of arrival of echoes. Typically four equal sectors but other groupings are possible.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Multi-beam</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Multiple single beams.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Multi-beam, split-aperture</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Multiple single beams with elements divided into groups to provide information on the direction of arrival of echoes. Typically four equal sectors per beam but other groupings are possible.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="list_calibration_method">B.4. Category: Calibration attributes: calibration_aquisition_method</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Method</th>
-<th class="tableblock halign-left valign-top">Comments</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Standard sphere, in-situ</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>As per citenp:[foote1987,demer2015calibration,simmonds2005]</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Standard sphere, tank</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Standard sphere, other</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Reciprocity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Hydrophone</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Seafloor reflection</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Nominal</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">For example, As per manufacturer&#8217;s nominal specification</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Intership</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">For example, comparison between echo integration from two ships in the same regions either as a relative difference, or comparing results from an uncalibrated ship to those from a calibrated ship.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -3634,222 +3862,13 @@ alongship = 0° , athwartship = -45° , rotation = 90°</p>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>Jens Rasmussen, Marine Scotland Science, Marine Laboratory, is thanked for his review of this document.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_references">References</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Some temporary citations (<a href="#simmonds2005">Simmonds and MacLennan&#44; 2005</a>; <a href="#foote1987">Foote <em>et al.</em>&#44; 1987</a>) because of a bug in asciidoctor, whereby citations inside tables are not seen (<a href="https://github.com/asciidoctor/asciidoctor-bibtex/issues/39" class="bare">https://github.com/asciidoctor/asciidoctor-bibtex/issues/39</a>).</p>
-</div>
-<div class="paragraph">
-<p><a id="demer2015calibration"></a>Demer, D. A., Berger, L., Bernasconi, M., Bethke, E., Boswell, K., Chu, D., Domokos, R., <em>et al.</em> 2015. Calibration of acoustic instruments. ICES CRR No. 326. International Council for the Exploration of the Sea (ICES).</p>
-</div>
-<div class="paragraph">
-<p><a id="dublincore2004"></a>Dublin Core. 2004. Dublin Core Metadata Initiative. <a href="http://dublincore.org/documents/2004/09/10/library-application-profile/" class="bare">http://dublincore.org/documents/2004/09/10/library-application-profile/</a>.</p>
-</div>
-<div class="paragraph">
-<p><a id="foote1987"></a>Foote, K. G., Knudsen, H. P., Vestnes, G., MacLennan, D. N., and Simmonds, E. J. 1987. Calibration of Acoustic Instruments for Fish Density Estimation: A Practical Guide. ICES CRR No. 144.</p>
-</div>
-<div class="paragraph">
-<p><a id="maclennan2002"></a>MacLennan, D. N., Fernandes, P., and Dalen, J. 2002. A Consistent Approach to Definitions and Symbols in Fisheries Acoustics. ICES Journal of Marine Science, 59: 365–369.</p>
-</div>
-<div class="paragraph">
-<p><a id="mitson1995"></a>Mitson, R. B. 1995. Underwater Noise of Research Vessels. ICES Cooperative Research Report No. 209.</p>
-</div>
-<div class="paragraph">
-<p><a id="rew1990"></a>Rew, R., and Davis, G. 1990. NetCDF: An Interface for Scientific Data Access. IEEE Computer Graphics and Applications, 10: 76–82.</p>
-</div>
-<div class="paragraph">
-<p><a id="simmonds2005"></a>Simmonds, J., and MacLennan, D. 2005. Fisheries Acoustics. Theory and Practice. Blackwell Science, Oxford.</p>
-</div>
-<div class="paragraph">
-<p><a id="unidata2017"></a>Unidata. 2017. Network Common Data Form (netCDF) Version 4. UCAR/Unidata.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_revisions">Revisions</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 12.5%;">
-<col style="width: 25%;">
-<col style="width: 62.5%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Version</th>
-<th class="tableblock halign-left valign-top">Date</th>
-<th class="tableblock halign-left valign-top">Changes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.04</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">21 August 2014</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Altered obligations on attributes from Mandatory (M) or Mandatory if Applicable (MA) to recommended (R) for ship_breadth, ship_tonnage, ship_engine_power, ship_noise_design and ship_acknowledgements.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Add Category:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Metadata record</strong>: Convention</p>
-</li>
-<li>
-<p><strong>Data attributes</strong>:  which describe the data type being stored and its dimensions (i.e. cell size)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Revised Category:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Data processing attributes</strong>: data_processing_transceiver_gain to data_processing_on_axis_gain and data_processing_transceiver_gain_units to data_processing_on_axis_gain_units</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Minor edits to:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Improve readability in &#8220;Purpose of this document&#8221; section</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.10</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">10 May 2016</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The ICES Data Centre (Hjalte Parner, Nils Olav Handegard) are constructing an Acoustic Trawl Survey database with the intention of implementing the ICES Acoustic Metadata Standard. Through this process a number of new and existing attribute fields were discussed. This revision documents the consequent changes that were made as described below.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Add Category:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Cruise attributes</strong>: cruise_summary_report</p>
-</li>
-<li>
-<p><strong>Ship attributes</strong>: ship_platform_code and ship_platform_class using ICES database</p>
-</li>
-<li>
-<p><strong>Data processing attributes</strong>: data_processing_triwave_correction</p>
-</li>
-<li>
-<p><strong>Metadata record</strong>: convention_version</p>
-</li>
-<li>
-<p><strong>Data attributes</strong>: data_range_axis_interval_value</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Revised Category:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Data attributes</strong>: data_range_axis_interval to data_range_axis_interval_type for consistency with attribute for vertical dimension: data_ping_axis_interval_type</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Minor edits to:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Wording of Category Mooring: mooring_uplimit, mooring_downlimit, mooring_z_units</p>
-</li>
-<li>
-<p>Wording of Category Transect: transect_uplimit, transect_downlimit, transect_z_units</p>
-</li>
-<li>
-<p>Wording of Category Dataset: uplimit, downlimit and z_units</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Revised convention version. Previous versions were using a decimal number series - e.g. version 1.01, 1.02 etc. limiting the minor number series to 99 revisions. This revision alters the convention to follow the more common convention in the computer world where the version number is described by two integers separated by a full stop. Thus following this convention our previous version 1.05 would now be version 1.5, that is the 5<sup>th</sup> revision in version 1 series. This version 1.10 is the 10<sup>th</sup> revision of the version 1 series.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">17 Feburary 2020</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Major revision. Moved to GitHub and available on ICES WGFAST GitHub <a href="https://github.com/ices-eg/wg_WGFAST">site</a> for user input.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Add Category:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Ship attributes</strong>: ship_home_port</p>
-</li>
-<li>
-<p><strong>Platform attributes</strong>: to allow long list of platform classes to be supported. These class types are defined by ICES controlled vocabulary</p>
-</li>
-<li>
-<p><strong>Data processing attributes</strong>: data_processing_transducer_beam_angle_major, data_processing_transducer_beam_angle_minor, data_processing_motion_correction, and data_processing_motion_correction_description</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Remove Category:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Mooring attributes</strong>: have been removed and can now be specified using the set of platform attributes</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Minor edits to:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Improve appendix sections 'Transducer orientation conventions' and 'Beam geometry'.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
 Version 2.0<br>
-Last updated 2020-04-22 15:05:42 UTC
+Last updated 2020-04-22 15:34:28 UTC
 </div>
 </div>
 <link rel="stylesheet" href="highlight/styles/github.min.css">
