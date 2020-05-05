@@ -428,36 +428,37 @@ There is also a geographic coordinate system (<<coordinate_system_figure_all>>) 
 |===
 |Coordinate system name|Origin|_x_-axis|_y_-axis|_z_-axis
 
-|Surface coordinate system|Platform origin|Pointing horizontally towards North|Pointing horizontally towards East|Pointing down with gravity
-|Platform coordinate system|Platform origin|Parallel to the main axis of the platform, positive values toward the front of the platform|Perpendicular to the main axis of the platform, positive values to the starboard side|Pointing down parallel to platform mast
-|Transducer coordinate system|Centre of transducer face|Pointing forward along transducer plane|Pointing starboard along transducer plane|Pointing down orthogonal to transducer plane
-|Sonar beam coordinate system|Centre of transducer face|Arbitrary|Orthogonal to the _x_-axis|Pointing along the beam axis
+|Surface coordinate system (SCS) |Platform origin|Pointing horizontally towards North|Pointing horizontally towards East|Pointing down with gravity
+|Platform coordinate system (PCS) |Platform origin|Parallel to the main axis of the platform, positive values toward the front of the platform|Perpendicular to the main axis of the platform, positive values to the starboard side|Pointing down parallel to platform mast
+|Transducer coordinate system (TCS) |Centre of transducer face|||
+2+|_not stabilized_ |Pointing forward along transducer plane|Pointing starboard along transducer plane|Pointing down orthogonal to transducer plane
+2+|_stabilized_ |Pointing forward along transducer plane|Pointing horizontally and perpendicular to x-axis|Pointing down with gravity
+|Sonar Beam coordinate system (BCS) |Centre of transducer face|Arbitrary|Orthogonal to the _x_-axis|Pointing along the beam axis
 |===
 
-The platform coordinate system (PCS) is obtained from the surface coordinate system (SCS) through a rotation that corresponds to the yaw/heading, pitch and roll of the platform. No translation is necessary. Platform heave is applied in this coordinate system.
+The platform coordinate system (PCS) is obtained from the transducer coordinate system (TCS) through a translation of the PCS origin and a rotation to align with the transducer face. Transducer depth and lever arms are applied in this coordinate system.
 
-The transducer coordinate system (TCS) is obtained from the PCS through a translation of the PCS origin and a rotation to align with the transducer face. Transducer depth is applied in this coordinate system.
+The surface coordinate system (SCS) is obtained from the platform coordinate system (PCS)  through a rotation that corresponds to the yaw/heading, pitch and roll of the platform. No translation is necessary. Platform heave is not applied in this coordinate system.
 
-If a sonar actively alters beam pointing directions to compensate for motion of the platform, the _beam_stabilisation_ variable is set to True, other False. If True, the sonar beam coordinate system (BCS) is defined by a rotation of the SCS that has been translated to the origin of the TCS. If False, the sonar beam coordinate system is obtained from a rotation of the TCS. Note that split-aperture coordinates (minor and major angles) are defined in the BCS.
-
-Note that a coordinate in the SCS can be converted to a geographical coordinate by applying latitude and longitude to the origin.
+[NOTE]
+If a sonar actively alters beam pointing directions to compensate for motion of the platform, the _beam_stabilisation_ variable is set to True, otherwise to False.
+If True, the transducer coordinate system (TCS) is obtained from the SCS only through a translation of SCS origin, the transducer adapts its beam in order to compensate for ship movements
 
 .Coordinate systems used to physically position an echo in an absolute geographical system. The arrows on the axes indicate the positive direction and the circular arrows around each platform coordinate system axis indicates positive rotations (Hull drawing based on image from Simrad SN90 manual, redrawn with permission).
 [[coordinate_system_figure_all]]
 image::coordinateSystemFigureAll.svg[align="center"]
 
-_Need to specify how the draft and heave stuff comes into the translations_
 
-Rotation of one coordinate system into another is specified via three rotations variables and can be implemented via matrix multiplication. As an example, the matrix that will convert a coordinate from coordinate system SCS to coordinate system PCS is defined by:
-
+=== Coordinate System Transforms
+Coordinate system transforms  stem:[F_{A->B}] can be expressed as a combination of a Rotation and a Translation of one coordinate system A into another B.
 [stem]
 ++++
 \begin{equation}
-M_{SCS/PCS} = M_z(h) \cdot M_y(p) \cdot M_z(r)
+F_{A->B} = R_{A->B} + T_{A->B}
 \end{equation}
 ++++
 
-noting that the order of the matrices is important, and is used:
+Transformation of coordinates from A to B can then be implemented as:
 
 [stem]
 ++++
@@ -466,54 +467,71 @@ noting that the order of the matrices is important, and is used:
 x\\
 y\\
 z
-\end{bmatrix}_{PCS} = M_{SCS/PCS} \cdot \begin{bmatrix}
+\end{bmatrix}_{B} = R_{A->B} \cdot \begin{bmatrix}
 x\\
 y\\
 z
-\end{bmatrix}_{SCS}
+\end{bmatrix}_{A} +
+T_{A->B}
 \end{equation}
 ++++
 
-where latexmath:[M_z(h)] is the rotation about the _z_-axis by _h_ degrees, etc. The rotation symbols are chosen to reflect their common nautical names: _h_ for heading, _p_ for pitch, and _r_ for roll and used thus:
+Rotation is specified via three rotation variables and can be implemented via matrix multiplication. As an example, the matrix that will convert a coordinate from coordinate system PCS to coordinate system SCS is defined by:
+
+[stem]
+++++
+\begin{equation}
+R_{PCS->SCS} = R_z(h) \cdot R_y(p) \cdot R_z(r)
+\end{equation}
+++++
+
+
+where latexmath:[R_z(h)] is the rotation about the _z_-axis by _h_ degrees, etc. The rotation symbols are chosen to reflect their common nautical names: _h_ for heading, _p_ for pitch, and _r_ for roll and used thus:
 
 [stem]
 ++++
 \begin{eqnarray}
-M_x(r) =
+
+R_z(h) =
 \begin{bmatrix}
-1 & 0 & 0 \\
-0 & \cos(r) & -\sin(r) \\
-0 & \sin(r) & \cos(r)
+\cos(h) & -\sin(h) & 0 \\
+\sin(h) & \cos(h) & 0 \\
+0 & 0 & 1
 \end{bmatrix} \\
 
-M_y(p) =
+R_y(p) =
 \begin{bmatrix}
 \cos(p) & 0 & \sin(p) \\
 0 & 1 & 0 \\
 -\sin(p) & 0 & cos(p)
 \end{bmatrix} \\
 
-M_z(h) =
+R_x(r) =
 \begin{bmatrix}
-\cos(h) & -\sin(h) & 0 \\
-\sin(h) & \cos(h) & 0 \\
-0 & 0 & 1
+1 & 0 & 0 \\
+0 & \cos(r) & -\sin(r) \\
+0 & \sin(r) & \cos(r)
 \end{bmatrix}
 
 \end{eqnarray}
 ++++
 
+noting that the order of the matrices is important and should follow this order.
+
 To be clear, the right-hand rule when applied to roll, pitch, and heave means that:
 
 * looking along the positive _x_-axis, a positive rotation (roll) is clockwise (to starboard),
 * looking along the positive _y_-axis, a positive rotation (pitch) is clockwise (bow up),
-* looking along the positive _z_-axis, a positive rotation (yaw) is clockwise (to starboard).
+* looking along the positive _z_-axis, a positive rotation (heading) is clockwise (to starboard).
 
-The orientation of the platform is represented using the _z_–_y_’–_x_” Tait-Bryan intrinsic rotation convention (https://en.wikipedia.org/wiki/Euler_angles[en.wikipedia.org/wiki/Euler_angles]), corresponding to yaw, pitch, and roll, respectively. Intrinsic means that rotations about the _y_-axis are measured after any rotation about the _z_-axis, and rotations about the _x_-axis are measured after rotations about the _y_-axis (for comparison, extrinsic angles are applied relative to a fixed-platform orientation). This is the most used rotation convention in the maritime field, and the main effect is that roll is measured relative to the plane tilted by the pitch angle.
+The orientation of the platform is represented using the _z_–_y_’–_x_” Tait-Bryan intrinsic rotation convention (https://en.wikipedia.org/wiki/Euler_angles[en.wikipedia.org/wiki/Euler_angles]), corresponding to heading, pitch, and roll, respectively. Intrinsic means that rotations about the _y_-axis are measured after any rotation about the _z_-axis, and rotations about the _x_-axis are measured after rotations about the _y_-axis (for comparison, extrinsic angles are applied relative to a fixed-platform orientation). This is the most used rotation convention in the maritime field, and the main effect is that roll is measured relative to the plane tilted by the pitch angle.
 
-Several coordinate system offsets can be given in the Platform group. These allow for precise specification of the origin of sensors, such as the position and attitude sensors, and sonar transducer. The offset is a (x,y,z) tuple in the platform coordinate system. Offsets are to be interpreted as a vector that starts at the platform coordinate system origin and ends at the sensor position. For example, an offset of (1, 2, –3) indicates a position that is 1 m toward the bow, 2 m to starboard, and 3 m above the origin of the platform coordinate system.
+Translation are linked to a change of system origin, namely from platform origin and the transducer origins.
+The coordinate system offsets of the transducer are given in the Platform group.
+These allow for precise specification of the origin of sonar transducer. The offset is a (x,y,z) tuple in the platform coordinate system. Offsets are to be interpreted as a vector that starts at the platform coordinate system origin and ends at the transducer position.
+For example, an offset of (1, 2, –3) indicates a position that is 1 m toward the bow, 2 m to starboard, and 3 m above the origin of the platform coordinate system.
 
-Some sensors (e.g. the attitude sensor) can have a rotation relative to the platform-coordinate system. This is represented as the extrinsic rotation required from the platform coordinate system’s _x_-, _y_-, and _z_-axes to arrive at the sensor’s _x_-, _y_-, and _z_-axes.
+Some sensors (e.g. the position, attitude sensor) can have their installation offset and angle defined in the Platform group and relative to the platform-coordinate system. Those parameters are usually taken into account by the sensors and the sensor data values are considered to given relatively to the platform origin (namely roll, pitch should not be compensate for level arms and installation offset except explicitely specified).
 
 === Split-aperture coordinates
 
@@ -532,9 +550,244 @@ For conventional downward-looking echosounders mounted on a ship it is normal th
 image::splitApertureAngles.svg[align="center"]
 
 
-=== Equations for positioning echoes in a geographical coordinate system
-==== Beams are stabilised by the sonar and beam pointing angles are relative to SCS
-==== Beams are not stabilised by the sonar and beam pointing angles are relative to TCS
+=== Equations for positioning echoes in a Surface coordinate system
+
+This section provides examples of equations that can be used to position echoes in a geographical coordinate system.
+These example make some assumptions and approximations :
+
+* Speed of sound is constant and as a consequence sound displacement follows a straight line.
+* Sound travel time are supposed to be symetrical, ie the travel time from transmitting position to echo and travel time from echo to receiving position are the same
+* Positionning is computed with respect to rx_beam only, meaning we do not make any computation for intersection between tx_beam and rx_beam and taking into account for the ship displacement between emission and reception
+
+Two main categories of system are considered as case studies : system with beam stabilization and pointing angle relative to SCS (typically ME70) and system where beam are not stabilised and
+beam pointing angles relative to TCS.
+
+More complex equations and algorithm for more precise positioning or for other sensors are out of scope of this section.
+
+Given an echo _E(beam,i)_ where _i_ is the sample number (from zero to one less than the number of samples) and _beam_ the receiving beam considered, several values can be associated with this echo :
+
+* A time stamp given by
+[stem]
+++++
+\begin{equation}
+t_i=ping\_time+\frac{i\cdot sample\_interval + blanking\_interval- sample\_time\_offset}{2}
+\end{equation}
+++++
+
+* Its range stem:[r_i] given by equation \eqref{eq:timeToRange}
+
+==== Beams are stabilized by the sonar and beam pointing angles are relative to SCS
+When beam are stabilized by the sonar their angles are relative to SCS the sonar will dynamically change beam angles relative to TCS to follow platform movement and maintain a constant beam angle with respect to the SCS.
+The change from TCS to SCS is composed of a translation from transducer origin to platform origin, taking into account lever arms, and a rotation taking into account platform heading
+
+The position of the echo can be defined as :
+
+[stem]
+++++
+\begin{equation}
+\begin{bmatrix}
+x\\
+y\\
+z
+\end{bmatrix}_{SCS} =R_{TCS->PCS}(t_i) \cdot T_{TCS->PCS}
++ R_{heading}(t_i) \cdot R_{BCS->TCS} \cdot \begin{bmatrix}
+\cos(\phi) & 0 & \sin(\phi) \\
+0 & 1 & 0 \\
+-\sin(\phi) & 0 & cos(\phi)
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & \cos(\theta) & -\sin(\theta) \\
+0 & \sin(\theta) & \cos(\theta)
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+0\\
+0\\
+r_i
+\end{bmatrix}
+\end{equation}
+++++
+
+with latexmath:[\phi] and latexmath:[\theta] the split-aperture coordinates as defined in <<Split-aperture coordinates>>:
+
+
+and
+[stem]
+++++
+\begin{equation}
+R_{BCS->TCS} =
+\begin{bmatrix}
+\cos(\alpha) & -\sin(\alpha) & 0 \\
+\sin(\alpha) & \cos(\alpha) & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+\cos(\beta) & 0 & \sin(\beta) \\
+0 & 1 & 0 \\
+-\sin(\beta) & 0 & cos(\beta)
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & \cos(\gamma) & -\sin(\gamma) \\
+0 & \sin(\gamma) & \cos(\gamma)
+\end{bmatrix}
+\end{equation}
+++++
+
+
+where stem:[\alpha,\beta,\gamma] are the beam pointings angles as given in the rx_beam_rotation_alpha, rx_beam_rotation_beta, rx_beam_rotation_gamma variables of the beam mode subgroups of the sonar group (see <<sonarBeammodeTable>>)
+
+and:
+
+[stem]
+++++
+\begin{equation}
+R_{PCS/SCS}(t_i) = R_{z}(h(t_i)) \cdot R_{y}(p(t_i)) \cdot R_{x}(r(t_i))
+\end{equation}
+++++
+
+where stem:[h,p,r] are the heading, pitch and roll as given at the time of the ping in the platform_heading, platform_pitch, platform_roll variables of the beam mode subgroups of the sonar group (see <<sonarBeammodeTable>>).
+(_Those variables can also be defined at a higher sample rate in the platform group  (see <<platformGroupTable>>)_)
+
+and:
+
+[stem]
+++++
+\begin{equation}
+T_{TCS->PCS} = \begin{bmatrix}
+transducer\_offset\_x \\
+transducer\_offset\_y \\
+transducer\_offset\_z
+\end{bmatrix}
+\end{equation}
+++++
+where transducer_offset_x, transducer_offset_y and transducer_offset_z are the installation offsets of the transducer associated
+with the echo, defined in the platform group  (see <<platformGroupTable>>)
+
+
+==== Beams are not stabilized by the sonar and beam pointing angles are relative to TCS
+When beam are not stabilized by the sonar, the beam angles  are given relative to the TCS and
+the sonar will not dynamically change the beam angles to follow the platform movement during a transmit/receive cycle.
+
+The position of the echo can be defined as :
+[stem]
+++++
+\begin{equation}
+\begin{bmatrix}
+x\\
+y\\
+z
+\end{bmatrix}_{SCS} = R_{PCS->SCS}(t_i)  \cdot T_{TCS->PCS}  +
+R_{PCS->SCS}(t_i)  \cdot
+R_{TCS->PCS} \cdot
+R_{BCS->TCS} \cdot \begin{bmatrix}
+\cos(\phi) & 0 & \sin(\phi) \\
+0 & 1 & 0 \\
+-\sin(\phi) & 0 & cos(\phi)
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & \cos(\theta) & -\sin(\theta) \\
+0 & \sin(\theta) & \cos(\theta)
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+0\\
+0\\
+r_i
+\end{bmatrix}
+\end{equation}
+++++
+
+with latexmath:[\phi] and latexmath:[\theta] the split-aperture coordinates as defined in <<Split-aperture coordinates>>:
+
+and:
+
+[stem]
+++++
+\begin{equation}
+R_{BCS->TCS} =
+\begin{bmatrix}
+\cos(\alpha) & -\sin(\alpha) & 0 \\
+\sin(\alpha) & \cos(\alpha) & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+\cos(\beta) & 0 & \sin(\beta) \\
+0 & 1 & 0 \\
+-\sin(\beta) & 0 & cos(\beta)
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & \cos(\gamma) & -\sin(\gamma) \\
+0 & \sin(\gamma) & \cos(\gamma)
+\end{bmatrix}
+\end{equation}
+++++
+
+where stem:[\alpha,\beta,\gamma] are the beam pointings angles as given in the rx_beam_rotation_alpha, rx_beam_rotation_beta, rx_beam_rotation_gamma variables of the beam mode subgroups of the sonar group (see <<sonarBeammodeTable>>)
+
+and:
+
+[stem]
+++++
+\begin{equation}
+R_{TCS->PCS} = R_z(transducer\_rotation\_z) \cdot R_y(transducer\_rotation\_y) \cdot R_x(transducer\_rotation\_x)
+\end{equation}
+++++
+
+with transducer_rotation_x, transducer_rotation_y and transducer_rotation_z,  the installation angles of the transducer associated
+with the echo, defined in the platform group (see <<platformGroupTable>>)
+(Note that calibration angles are supposed to be integrated in these variables)
+
+and:
+
+[stem]
+++++
+\begin{equation}
+T_{TCS->PCS} = \begin{bmatrix}
+transducer\_offset\_x \\
+transducer\_offset\_y \\
+transducer\_offset\_z
+\end{bmatrix}
+\end{equation}
+++++
+with transducer_offset_x, transducer_offset_y and transducer_offset_z the installation offsets of the transducer associated
+with the echo, defined in the platform group (see <<platformGroupTable>>)
+
+and:
+
+[stem]
+++++
+\begin{equation}
+R_{PCS->SCS}(t_i)  = R_{z}(h(t_i)) \cdot R_{y}(p(t_i)) \cdot R_{x}(r(t_i))
+\end{equation}
+++++
+where stem:[h,p,r] are the heading, pitch and roll as given in the platform_heading, platform_pitch, platform_roll variables of the sonar group (see <<sonarBeammodeTable>>) or platform group (see <<platformGroupTable>>)
+
+
+=== Equations for positioning echoes in a Geographical Coordinate System
+The Surface Coordinate system is a coordinate system oriented with platform heave at the origin of the platform origin.
+In order to define an absolute position, the coordinate should be converted to a Terrestrial Geographic System coordinate and take into account heave, draft, tide and so on.
+
+The Terrestrial Geographic System coordinate will use latitude and longitude to define its' position with respect to Earth and elevation will be defined with respect to a absolute surface reference.
+The absolute surface reference could be the WGS84 ellipsoid, or a surface such as MSL (Mean Sea Level) or LAT (Lowest Astronomical Tide)
+
+Switching from SCS system to TGS is achieved by applying a vertical translation from the platform origin to the surface reference of the TGS
+The vertical translation at each time is a vector obtained by adding the variables :
+
+* waterline_to_chart_datum matching the distance from the surface reference to the waterline. This variable takes into account the tide and the surface definition for ship or similar
+* platform_vertical_offset containing the heave and draft for ship or similar
+
+Each translated coordinate can be then expressed as latitude-longitude coordinates given the platform position retrieved from GPS and the coordinates expressed in SCS system.
+
 
 == Split-aperture beams
 
