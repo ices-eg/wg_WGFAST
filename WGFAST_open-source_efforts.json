@@ -1,0 +1,39 @@
+{
+  "title": "WGFAST open-source efforts",
+  "description": "WGFAST comprehensive list of open-source efforts to read, process, analyze, and interpret acoustic data",
+  "efforts": [
+		{
+			"title": "Echopype",
+			"url": "https://github.com/OSOceanAcoustics/echopype",
+			"programming_language": "Python",
+			"description": "Enhance interoperability and scalability of fisheries acoustics data based on the pydata suite of tools.",
+			"contact": {
+				"name": "Wu-Jung Lee",
+				"e-mail": "leewujung@gmail.com",
+				"institution": "University of Washington Applied Physics Lab"
+			}
+		},
+		{
+			"title": "ExCal",
+			"url": "https://github.com/gavinmacaulay/calibration-code",
+			"programming_language": "Matlab",
+			"description": "Calculate calibration coefficients for EK/ES60 echosounders.",
+			"contact": {
+				"name": "Gavin Macaulay",
+				"e-mail": "gavin.macaulay@hi.no",
+				"institution": "Institute of Marine Research, Norway"
+			}
+		},
+		{
+			"title": "EchoR",
+			"url": "https://gitlab.ifremer.fr/md0276b/echor",
+			"programming_language": "R",
+			"description": "R package to handle pre-processed fisheries acoustics data collected during sea surveys and to produce and analyse ec(h)osystem indices and maps based on fisheries acoustics data.",
+			"contact": {
+				"name": "Mathieu Doray",
+				"e-mail": "mathieu.doray@ifremer.fr",
+				"institution": "Ifremer, France"
+			}
+		}		
+  ]
+}
