@@ -34,6 +34,17 @@
 				"e-mail": "mathieu.doray@ifremer.fr",
 				"institution": "Ifremer, France"
 			}
-		}		
+		},
+		{
+  			"title": "Echopy",
+  			"url": "https://github.com/bas-acoustics/echopy",
+  			"programming_language": "Python, v3",
+  			"description": "Fisheries acoustic data processing and analysis, such as noise removal, binning, seabed detection and target detection. The library provides building blocks that can be assembled to design custom processing routines.",
+  			"contact": {
+  				"name": "Alejandro Ariza",
+  				"e-mail": "alejandro.ariza@ird.fr",
+  				"institution": "Institut de Recherche pour le Développement"
+  		}
+  	}
   ]
 }
