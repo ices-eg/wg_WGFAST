@@ -22,6 +22,7 @@ params$table_df %>%
     bootstrap_options = c("striped", "hover", "condensed", "responsive")
   ) %>%
   column_spec(1, bold = TRUE, border_right = TRUE) %>%
+  column_spec(4, width = "30em") %>% 
   footnote(
     general = "I used [this page](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html) for the table styling. There are lots of options though."
   )
