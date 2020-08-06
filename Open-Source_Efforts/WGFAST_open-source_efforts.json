@@ -1,0 +1,94 @@
+{
+  "title": "WGFAST open-source efforts",
+  "description": "WGFAST comprehensive list of open-source efforts to read, process, analyze, and interpret fisheries acoustic data",
+  "efforts": [
+    {
+      "title": "Echopype",
+      "url": "https://github.com/OSOceanAcoustics/echopype",
+      "programming_language": "Python",
+      "description": "Enhance interoperability and scalability of fisheries acoustics data based on the pydata suite of tools.",
+      "contact": {
+        "name": "Wu-Jung Lee",
+        "e-mail": "leewujung@gmail.com",
+        "institution": "University of Washington Applied Physics Lab"
+      }
+    },
+    {
+      "title": "ExCal",
+      "url": "https://github.com/gavinmacaulay/calibration-code",
+      "programming_language": "Matlab",
+      "description": "Calculate calibration coefficients for EK/ES60 echosounders.",
+      "contact": {
+        "name": "Gavin Macaulay",
+        "e-mail": "gavin.macaulay@hi.no",
+        "institution": "Institute of Marine Research, Norway"
+      }
+    },
+    {
+      "title": "Echopy",
+      "url": "https://github.com/bas-acoustics/echopy",
+      "programming_language": "Python, v3",
+      "description": "Fisheries acoustic data processing and analysis, such as noise removal, binning, seabed detection and target detection. The library provides building blocks that can be assembled to design custom processing routines.",
+      "contact": {
+        "name": "Alejandro Ariza",
+        "e-mail": "alejandro.ariza@ird.fr",
+        "institution": "Institut de Recherche pour le Développement"
+      }
+    },
+    {
+      "title": "EchoR",
+      "url": "https://gitlab.ifremer.fr/md0276b/echor",
+      "programming_language": "R",
+      "description": "R package to handle pre-processed fisheries acoustics data collected during sea surveys and to produce and analyse ec(h)osystem indices and maps based on fisheries acoustics data.",
+      "contact": {
+        "name": "Mathieu Doray",
+        "e-mail": "mathieu.doray@ifremer.fr",
+        "institution": "Ifremer, France"
+      }
+    },
+    {
+      "title": "pyEcholab",
+      "url": "https://github.com/CI-CMG/pyEcholab",
+      "programming_language": "Python, v3",
+      "description": "pyEcholab is an open-source, Python-based toolkit for reading, processing, plotting and exporting fisheries acoustic echosounder data.",
+      "contact": {
+        "name": "Carrie Wall, Chuck Anderson",
+        "e-mail": "carrie.wall@noaa.gov, charles.anderson@noaa.gov",
+        "institution": "NOAA National Center for Environmental Information (NCEI)"
+      }
+    },
+    {
+      "title": "ESP3",
+      "url": "https://sourceforge.net/projects/esp3",
+      "programming_language": "Matlab (standalone available)",
+      "description": "ESP3 is an open-source software package for visualising and processing active acoustics data, developed at NIWA (Wellington, New Zealand) by the Fisheries Monitoring and Acoustics group. ESP3 is designed for single-beam and split-beam echosounder data. The software has been written mainly for processing fisheries acoustic surveys, with attention to reproducibility, consistency and efficiency. Although ESP3 was initialy developed to visualise and process single, multi-frequency and broadband SIMRAD EK60 and EK80 raw data, it also supports other formats (e.g., NIWA CREST, Furuno FCV-30 and ASL AZFP). The software allows standard post-processing and analysis of fisheries acoustic survey data such as calibration, scrutinisation using in-house algorithms (e.g, bad transmits identification, automated bottom detection, single targets detection and tracking, schools detection, etc.) and others developed by the scientific community (e.g., background noise removal), multi-frequency analysis and echo-integration.",
+      "contact": {
+        "name": "Yoann Ladroit",
+        "e-mail": "yoann.ladroit@niwa.co.nz",
+        "institution": "National Institute of Water and Atmospheric Research (NIWA)"
+      }
+    },
+    {
+      "title": "Matecho",
+      "url": "ftp://ftp.ifremer.fr/ifremer/ird/acoustics/survey_kit",
+      "programming_language": "Matlab",
+      "description": "Matecho is an automated processing method to extract information and perform echo-integration and fish shoal extraction from various scientific echo-sounder sources. The procedure allows the semiautomatic cleaning of echogram data and the application of automatic data filters. Echo-integration processing is executed for each depth layer and integrates their characteristics per elementary sampling unit. Sound scattered layers are automatically detected by segmentation from the echo-integrated echogram, and shoals are extracted according to an iterative process of aggregation of filtered echogram echoes that allows, in both cases, the calculation of the ad hoc parameters describing morphological, spatial location and acoustic characteristics of sound scattered layers and shoals.",
+      "contact": {
+        "name": "Yannick Perrot",
+        "e-mail": "yannick.perrot@ird.fr",
+        "institution": "French Institute of Research For Development (IRD-France)"
+      }
+    },
+    {
+      "title": "",
+      "url": "",
+      "programming_language": "",
+      "description": "",
+      "contact": {
+        "name": "",
+        "e-mail": "",
+        "institution": ""
+      }
+    }
+  ]
+}
