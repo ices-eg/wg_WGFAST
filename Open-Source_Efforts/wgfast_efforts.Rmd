@@ -1,9 +1,7 @@
 ---
 title: '`r params$title`'
 date: '`r strftime(Sys.time(), format = "updated on %d %B %Y")`'
-output: 
-  github_document: default
-always_allow_html: true
+output: html_document
 params:
   title:
     value: ""
@@ -25,6 +23,6 @@ params$table_df %>%
     ) %>%
   column_spec(1, bold = TRUE, border_right = TRUE) %>%
   footnote(
-    general = "I used [this page](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html) for the table styling. There are lots of options though."
+    general = "Table stying from [kable and kabelExtra](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html)."
   )
 ```
