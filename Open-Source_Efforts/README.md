@@ -17,3 +17,7 @@ The list, `WGFAST_open-source_efforts.json`, is in JSON format, so anyone can re
 
 
 The R script `wgfast_efforts.R` uses the markdown file `wgfast_efforts.Rmd` to create an HTML table, `wgfast_efforts.html`, that is useful for reports and documents. You are free to copy these scripts and use them.
+
+Use your web browser to view the Open-Source Projects table [here](https://htmlpreview.github.io/?https://github.com/ices-eg/wg_WGFAST/blob/master/Open-Source_Efforts/wgfast_efforts.html).
+
+
