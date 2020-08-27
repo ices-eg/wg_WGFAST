@@ -53,12 +53,17 @@ What is a Git repository? A repository is a permanent record of a project's deve
 
 https://github.com/ices-eg[`ices-eg`] is the ICES Expert Groups' GitHub account. It is an account of "Workspaces for ICES expert groups to archive code and case-specific methods". https://github.com/ices-eg/wg_WGFAST[`wg_WGFAST`] is the repository for the working group on Fisheries Acoustics, Science and Technology.
 
-.There are five folders within the wg_WGFAST repository
-. `How_to_contribute`: Contains help files on how to contribute to the conventions. You are in this folder.
-. `AcMeta` - Contains the _A metadata convention for processed acoustic data from active acoustic systems_ document and supporting files.
-. `SONAR-netCDR` - Contains the `docs` subfolder with the _The SONAR-netCDF4 convention for sonar data, Version 1.1_ document and supporting files, and the `src` subfolder with MATLAB code.
-. `SISP_formatted` - Contains the latest HTML file of the metadata convention. You can view this file in your web browser by going https://htmlpreview.github.io/?https://github.com/ices-gists/wg_WGFAST/blob/master/SISP_formatted/TG-AcMeta.html[here].
-. `.github/workflows` - Contains the `.yml` for a GitHub Action to build the HTML and put it in `SISP_formatted`. Do not touch this file, please. +
+.There are three folders and two files within the `wg_WGFAST` repository
+**Folders** +
+
+. `github`: Ignore this folder (unless you are Gavin Macaulay, who is probably not reading this file).
+. `How_to_contribute`: This folder contains help files on how to contribute to the conventions. If you are reading this, you are in this folder.
+. `Open-Souce_Efforts`: The .json and HTML files, and the link to a rendered HTML file, of open-source efforts to develop open-source data formats and open-source software for the acquisition, processing, analysis, and visualization of water-column sonar data. _If you have an open-source project you would like to contribute, please read the `README` in this folder_.
+
+**Files** +
+
+. `.gitignore`: Like the file name says, ignore this file. This is the list of files Git should ignore when it adds/commits/pushes data from your local machine to the repository online. If you use R/RStudio, the `.gitignore` file already has the appropriate lines to ignore your project and user files.
+. `README.md`: This is the markdown file of the text you see when you first land on the `wg_WGFAST` repository. 
 {empty} +
 
 
