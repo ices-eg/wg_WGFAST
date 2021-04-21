@@ -8,7 +8,7 @@
 
 
 # read in table info:
-wgfast_efforts <- jsonlite::read_json("WGFAST_open-source_efforts.json")
+wgfast_efforts <- jsonlite::read_json("Open-Source_Efforts/WGFAST_open-source_efforts.json")
 
 # create the rows of the table to create
 # note: column names provide the table headers
@@ -30,7 +30,7 @@ table_df <-
 
 # render the document
 rmarkdown::render(
-  "wgfast_efforts.Rmd",
+  "Open-Source_Efforts/wgfast_efforts.Rmd",
   params = list(
     title = wgfast_efforts$title,
     description = wgfast_efforts$description,
