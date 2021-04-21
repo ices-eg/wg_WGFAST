@@ -80,6 +80,16 @@
       }
     },
     {
+      "title": "pymovies3d",
+      "url": "https://gitlab.ifremer.fr/fleet/movies/pymovies_3d",
+      "programming_language": "Python and MOVIES3D C++ libraries",
+      "description": "pymovies3D is the open-source version of the MOVIESD software developped at Ifremer for visualising and processing single beam and multibeam active acoustics data in HAC format and soon in Sonar-Netcdf format",
+      "contact": {
+        "name": "Laurent Berger",
+        "e-mail": "laurent.berger@ifremer.fr",
+        "institution": "Ifremer"
+      },
+    {
       "title": "",
       "url": "",
       "programming_language": "",
