@@ -23,6 +23,6 @@ params$table_df %>%
     ) %>%
   column_spec(1, bold = TRUE, border_right = TRUE) %>%
   footnote(
-    general = "Table stying from [kable and kabelExtra](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html)."
+    general = "Table styling from [kable and kabelExtra](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html)."
   )
 ```
