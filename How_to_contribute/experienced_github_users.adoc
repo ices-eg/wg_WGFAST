@@ -53,7 +53,7 @@ HTML (single file):: For a single html file (including the images, which makes i
 
 PDF:: Note that the asciidoctor-mathematical extension must be installed to get the mathematical equations correctly rendered:
 
- asciidoctor-pdf -r asciidoctor-bibtex  acmeta.adoc
+ asciidoctor-pdf -r asciidoctor-bibtex -r asciidoctor-mathematical acmeta.adoc
 
 Word (.docx):: First convert to docbook format, then install and use https://pandoc.org/[pandoc] to convert to Word:
 
