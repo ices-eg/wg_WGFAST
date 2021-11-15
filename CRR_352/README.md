@@ -7,4 +7,4 @@ Software code written in R (R statistical software language, https://www.r-proje
 
 [Dunford_Motion-Correction.R](Dunford_Motion-Correction.R) generates diagnostic graphs that can be used to evaluate the effect of transducer motion on acoustic survey data. These diagnostics can be generated for previously-collected data to determine whether to apply the "Dunford" correction, or generated while at sea during a survey to evaluate the effects of vessel motion on in-situ echosounder data and potentially be used to assist with the decision making process as to whether to continue surveying or modify data collection plans.   
 
-[Pena2021_hist_equ.py](Pena2021_hist_equ.py) provides the code for histogram equalization used in Pena, M. (2021), Full customization of color maps for fisheries acoustics: Visualizing every target. Fisheries Research, 240: 105949.
+[Peña2021_hist_equ.py](Peña2021_hist_equ.py) provides the code for histogram equalization used in Pena, M. (2021), Full customization of color maps for fisheries acoustics: Visualizing every target. Fisheries Research, 240: 105949.
