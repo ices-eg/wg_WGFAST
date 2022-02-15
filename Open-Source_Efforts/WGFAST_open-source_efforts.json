@@ -1,6 +1,6 @@
 {
   "title": "WGFAST open-source efforts",
-  "description": "WGFAST comprehensive list of open-source efforts to read, process, analyze, and interpret fisheries acoustic data",
+  "description": "WGFAST comprehensive list of open-source efforts to store, read, process, analyze, and interpret fisheries acoustic data",
   "efforts": [
     {
       "title": "Echopype",
@@ -88,6 +88,17 @@
         "name": "Laurent Berger",
         "e-mail": "laurent.berger@ifremer.fr",
         "institution": "Ifremer"
+      }
+    },
+    {
+      "title": "SONAR-netCDF4",
+      "url": "https://github.com/ices-publications/SONAR-netCDF4",
+      "programming_language": "AsciiDoctor",
+      "description": "A netCDF4 data format to store raw data from omni-directional sonars (version 1), expanded to store raw and partially-processed data from all types of active underwater acoustic systems, including echosounders, multi-beam sonars, acoustic current profilers, etc.",
+      "contact": {
+        "name": "Gavin Macaulay",
+        "e-mail": "gavin.macaulay@hi.no",
+        "institution": "Institute of Marine Research"
       }
     },
     {
