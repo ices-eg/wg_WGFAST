@@ -16,7 +16,7 @@ jobs:
     - name: install packages
       run: |
         R -e 'install.packages("jsonlite")'
-        R -e 'install.pakcages("rmarkdown")'
+        R -e 'install.packages("rmarkdown")'
 
     - name: build wgfast_efforts.html
       run: Rscript Open-Source_Efforts/wgfast_efforts.R  
