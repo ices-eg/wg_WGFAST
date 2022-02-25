@@ -15,6 +15,7 @@ jobs:
     
     - name: install packages
       run: |
+        apk add --update pandoc
         R -e 'install.packages("jsonlite")'
         R -e 'install.packages("rmarkdown")'
 
