@@ -12,6 +12,10 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - uses: r-lib/actions/setup-r@master
+    
+    - name: install packages
+      run: |
+        R -e 'install.packages("jsonlite")'
 
     - name: build wgfast_efforts.html
       run: Rscript Open-Source_Efforts/wgfast_efforts.R  
