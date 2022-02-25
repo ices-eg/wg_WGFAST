@@ -18,6 +18,9 @@ jobs:
         sudo apt-get install -y pandoc
         R -e 'install.packages("jsonlite")'
         R -e 'install.packages("rmarkdown")'
+        R -e 'install.packages("curl")'
+        R -e 'install.packages("httr")'
+        R -e 'install.packages("rvest")'
         R -e 'install.packages("kableExtra")'
 
     - name: build wgfast_efforts.html
