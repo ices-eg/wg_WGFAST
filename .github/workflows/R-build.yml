@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@master
-    - uses r-lib/actions/setup-r@master
+    - uses: r-lib/actions/setup-r@master
 
     - name: build wgfast_efforts.html
       run: Rscript wgfast_efforts.R  
