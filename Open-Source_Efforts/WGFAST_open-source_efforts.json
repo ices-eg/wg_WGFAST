@@ -102,6 +102,17 @@
       }
     },
     {
+      "title": "test",
+      "url": "test",
+      "programming_language": "test",
+      "description": "test",
+      "contact": {
+        "name": "test",
+        "e-mail": "test",
+        "institution": "test"
+      }
+    },
+	    {
       "title": "",
       "url": "",
       "programming_language": "",
