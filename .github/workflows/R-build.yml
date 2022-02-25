@@ -15,7 +15,8 @@ jobs:
     
     - name: install packages
       run: |
-        sudo apt-get install -y pandoc
+        sudo apt-get install -y pandoc libssl-dev libcurl4-openssl-dev
+        sudo apt-get insta
         R -e 'install.packages("jsonlite")'
         R -e 'install.packages("rmarkdown")'
         R -e 'install.packages("curl")'
