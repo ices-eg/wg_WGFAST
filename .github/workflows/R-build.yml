@@ -1,0 +1,30 @@
+name: BuildDocuments
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@master
+    - uses r-lib/actions/setup-r@master
+
+    - name: build wgfast_efforts.html
+      run: Rscript wgfast_efforts.R  
+    
+    - name: Commit html file
+      run: |
+        git config --local user.email "github@ices.dk"
+        git config --local user.name "ices-github-bot"
+        git status
+        git add Open-Source_Efforts/wgfast_efforts.html
+        git commit --allow-empty -m "Push triggered R build"
+        
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
