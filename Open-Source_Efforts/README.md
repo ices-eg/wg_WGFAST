@@ -18,7 +18,7 @@ For **less experienced GitHub users**, follow the bullets above but after you ha
 
 
 ### How it works  
-The R script `wgfast_efforts.R` uses the markdown file `wgfast_efforts.Rmd` to create an HTML table, `wgfast_efforts.html`, that is useful for reports and documents. You are free to copy these scripts and use them. The HTML file is generated from the .json file and is not meant to be edited.
+The R script `wgfast_efforts.R` uses the markdown file `wgfast_efforts.Rmd` to create an HTML table, `wgfast_efforts.html`, that is useful for reports and documents. You are free to copy these scripts and use them. The HTML file is generated from the .json file and is not meant to be edited. Each time a change is pushed to this repository, a Github Action is started that runs the R script and commits the generated .html file to the repository.
 
 ### View the list of projects   
 To view the list of open-source projects in your web browser click [here](https://htmlpreview.github.io/?https://github.com/ices-eg/wg_WGFAST/blob/master/Open-Source_Efforts/wgfast_efforts.html).
