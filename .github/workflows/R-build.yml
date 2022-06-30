@@ -28,6 +28,7 @@ jobs:
     
     - name: Commit html file
       run: |
+        git config --global --add safe.directory $PWD
         git config --local user.email "github@ices.dk"
         git config --local user.name "ices-github-bot"
         git status
