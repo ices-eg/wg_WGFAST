@@ -16,6 +16,8 @@ endif::[]
 [.text-center]
 *Welcome!*
 
+Note: These docs, while still provide the workflow information needed to contibute to the WGFAST conventions, there might be some broken links. Please https://github.com/ices-eg/wg_WGFAST/issues[submit an issue] if you fine one. Also, the text editor, https://github.blog/2022-06-08-sunsetting-atom/[Atom], was sunsetted in December 2022. 
+
 If you have experience with and are comfortable using Git and GitHub, skip this file and read through link:experienced_github_users.adoc[A quick workflow for experienced Git, GitHub, and Asciidoc users] to learn how to contribute to the WGFAST convention documents.
 
 [.text-center]
