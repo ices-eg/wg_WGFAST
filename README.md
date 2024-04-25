@@ -35,7 +35,8 @@ In addition to these symposia, WGFAST has met yearly since 1984:
 
 |Year|Dates|Location|Note|Chair|No. attendees|Symposium attendees|Source|
 |---|---|---|---|---|---|---|---|
-|2023|31-Mar|Portland, Maine, USA|Symposium 27-30 March|Anne Lebourges-Dhaussy|47|150||
+|2024|9-12 April|Brest, France|Online and physical, 85 in person, 115 registrations|Anne Lebourges-Dhaussy|85|||
+|2023|31 March|Portland, Maine, USA|Symposium 27-30 March|Anne Lebourges-Dhaussy|47|150||
 |2022|25-28 April|Somone, Senegal|Online and physical, 16 in person, 114 online|Michael Jech|130||
 |2021|19-23 April|Bergen, Norway|Joint session on 21 April, online|Michael Jech|156||
 |2020|22-Apr|Bergen, Norway|Online|Michael Jech|120||
