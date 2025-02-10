@@ -26,9 +26,14 @@ There is a lot of jargon surrounding Git and GitHub, but that is normal in any s
 == Software, accounts, and languages
 === Software to install
 *Git* - A distributed version control system. +
-*AsciidocFX* or *Visual Studio (VS) Code* - Modern text editors/Integrated Development Environments (IDEs). AsciidocFX and VS Code can open, edit, and live preview AsciiDoc files. +
 
-If you prefer to work online (in GitHub), you will not need a text editor. However, we suggest using a text editor if you are going to do more than fix a few spelling errors. +
+*Text editor/IDE* - Because AsciiDoc is plan text, you can use any text editor to edit .adoc files. If you would like to preview edits in realtime, an Integrated Development Editor (IDE) is advised. You can edit .adoc files in GitHub, but you cannot preview the edits in realtime. +
+
+https://docs.asciidoctor.org/asciidoctor/latest/tooling/[Suggested IDEs]: 
+
+- https://www.asciidocfx.com/[AsciiDocFX]
+- https://code.visualstudio.com/[Visual Studio Code]
+
 
 === Account to create
 *GitHub* - A cloud-based hosting service used to manage Git repositories. +
@@ -40,7 +45,7 @@ AsciiDoc is a popular and flexible plain text markup language. Both convention d
 *Markdown* - extension `.md` +
 Markdown is the most popular plain text markup language but it is not as flexible as AsciiDoc. You will see a couple documents in the `wg_WGFAST` repository with `.md` extensions (eg - `README.md`). These are written in Markdown. GitHub automatically renders Markdown files into HTML.
 
-AsciidocFX and VS Code can open, edit, and live preview AsciiDoc and Markdown files. +
+AsciidocFX and Visual Studio Code can open, edit, and live preview AsciiDoc and Markdown files. +
 
 == Suggested order of setup
 If you do not have any of the software or accounts listed in the section above, this is the most painless way to get started.

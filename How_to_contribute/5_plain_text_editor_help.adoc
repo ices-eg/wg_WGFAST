@@ -56,48 +56,15 @@ image:AsciidocFX_panes.png[]
 TIP: The default editor theme has a white background. You can change the theme to "Dark" in the `Settings -> Editor Settings` tab.
 
 
-
 == https://code.visualstudio.com/[Visual Studio Code]
 image:VSCodeLogo.jpg[width = 50, height = 50] +
 
-Section on installing and using VS Code
+Visual Studio Code is more versatile that AsciiDocFX in that you can work in a variety of coding languages as well as AsciiDoc and markdown. You do have to install the https://marketplace.visualstudio.com/items?itemName=asciidoctor.asciidoctor-vscode[AsciiDoc extension] for live preview to work. 
 
-=== Pros and Cons
+=== Installing Visual Studio Code
+The easiest way to install Visual Studio Code is to go to https://code.visualstudio.com and click the download button.
 
-.Text Editors/IDEs Test - Windows
-[cols=3, width="100%", options = header]
-|====================
-|      | AsciidocFX | Visual Studio Code
-| *Pros*
-a|
-* Best live preview display
-* Easy link to browser preview
-* Pseudo terminal emulator for Git commands
-* Good integration of hotkeys for standard text formatting
-* Spell checker
+https://code.visualstudio.com/docs/[Getting Started documents] and other helpful links for Visual Studio Code. https://www.youtube.com/watch?v=B-s71n0dHUk&ab_channel=VisualStudioCode[Getting Started Video] - it is only 7 minutes long and is quite informative.
 
-a|
-* VS Code Pro
-* VS Code Pro
-* Spell checker extension
-
-
-| *Cons*
-a|
-* VERY Slow to load
-* Uses a lot of memory
-* Not all the shortcuts work
-
-a|
-* VS code cond
-* Vs cod cons
-
-| *Quirks*
-a|
-* Scrolling in the source pane jumps no matter what scroll rate is set
-* Sometimes you have to restart the program for settings to update
-
-a|
-* Closing the terminal from the Terminal-tab package can crash Atom if you do not exit the terminal first
-
-|====================
+=== Integration with Git and GitHub
+Like AsciiDocFX, there is no Git/GitHub GUI native to Visual Studio Code, but there is a terminal emulator. 
