@@ -1,7 +1,7 @@
 = How to contribute to the AcMeta and SONAR-netCDF4 documents
 Erin LaBrecque
-:revnumber: 0.02
-:revdate: 2020-03-18
+:revnumber: 1.0
+:revdate: 2025-02-10
 :imagesdir: images\
 :toc: preamble
 :toclevels: 4
@@ -16,7 +16,7 @@ endif::[]
 [.text-center]
 *Welcome!*
 
-*Note:* While these help files still provide workflow guidance to contibute to the WGFAST conventions (as of 2023-03-30), there might be some broken links. Please https://github.com/ices-eg/wg_WGFAST/issues[submit an issue] if you fine one. Also, the text editor, https://github.blog/2022-06-08-sunsetting-atom/[Atom], was sunsetted in December 2022. The Atom help files will be deleted and the text editor/IDE list will be updated shortly. 
+*Note:* While these help files still provide workflow guidance to contribute to the WGFAST conventions (as of 2025-02-10), there might be some broken links. Please https://github.com/ices-eg/wg_WGFAST/issues[submit an issue] if you fine one. 
 
 If you have experience with and are comfortable using Git and GitHub, skip this file and read through link:experienced_github_users.adoc[A quick workflow for experienced Git, GitHub, and Asciidoc users] to learn how to contribute to the WGFAST convention documents.
 
@@ -87,7 +87,6 @@ TIP: In lieu of installing browser extensions, the Asciidoctor toolchain, and al
 == AsciidocFX, Atom, Brackets text editors/IDEs
 AsciidocFX, Atom, and Brackets are text editors/IDEs that can read, edit, and live preview AsciiDoc documents. All three editors can interact with GitHub through a terminal or a terminal emulator or a GUI.
 
-NOTE: Previews of citations in AsciiDoc documents do not currently work in Atom or Brackets. Previews of math equation (LaTex math) in AsciiDoc documents does not currently work in Atom, but you can change the settings of the AsciiDoc preview pane in Brackets to preview math equations. +
 
 
 == Links To Help Files
@@ -98,8 +97,6 @@ NOTE: Previews of citations in AsciiDoc documents do not currently work in Atom 
 - link:5_plain_text_editor_help.adoc[Text editors/IDEs help]  +
 - link:6_asciidoc_help.adoc[AsciiDoc markup help]  +
 - link:Git_and_GitHub_terminology.adoc[Git and GitHub terminology]
-- link:Atom_Git_GUI.adoc[How to use Git/GitHub GUI in Atom]
-- link:Brackets_Git_GUI.adoc[How to use Git/GitHub GUI in Brackets]
 - link:experienced_github_users.adoc[A quick workflow for experienced Git, GitHub, and Asciidoc users] +
 {empty} +
 
@@ -116,8 +113,7 @@ NOTE: The help files are written in AsciiDoc (.adoc) markup. If you want to take
 |3_github_help.adoc | GitHub help
 |4_git_help.adoc | Git help
 |5_plain_text_editor_help.adoc |Text editors/IDEs help
-|6_asciidoc_help.adoc |AsciiDoc help
+|6_asciidoc_help.adoc |AsciiDoc help  
 |Git_and_GitHub_terminology.adoc| Git and GitHub terminology
-|Atom_Git_GUI.adoc |How to use Git/GitHub GUI in Atom
-|Brackets_Git_GUI.adoc | How to use Git/GitHub GUI in Brackets |experienced_github_users.adoc | A quick workflow for experienced Git, GitHub, and Asciidoc users
+|experienced_github_users.adoc | A quick workflow for experienced Git, GitHub, and Asciidoc users
 |README.adoc |How to contribute to the AcMeta and SONAR-netCDF4 documents

@@ -1,7 +1,7 @@
 = Text editors/IDEs help
 Erin LaBrecque
-:revnumber: 0.02
-:revdate: 2020-03-16
+:revnumber: 1.0
+:revdate: 2025-02-10
 :imagesdir: images\
 :toc: preamble
 :toclevels: 4
@@ -13,7 +13,7 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
-These instructions are to help contributors install and use either AsciidocFX, Atom, or Brackets to edit the WGFAST convention documents.
+These instructions are to help contributors install and use either AsciidocFX, or Visual Studio Code (VS Code) to edit the WGFAST convention documents. Atom and Brackets are no longer maintained and have been archived.
 
 == Why use a text editor/IDE?
 There are three ways you can view and edit AsciiDoc documents. +
@@ -57,75 +57,17 @@ TIP: The default editor theme has a white background. You can change the theme t
 
 
 
-== http://brackets.io/[Brackets]
-image:Brackets_Icon.svg[width = 50, height = 50] +
-Brackets is supported on macOS, Windows, and Linux
+== https://code.visualstudio.com/[Visual Studio Code]
+image:VSCodeLogo.jpg[width = 50, height = 50] +
 
-=== Install Brackets
-To install Brackets, click the big, blue "Download Brackets 1.14.1" button at http://backets.io/[Brackets.io] and run the installer. If the correct installer for your operating system does come up, you can find other builds and releases at https://github.com/adobe/brackets (scroll down). +
+Section on installing and using VS Code
 
-==== Extensions
-To preview AsciiDoc and Markup documents and to interface with Git/GitHub, you have to install a few extensions using the Extension Manager. +
-Go to `File -> Extension Manager` or click on the Extension Manager button on the right. +
-
-.Extensions to install
-* AsciiDoc Preview +
- Live preview of AsciiDoc documents.
-* Markdown Preview +
- Live preview of Markdown documents.
-* Brackets-Git +
- Integration of Git into Brackets.
-* Alice - Spell Checking +
- Adds offline spell checking capabilities to Brackets.
-* Alice Dictionaries +
- Provides dictionary data for the Alice spell checker. +
-{empty} +
-
-=== Panes
-image:Brackets_panes.png[] +
-
-* To enable the AsciiDoc or Markdown preview and Git extensions you have to select the respective icons on the right. The AsciiDoc and Markdown preview icons will only be available if an `.adoc` or `.md` file is open.
-* The AsciiDoc live preview pane can be float if you do not like its default location on the bottom of the screen.
-* There are four icons in the top-right of the AsciiDoc preview pane:
-** synchronization icon image:Brackets_ADPreview_arrow.png[]
-*** If auto-sync to the editing location is turned off, pressing this button will scroll the preview to the cursor's location in the source pane.
-** export to browser icon image:Brackets_ADPreview_export.png[]
-*** Exports the current preview to your browser. Live update is not available when the preview is in your browser.
-** settings icon image:Brackets_ADPreview_settings.png[]
-*** Auto-sync the preview to the source pane in the `Update` table and turn on math rendering in the `View` tab.
-** dock/undock icon image:Brackets_ADPreview_dock.png[]
-*** Docs the preview pane at the bottom of the screen or undocks it.
-
-_For more on the available features of of each extension, please visit their websites:_ +
-
-* https://github.com/asciidoctor/brackets-asciidoc-preview[AsciiDoc Preview]
-* https://github.com/brackets-userland/brackets-git[Brackets-Git]
-* https://github.com/JohnathonKoster/brackets-spellcheck[Alice - Spell Checking]
-
-
-=== Integration with Git and GitHub
-After installing the Brackets-Git extension, you can clone, branch, stage, commit, and push to your remote repository by using Git commands in a terminal or you can use the GUI.
-
-==== Git terminal from Brackets
-1. First make sure the path your terminal is correct. Go to `File -> Git Settings... -> Git Configuration`.
-2. Click on the Git icon on the right side, then click on the terminal icon in the Git pane to open your terminal.
-
-Instructions for working with Git in a terminal are in the link:2_suggested_workflow.adoc[Suggested workflow to contribute to the ICES WGFAST convention documents] file.
-
-==== Git/GitHub GUI in Brackets
-Please see link:Brackets_Git_GUI.adoc[How to use Git/GitHub GUI in Brackets]
-
-== Pro, Cons, Quirks
-.Windows only
-Various parts of the "How-to" documents were written using the three text editors/IDEs on a Dell XPS 15 (9560) with Microsoft Windows 10 Pro Build 18363, 32 GB RAM. +
-
-If anyone wants to update this section for macOS and Linux, please do!
-
+=== Pros and Cons
 
 .Text Editors/IDEs Test - Windows
-[cols=4, width="100%", options = header]
+[cols=3, width="100%", options = header]
 |====================
-|      | AsciidocFX | Atom | Brackets
+|      | AsciidocFX | Visual Studio Code
 | *Pros*
 a|
 * Best live preview display
@@ -135,17 +77,10 @@ a|
 * Spell checker
 
 a|
-* Loads quickly
-* GitHub/Git integration and GUI without external packages
-* Git terminal (external package)
-* Easy to see staged changes in Git pane
-* Spell checker
+* VS Code Pro
+* VS Code Pro
+* Spell checker extension
 
-a|
-* Loads quickly
-* Live preview of math equations
-* GUI and terminal for Git (from Brackets-Git extension)
-* Synchronization of source pane and live preview pane is the best of the three editors/IDEs
 
 | *Cons*
 a|
@@ -154,15 +89,8 @@ a|
 * Not all the shortcuts work
 
 a|
-* No live preview for citations and math equations
-* Synchronizing the live preview pane to the source pane does not work well
-
-
-a|
-* No live preview for citations
-* AsciiDoc live preview pane only docks at the bottom of the screen (but it can float)
-* Markdown live preview pane cannot move
-
+* VS code cond
+* Vs cod cons
 
 | *Quirks*
 a|
@@ -172,9 +100,4 @@ a|
 a|
 * Closing the terminal from the Terminal-tab package can crash Atom if you do not exit the terminal first
 
-
-a|
-* Lots of pop-up boxes when using the GUI to push to a remote repository. It is somewhat annoying to keep clicking `OK`
-* Potential issues with initially finding GitHub credentials (might be a Window problem)
-* No internal spell checker - you have to install an extension with limited configurations
 |====================
