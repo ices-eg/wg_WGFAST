@@ -25,7 +25,7 @@ The rest of you, do not panic! +
 
 Please keep reading. :smile:
 
-
+v
 == Where do I start?
 === Here
 We realize that learning Git workflows and commands is probably not what you thought of when you thought of contributing to the WGFAST conventions. Don't worry. We have created several help files to get you up and running with the least amount of friction. You concentrate on contributing to the WGFAST conventions and we will take care of the "Git-stuff".
@@ -84,8 +84,8 @@ CAUTION: Setting up live preview of AsciiDoc markup documents with a browser ext
 TIP: In lieu of installing browser extensions, the Asciidoctor toolchain, and all the dependencies, we recommend using a text editor/IDE that can edit and provide live previews of AsciiDoc documents. *AsciidocFX*, *Atom*, or *Brackets* are three suggested text editors/IDEs.
 
 
-== AsciidocFX, Atom, Brackets text editors/IDEs
-AsciidocFX, Atom, and Brackets are text editors/IDEs that can read, edit, and live preview AsciiDoc documents. All three editors can interact with GitHub through a terminal or a terminal emulator or a GUI.
+== Text editors/IDEs
+AsciidocFX and Visual Studio Code are two text editors/IDEs that can read, edit, and live preview AsciiDoc documents. Both editors can interact with Git and GitHub through a terminal or a terminal emulator.
 
 
 
