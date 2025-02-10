@@ -1,7 +1,7 @@
 = Suggested workflow to contribute to the ICES WGFAST conventions
 Erin LaBrecque
-:revnumber: 0.02
-:revdate: 2020-03-18
+:revnumber: 1.0
+:revdate: 2025-02-10
 :imagesdir: images\
 :toc: preamble
 :toclevels: 4
@@ -27,7 +27,7 @@ We are going to use a workflow called *_Fork-Branch-Pull Request_*. A list and g
 .A few things to remember
 . This document might seem overwhelming at first. Do not worry. You can get through it. Take it one step at a time. You do not have to go through all the help files at once.
 . If you have questions or if anything is unclear, open an https://github.com/ices-eg/wg_WGFAST/issues[issue] and submit your question(s). Add `@erinann` to the issue and I will be notified.
-. You cannot break anything in the `ices-eg/wg_WGFAST` repository. Permissions are set so only the convention coordinators can wreak any havoc.
+. You cannot break anything in the `ices-eg/wg_WGFAST` repository. Permissions are set so only the convention coordinators can wreak havoc.
 . If you crash your remote repository beyond repair, do not worry. Delete it and fork another one.
 . If you would like to practice your Git skills before working on the `wg_WGFAST` repository, fork https://github.com/erinann/FAST_doc_tests and have a go!
 . All Git commands start with `git`.
@@ -37,8 +37,6 @@ We are going to use a workflow called *_Fork-Branch-Pull Request_*. A list and g
 [NOTE]
 ====
 *We recommend that you learn Git from the command line first because it will give you a better understanding of Git's functionality.* This workflow is written to use Git commands in a terminal.
-
-If you cannot get comfortable working at a command line, link:Atom_Git_GUI.adoc[How to use Git/GitHub GUI in Atom] and link:Brackets_Git_GUI.adoc[How to use Git/GitHub GUI in Brackets] will show you how to use the Atom and Brackets Git/GitHub GUIs. If you decide to use the GUIs, *please still read through this file as it provides an overview of the entire workflow*.
 ====
 {empty} +
 
@@ -46,9 +44,8 @@ If you cannot get comfortable working at a command line, link:Atom_Git_GUI.adoc[
 === Fork the ices-eg/wg_WGFAST repository
 * You only have to do this step once.
 - Sign into https://github.com[GitHub] and navigate to the ICES Expert Groups - wg_WGFAST repository at https://github.com/ices-eg/wg_WGFAST.
-- Fork the repository to your account by clicking on the image:fork_button.png[] button.
+- Fork the repository to your account by clicking on the fork button. image:fork_button.png[]
 
-image:fork_page.png[]
 {empty} +
 {empty} +
 
@@ -60,12 +57,12 @@ Once the repository is forked to your GitHub account you can either <<Editing do
 === Clone the forked repository to your computer
 * You only have to do this step once.
 ** Click on the repository to open it.
-** Click on the clone button. Use `Clone with HTTPS`.
+** Click on the Code button. Use `HTTPS`.
 ** Click on the clipboard button to save the URL to the clipboard.
 
 //
 
-1. Clone button.
+1. Code button.
 2. Clipboard button. This places a copy of the repository's URL on your clipboard. +
 
 image:clone_button.png[] +
@@ -111,12 +108,12 @@ The output means that a directory called `wg_WGFAST` was created on the computer
 [start=3]
 3. After the local repository is on your computer, change directories again to enter it by typing `cd wg_WGFAST`. You have to be in the local repository to work on it. When you are in the repository, the branch name will be in parentheses at the end of the pathname.
 
-.Example in Git Bash terminal, Windows 10
+.Example in Git Bash terminal, Windows 10 or 11
 image:BASH_terminal_git_clone.png[] +
 {empty} +
 
 
-=== Add the upstream repository
+=== Add changes from the upstream repository 
 You now have a copy of the forked repository on your computer, but what happens if there are changes in the upstream repository? How do you get those changes to your local repository? Remember, the upstream repository is the repository you forked from. The remote repository is in your GitHub account. The local repository is the repository on your computer. You need to tell Git what the upstream repository is in order to pull changes from it. This is called "adding the upstream repository" or "adding a remote".
 
 .List the current configured remote repository +
@@ -188,29 +185,7 @@ Time to step away from the terminal and open your text editor/IDE.
 
 Now that the repository is on your computer, add it to a workspace in text editor/IDE you chose, and check that you are on the correct branch.
 
-.*AsciidocFX*: +
-. Click on the image:ADFX_folder_icon.png[] and navigate to the folder.
-. Open the terminal. The active branch will be in parentheses at the end of the pathname.
-{empty} +
 
-.*Atom*: +
-. `File > Add Project Folder...` and navigate to the folder.
-. Look in the lower-right corner. There should be four icons: Branch, Publish (or Push), GitHub, and Git. Your branch name should be listed next to the branch icon. If it is not, click on the icon to open and drop down menu and select your working branch. +
-image:Atom_branch_check.png[] +
-{empty} +
-
-.*Brackets*: The _Brackets-Git_ extension has to be installed
-. `File > Open Folder...` and navigate to the folder.
-. Look in the upper-left corner below the File Menu bar. You  should see the branch icon and your branch name. If your working branch is not listed, click on the down arrow and select your working branch. +
-image:Brackets_branch_check.png[] +
-{empty} +
-
-You will have to add packages in Atom and extensions in Brackets to preview AsciiDoc files. Please see link:5_plain_text_editor_help.adoc[Text editors/IDEs help]. +
-{empty} +
-
-
-NOTE: Citation preview does not currently work in Atom or Brackets. Math equation (LaTex math) preview does not currently work in Atom, but you can change the settings of the AsciiDoc Preview extension in Brackets to preview math equations. +
-{empty} +
 
 === Edit
 Open an AsciiDoc document in AsciidocFX, Atom, or Brackets and start editing. +

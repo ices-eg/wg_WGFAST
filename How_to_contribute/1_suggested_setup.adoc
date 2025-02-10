@@ -1,7 +1,7 @@
 = Suggested setup to contribute to the ICES WGFAST conventions
 Erin LaBrecque
-:revnumber: 0.02
-:revdate: 2020-03-18
+:revnumber: 1.0
+:revdate: 2025-02-10
 :imagesdir: images\
 :toc: preamble
 :toclevels: 4
@@ -26,7 +26,7 @@ There is a lot of jargon surrounding Git and GitHub, but that is normal in any s
 == Software, accounts, and languages
 === Software to install
 *Git* - A distributed version control system. +
-*AsciidocFX* or *Atom* or *Brackets* - Modern text editors/Integrated Development Environments (IDEs). AsciidocFX, Atom, and Brackets can open, edit, and live preview AsciiDoc files. +
+*AsciidocFX* or *Visual Studio (VS) Code* - Modern text editors/Integrated Development Environments (IDEs). AsciidocFX and VS Code can open, edit, and live preview AsciiDoc files. +
 
 If you prefer to work online (in GitHub), you will not need a text editor. However, we suggest using a text editor if you are going to do more than fix a few spelling errors. +
 
@@ -40,15 +40,15 @@ AsciiDoc is a popular and flexible plain text markup language. Both convention d
 *Markdown* - extension `.md` +
 Markdown is the most popular plain text markup language but it is not as flexible as AsciiDoc. You will see a couple documents in the `wg_WGFAST` repository with `.md` extensions (eg - `README.md`). These are written in Markdown. GitHub automatically renders Markdown files into HTML.
 
-AsciidocFX, Atom, and Brackets can open, edit, and live preview AsciiDoc and Markdown files. +
+AsciidocFX and VS Code can open, edit, and live preview AsciiDoc and Markdown files. +
 
 == Suggested order of setup
 If you do not have any of the software or accounts listed in the section above, this is the most painless way to get started.
 
 1. Create a GitHub account. See the link:3_github_help.adoc[GitHub Help] file.
 2. Install Git. See the link:4_git_help.adoc[Git Help] file.
-3. Install AsciidocFX or Atom or Brackets and the necessary packages or extensions to read `.adoc` and `.md` files. See link:5_plain_text_editor_help.adoc[Text editors/IDEs help] file.
-4. Learn a little about AsciiDoc markup. See the link:asciidoc_help.adoc[AsciiDoc Help] file. +
+3. Install AsciidocFX or VS Code and the necessary packages or extensions to read `.adoc` and `.md` files. See link:5_plain_text_editor_help.adoc[Text editors/IDEs help] file.
+4. Learn a little about AsciiDoc markup. See the link:6_asciidoc_help.adoc[AsciiDoc Help] file. +
 {empty} +
 
 
