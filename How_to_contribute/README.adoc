@@ -25,7 +25,7 @@ The rest of you, do not panic! +
 
 Please keep reading. :smile:
 
-v
+
 == Where do I start?
 === Here
 We realize that learning Git workflows and commands is probably not what you thought of when you thought of contributing to the WGFAST conventions. Don't worry. We have created several help files to get you up and running with the least amount of friction. You concentrate on contributing to the WGFAST conventions and we will take care of the "Git-stuff".
