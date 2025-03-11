@@ -71,7 +71,7 @@ Some of the formatting used in the WGFAST conventions:
 * Included files
 
 
-TIP: You can find a list of AsciiDoc Attributes and their descriptsions in https://asciidoctor.org/docs/user-manual/#attribute-catalog[_Appendix A: Catalog of Documents Attributes_] of the Asciidoctor User Manual.
+TIP: You can find a list of AsciiDoc Attributes and their descriptions in https://asciidoctor.org/docs/user-manual/#attribute-catalog[_Appendix A: Catalog of Documents Attributes_] of the Asciidoctor User Manual.
 
 
 Below we will show some of the basics of the *document header* with its attributes, *section titles*, *formatted text*, *breaks*, and *lists*. Please refer to the online documentation for detailed explanations of other AsciiDoc markup.

@@ -50,11 +50,11 @@ AsciidocFX and Visual Studio Code can open, edit, and live preview AsciiDoc and 
 == Suggested order of setup
 If you do not have any of the software or accounts listed in the section above, this is the most painless way to get started.
 
-1. Create a GitHub account. See the link:3_github_help.adoc[GitHub Help] file.
-2. Install Git. See the link:4_git_help.adoc[Git Help] file.
-3. Install AsciidocFX or VS Code and the necessary packages or extensions to read `.adoc` and `.md` files. See link:5_plain_text_editor_help.adoc[Text editors/IDEs help] file.
-4. Learn a little about AsciiDoc markup. See the link:6_asciidoc_help.adoc[AsciiDoc Help] file. +
+1. Create a GitHub account. See the link:3%20Github%20Help.adoc[GitHub Help] file.
+2. Install Git. See the link:4%20Git%20Help.adoc[Git Help] file.
+3. Install AsciidocFX or VS Code and the necessary packages or extensions to read `.adoc` and `.md` files. See link:5%Text%Editor%Help.adoc[Text editors/IDEs help] file.
+4. Learn a little about AsciiDoc markup. See the link:6%20AsciiDoc%20Help.adoc[AsciiDoc Help] file. +
 {empty} +
 
 
-Next: link:2_suggested_workflow.adoc[Suggested workflow to contribute to the ICES WGFAST convention documents]
+Next: link:2%Suggested%20Workflow.adoc[Suggested workflow to contribute to the ICES WGFAST convention documents]

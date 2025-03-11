@@ -43,6 +43,7 @@ To contribute to the WGFAST convention documents, you will have to create a free
  - Add a .gitignore file if there are files in your repository you want Git to ignore (do not want in the repository).
 6. Read through https://guides.github.com/activities/hello-world/[Hello World guide]. It is a good tutorial to get you started. +
 
+The https://docs.github.com/en/get-started[Getting Started] section of GitHub Docs has a lot more information on how to use GitHub if you would like more details. 
 
 == Terminology
 These are a few Git and GitHub terms you should be familiar with before starting.

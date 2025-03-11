@@ -90,14 +90,14 @@ AsciidocFX and Visual Studio Code are two text editors/IDEs that can read, edit,
 
 
 == Links To Help Files
-- link:1 Suggested Setup.adoc[Suggested setup to contribute to the ICES WGFAST convention documents] +
-- link:2 Suggested Workflow.adoc[Suggested workflow to contribute to the ICES WGFAST convention documents] +
-- link:3 GitHub Help.adoc[GitHub help] +
-- link:4 Git Help.adoc[Git help]  +
-- link:5_plain_text_editor_help.adoc[Text editors/IDEs help]  +
-- link:6_asciidoc_help.adoc[AsciiDoc markup help]  +
-- link:Git_and_GitHub_terminology.adoc[Git and GitHub terminology]
-- link:experienced_github_users.adoc[A quick workflow for experienced Git, GitHub, and Asciidoc users] +
+- link:1%20Suggested%20Setup.adoc[Suggested setup to contribute to the ICES WGFAST convention documents] +
+- link:2%20Suggested%20Workflow.adoc[Suggested workflow to contribute to the ICES WGFAST convention documents] +
+- link:3%20GitHub%20Help.adoc[GitHub help] +
+- link:4%20Git%20Help.adoc[Git help]  +
+- link:5%20Text%20Editor%20Help.adoc[Text editors/IDEs help]  +
+- link:6%AsciiDoc%20Help.adoc[AsciiDoc markup help]  +
+- link:Git%20and%20GitHub%20Yerminology.adoc[Git and GitHub terminology]
+- link:Experienced%20GitHub%20Users.adoc[A quick workflow for experienced Git, GitHub, and Asciidoc users] +
 {empty} +
 
 NOTE: The help files are written in AsciiDoc (.adoc) markup. If you want to take a quick peek, click on the `Raw` button above. If you installed an AsciiDoc browser extension, make sure you turn it off to view the markup.
