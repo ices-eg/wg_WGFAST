@@ -1,7 +1,7 @@
 = A quick workflow for experienced Git, GitHub, and Asciidoc users
 Erin LaBrecque
-:revnumber: 0.02
-:revdate: 2020-03-14
+:revnumber: 1.0
+:revdate: 2025-02-10
 :imagesdir: images\
 :toc: preamble
 :toclevels: 4

@@ -1,7 +1,7 @@
-= Git and GitHub terminology
+= GitHub help
 Erin LaBrecque
-:revnumber: 0.02
-:revdate: 2020-03-14
+:revnumber: 1.0
+:revdate: 2025-02-10
 :imagesdir: images\
 :toc: preamble
 :toclevels: 4
@@ -13,7 +13,39 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
+Setup a GitHub account and create your first repository!
 
+== https://github.com/[GitHub]
+image:Octocat.png[width = 50, height = 50]
+GitHub's mascot, Octocat. +
+https://octodex.github.com/[Different versions of Octocat] +
+{empty} +
+
+=== What is GitHub?
+https://github.com/[GitHub] is a web-based hosting service that manages Git repositories. GitHub is not Git, although it is build on top of Git. GitHub is the service that allows multiple contributors and collaborators access to project repositories. +
+
+GitHub is one of the most popular hosting platforms for version control systems, but there are others including https://gitlab.com/[GitLab] and https://bitbucket.org/[Bitbucket]. +
+
+`wg_WGFAST` is a Git repository within the https://github.com/ices-eg[ICES Expert Groups] GitHub workspace. +
+
+To contribute to the WGFAST convention documents, you will have to create a free GitHub account. +
+{empty} +
+
+=== Create a GitHub account
+1. Go to https://github.com and create an account.
+2. Select the Free plan.
+3. Answer the questions GitHub askes about what you do. Or, skip this step.
+4. Verify your email address.
+5. Create your first repository!
+ - Add a repository name and short description.
+ - Keep the repository public.
+ - Initialize the repository with a README. These are initially written in Markdown and are a great way to tell people what your repository (project) is about.
+ - Add a .gitignore file if there are files in your repository you want Git to ignore (do not want in the repository).
+6. Read through https://guides.github.com/activities/hello-world/[Hello World guide]. It is a good tutorial to get you started. +
+
+The https://docs.github.com/en/get-started[Getting Started] section of GitHub Docs has a lot more information on how to use GitHub if you would like more details. 
+
+== Terminology
 These are a few Git and GitHub terms you should be familiar with before starting.
 
 * *_Git_* - A type of version control system (software).

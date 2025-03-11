@@ -1,6 +1,6 @@
 = AsciiDoc markup help
-:revnumber: 0.01
-:revdate: 2020-02-25
+:revnumber: 1.0
+:revdate: 2025-02-10
 :imagesdir: images\
 :toc: preamble
 :toclevels: 4
@@ -45,7 +45,7 @@ ____
 === Installing Asciidoctor
 Do not! +
 
-Unless you work in Ruby, like diving into the guts of your operating system, and want to compile a backend on your computer, there is no need for you to install the Asciidoctor toolchain. The AsciidocFX, Atom, and Brackets text editors/IDEs work well for editing and previewing the convention documents.
+Unless you work in Ruby, like diving into the guts of your operating system, and want to compile a backend on your computer, there is no need for you to install the Asciidoctor toolchain. The AsciidocFX and Visual Source Code text editors/IDEs work well for editing and previewing the convention documents.
 
 
 [TIP]
@@ -57,7 +57,7 @@ The link:experienced_github_users.adoc[A quick workflow for experienced Git and 
 
 
 == AsciiDoc basics
-If you have not used AsciiDoc markup before, it's a good idea to open thep https://asciidoctor.org/docs/asciidoc-writers-guide/[AsciiDoc Writer's Guide'] and read through it with one of the  `.adoc` files open in your text editor/IDE. Honestly, the AsciiDoc Writer's guide is well done.
+If you have not used AsciiDoc markup before, it's a good idea to open the https://asciidoctor.org/docs/asciidoc-writers-guide/[AsciiDoc Writer's Guide'] and read through it with one of the  `.adoc` files open in your text editor/IDE. Honestly, the AsciiDoc Writer's guide is well done.
 {empty} +
 
 Some of the formatting used in the WGFAST conventions:
@@ -71,7 +71,7 @@ Some of the formatting used in the WGFAST conventions:
 * Included files
 
 
-TIP: You can find a list of AsciiDoc Attributes and their descriptsions in https://asciidoctor.org/docs/user-manual/#attribute-catalog[_Appendix A: Catalog of Documents Attributes_] of the Asciidoctor User Manual.
+TIP: You can find a list of AsciiDoc Attributes and their descriptions in https://asciidoctor.org/docs/user-manual/#attribute-catalog[_Appendix A: Catalog of Documents Attributes_] of the Asciidoctor User Manual.
 
 
 Below we will show some of the basics of the *document header* with its attributes, *section titles*, *formatted text*, *breaks*, and *lists*. Please refer to the online documentation for detailed explanations of other AsciiDoc markup.
@@ -79,12 +79,12 @@ Below we will show some of the basics of the *document header* with its attribut
 === Document header
 The document's title, authors, and attributes are set in the header.
 
-.This is the beginning of metadata convention document (acmeta.adoc) as of 2020-03-06.
+.This is the beginning of metadata convention document (acmeta.adoc) as of 2020-03-15.
 ----
 = A metadata convention for processed acoustic data from active acoustic systems    # <1>
 ICES WGFAST Topic Group, TG-AcMeta    # <2>
-:revnumber: 1.10                               ---------
-:revdate: 1 November 2016                               |
+:revnumber: 2.0                               ---------
+:revdate: 15 March 2020                               |
 :toc: left                                              |
 :toclevels: 3                                           |
 :doctype: book                                          |

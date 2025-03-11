@@ -1,0 +1,91 @@
+= Text editors/IDEs help
+Erin LaBrecque
+:revnumber: 1.0
+:revdate: 2025-02-10
+:imagesdir: images\
+:toc: preamble
+:toclevels: 4
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+
+These instructions are to help contributors install and use either AsciidocFX, or Visual Studio Code (VS Code) to edit the WGFAST convention documents. Atom and Brackets editors are no longer maintained and have been removed from these help documents.
+
+== Why use a text editor/IDE?
+There are three ways you can view and edit AsciiDoc documents. +
+
+. Install the Asciidoctor toolchain and all its dependencies to create backends (PDF, HTML, ePubs, Word docs, etc.). Requires https://www.ruby-lang.org/en/[Ruby]. You cannot see updates as you edit.
+. Install AsciiDoc browser extensions in Chrome, Firefox, or Opera and open files in your browser. Preview only. To see live updates you will have to install and set up a system monitor to watch for file changes.
+. Use a modern text editor/IDE that supports live preview and syntax highlighting of AsciiDoc documents. Syntax highlighting helps differentiate between markup commands and text.
+
+*Answer*: Installing and using a modern text editor/IDE is the easiest option to edit and preview AsciiDoc documents across multiple platforms! +
+{empty} +
+
+[TIP]
+====
+IDE = Integrated Development Environment +
+GUI = Graphical User Interface
+====
+{empty} +
+
+CAUTION: This document is not going to give you all the tips and tricks for each editor/IDE. It is only meant to help you choose an editor/IDE and to get started. Please refer to the manuals and online community help sections for in depth information on each program.
+
+== https://asciidocfx.com/[AsciidocFX]
+image:AsciidocFX_logo.png[width = 45, height = 45] +
+AsciidocFX is supported on macOS, Windows, and Linux.
+
+=== Installing AsciidocFX
+The easiest way to install AsciidocFX is to go to the installation section of the AsciidocFX website, download the installer for your system, and run it.
+
+https://www.asciidocfx.com/#truehow-to-install-asciidocfx[How to Install AsciidocFX]
+
+=== Integration with Git and GitHub
+There is no Git/GitHub GUI native to AsciidocFX, but there is a terminal emulator. This means that while working in AsciidocFX, you can open the terminal emulator and run Git commands. The terminal emulator will open in your current working directory.
+
+To change what terminal is used, update the settings in the `Settings -> Terminal Settings` tab (left side of the screen).
+
+TIP: Windows users, you might want to change the path from the Window's command prompt to the path for Git Bash. The path to Git Bash will depend on where you installed Git. The path to Git Bash under a default installation would be: `C:\Program Files\Git\bin\bash.exe`
+
+=== Panes
+image:AsciidocFX_panes.png[]
+
+TIP: The default editor theme has a white background. You can change the theme to "Dark" in the `Settings -> Editor Settings` tab.
+
+
+== https://code.visualstudio.com/[Visual Studio Code]
+image:VSCodeLogo.jpg[width = 50, height = 50] +
+
+Visual Studio Code is more versatile that AsciiDocFX in that you can work in a variety of coding languages as well as AsciiDoc and markdown. 
+
+CAUTION: You will have to install the https://marketplace.visualstudio.com/items?itemName=asciidoctor.asciidoctor-vscode[AsciiDoc extension] if you want to sue live preview (suggested). 
+
+=== Installing Visual Studio Code
+The easiest way to install Visual Studio Code is to go to https://code.visualstudio.com and click the download button.
+
+https://code.visualstudio.com/docs/[Getting Started documents] and other helpful links for Visual Studio Code. https://www.youtube.com/watch?v=B-s71n0dHUk&ab_channel=VisualStudioCode[Getting Started Video] - it is only 7 minutes long and is quite informative. 
+
+=== Integration with Git and GitHub
+Like AsciiDocFX, there is no Git/GitHub GUI native to Visual Studio Code, but there is a terminal emulator. 
+
+- To open any file, click on it in the Tree directory.
+- To open a terminal, click on `Terminal` in the Menu Bar and choose `New Terminal` in the dropdown menu.
+- To open the Live Preview Pane, click on the Live Preview Pane in the upper right corner.
+
+image:VSCode_toclick.png[]
+
+{empty} +
+
+### All Panes Open  
+
+image:VSCode_panes.png[]
+
+{empty} +  
+
+TIP: If you are on a Windows machine, the terminal will probably start in PowerShell. You can change your terminal by clicking on the dropdown arrow (see red arrow in the image above) and choose `Git Bash`.
+
+
+image:VSCode_change_terminal.png[] 

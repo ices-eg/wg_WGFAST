@@ -8,7 +8,7 @@ Erin LaBrecque
 ifdef::env-github[]
 :tip-caption: :bulb:
 :note-caption: :information_source:
-:important-caption: :heavy_exclamation_mark:
+:important-caption: :heavy_exclamation_mark: 
 :caution-caption: :fire:
 :warning-caption: :warning:
 endif::[]
@@ -25,13 +25,13 @@ Once you have installed Git and a text editor/IDE, set up your GitHub account, y
 We are going to use a workflow called *_Fork-Branch-Pull Request_*. A list and graphical explanation of Git and GitHub terminology used in this workflow is in the link:Git_and_GitHub_terminology.adoc[Git and GitHub terminology] file.
 
 .A few things to remember
-. This document might seem overwhelming at first. Do not worry. You can get through it. Take it one step at a time. You do not have to go through all the help files at once.
-. If you have questions or if anything is unclear, open an https://github.com/ices-eg/wg_WGFAST/issues[issue] and submit your question(s). Add `@erinann` to the issue and I will be notified.
-. You cannot break anything in the `ices-eg/wg_WGFAST` repository. Permissions are set so only the convention coordinators can wreak havoc.
-. If you crash your remote repository beyond repair, do not worry. Delete it and fork another one.
-. If you would like to practice your Git skills before working on the `wg_WGFAST` repository, fork https://github.com/erinann/FAST_doc_tests and have a go!
-. All Git commands start with `git`.
-. You will notice that some Git commands have `-<letter>` after them. Example, `git remote -v`. The `-v` is a flag. If you work in MATLAB, R, or Python, think of flags as arguments for functions.
+* This document might seem overwhelming at first. Do not worry. You can get through it. Take it one step at a time. You do not have to go through all the help files at once.
+* If you have questions or if anything is unclear, open an https://github.com/ices-eg/wg_WGFAST/issues[issue] and submit your question(s). Add `@erinann` to the issue and I will be notified.
+* You cannot break anything in the `ices-eg/wg_WGFAST` repository. Permissions are set so only the convention coordinators can wreak havoc.
+* If you crash your remote repository beyond repair, do not worry. Delete it and fork another one.
+* If you would like to practice your Git skills before working on the `wg_WGFAST` repository, fork https://github.com/erinann/FAST_doc_tests and have a go!
+* All Git commands start with `git`.
+* You will notice that some Git commands have `-<letter>` after them. Example, `git remote -v`. The `-v` is a flag. If you work in MATLAB, R, or Python, think of flags as arguments for functions.
 
 
 [NOTE]
@@ -55,22 +55,21 @@ Once the repository is forked to your GitHub account you can either <<Editing do
 {empty} +
 
 === Clone the forked repository to your computer
-* You only have to do this step once.
-** Click on the repository to open it.
-** Click on the Code button. Use `HTTPS`.
-** Click on the clipboard button to save the URL to the clipboard.
+You only have to do this step once.  
+
+1. Click on the repository to open it.
+2. Click on the Code button. Use `HTTPS`.
+3. Click on the clipboard button to save the URL to the clipboard.
 
 //
-
-1. Code button.
-2. Clipboard button. This places a copy of the repository's URL on your clipboard. +
-
 image:clone_button.png[] +
+A. Code button.
+B. Clipboard button. This places a copy of the repository's URL on your clipboard. +
 {empty} +
 
 //
-
-1. Open the Git terminal and use the navigate to the directory (folder) you want to copy the repository to.  +
+[start=1]
+1. Open the Git terminal and navigate to the directory (folder) you want to copy the repository to.  +
 
 `cd` is the command for "change directory". +
 
@@ -113,7 +112,7 @@ image:BASH_terminal_git_clone.png[] +
 {empty} +
 
 
-=== Add changes from the upstream repository 
+=== Add the upstream repository
 You now have a copy of the forked repository on your computer, but what happens if there are changes in the upstream repository? How do you get those changes to your local repository? Remember, the upstream repository is the repository you forked from. The remote repository is in your GitHub account. The local repository is the repository on your computer. You need to tell Git what the upstream repository is in order to pull changes from it. This is called "adding the upstream repository" or "adding a remote".
 
 .List the current configured remote repository +
@@ -188,7 +187,7 @@ Now that the repository is on your computer, add it to a workspace in text edito
 
 
 === Edit
-Open an AsciiDoc document in AsciidocFX, Atom, or Brackets and start editing. +
+Open an AsciiDoc document in AsciidocFX or VS Code and start editing. +
 image:editing_2.jpg[height=150, width=150] +
 {empty} +
 
@@ -324,7 +323,9 @@ NOTE: A GitHub Action is set to automatically build a new HTML version of `acmet
 === Submit a Pull Request
 After all your edits have been pushed to the remote repository (GitHub), submit a pull request to `ices-eg/wg_WGFAST`. A pull request tells others about the changes you made (all the commits), allows the convention coordinators to approve or deny your changes, and provides an area to discuss the changes if needed. It is called a pull request because you are asking the upstream repository to pull the changes from the branch of your fork. +
 
+[start=1]
 1. In GitHub, open your `wg_WGFAST` repository, and switch to your branch by clicking on the down arrow and choosing your branch.
+[start=2]
 2. Click on `Pull request`.
 ** If you want to see the differences between the documents the branch of your forked repository and the upstream repository, click on `Compare`. Your additions will be highlighted in green and subtractions will be highlighted in red.
 
