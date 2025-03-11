@@ -59,12 +59,33 @@ TIP: The default editor theme has a white background. You can change the theme t
 == https://code.visualstudio.com/[Visual Studio Code]
 image:VSCodeLogo.jpg[width = 50, height = 50] +
 
-Visual Studio Code is more versatile that AsciiDocFX in that you can work in a variety of coding languages as well as AsciiDoc and markdown. You do have to install the https://marketplace.visualstudio.com/items?itemName=asciidoctor.asciidoctor-vscode[AsciiDoc extension] for live preview to work. 
+Visual Studio Code is more versatile that AsciiDocFX in that you can work in a variety of coding languages as well as AsciiDoc and markdown. 
+
+CAUTION: You will have to install the https://marketplace.visualstudio.com/items?itemName=asciidoctor.asciidoctor-vscode[AsciiDoc extension] if you want to sue live preview (suggested). 
 
 === Installing Visual Studio Code
 The easiest way to install Visual Studio Code is to go to https://code.visualstudio.com and click the download button.
 
-https://code.visualstudio.com/docs/[Getting Started documents] and other helpful links for Visual Studio Code. https://www.youtube.com/watch?v=B-s71n0dHUk&ab_channel=VisualStudioCode[Getting Started Video] - it is only 7 minutes long and is quite informative. :nerd:
+https://code.visualstudio.com/docs/[Getting Started documents] and other helpful links for Visual Studio Code. https://www.youtube.com/watch?v=B-s71n0dHUk&ab_channel=VisualStudioCode[Getting Started Video] - it is only 7 minutes long and is quite informative. 
 
 === Integration with Git and GitHub
 Like AsciiDocFX, there is no Git/GitHub GUI native to Visual Studio Code, but there is a terminal emulator. 
+
+- To open any file, click on it in the Tree directory.
+- To open a terminal, click on `Terminal` in the Menu Bar and choose `New Terminal` in the dropdown menu.
+- To open the Live Preview Pane, click on the Live Preview Pane in the upper right corner.
+
+image:VSCode_toclick.png[]
+
+{empty} +
+
+### All Panes Open  
+
+image:VSCode_panes.png[]
+
+{empty} +  
+
+TIP: If you are on a Windows machine, the terminal will probably start in PowerShell. You can change your terminal by clicking on the dropdown arrow (see red arrow in the image above) and choose `Git Bash`.
+
+
+image:VSCode_change_terminal.png[] 
