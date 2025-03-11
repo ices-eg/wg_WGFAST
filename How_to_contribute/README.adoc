@@ -90,10 +90,10 @@ AsciidocFX and Visual Studio Code are two text editors/IDEs that can read, edit,
 
 
 == Links To Help Files
-- link:1_suggested_setup.adoc[Suggested setup to contribute to the ICES WGFAST convention documents] +
-- link:2_suggested_workflow.adoc[Suggested workflow to contribute to the ICES WGFAST convention documents] +
-- link:3_github_help.adoc[GitHub help] +
-- link:4_git_help.adoc[Git help]  +
+- link:1 Suggested Setup.adoc[Suggested setup to contribute to the ICES WGFAST convention documents] +
+- link:2 Suggested Workflow.adoc[Suggested workflow to contribute to the ICES WGFAST convention documents] +
+- link:3 GitHub Help.adoc[GitHub help] +
+- link:4 Git Help.adoc[Git help]  +
 - link:5_plain_text_editor_help.adoc[Text editors/IDEs help]  +
 - link:6_asciidoc_help.adoc[AsciiDoc markup help]  +
 - link:Git_and_GitHub_terminology.adoc[Git and GitHub terminology]
@@ -108,12 +108,12 @@ NOTE: The help files are written in AsciiDoc (.adoc) markup. If you want to take
 [cols=2, width="90%", options = header]
 |=========
 |Filename |Document name
-|1_suggested_setup.adoc | Suggested setup to contribute to the ICES WGFAST conventions
-|2_suggested_workflow.adoc |Suggested workflow to contribute to the ICES WGFAST conventions
-|3_github_help.adoc | GitHub help
-|4_git_help.adoc | Git help
-|5_plain_text_editor_help.adoc |Text editors/IDEs help
-|6_asciidoc_help.adoc |AsciiDoc help  
-|Git_and_GitHub_terminology.adoc| Git and GitHub terminology
-|experienced_github_users.adoc | A quick workflow for experienced Git, GitHub, and Asciidoc users
+|1 Suggested Setup.adoc | Suggested setup to contribute to the ICES WGFAST conventions
+|2 Suggested Workflow.adoc |Suggested workflow to contribute to the ICES WGFAST conventions
+|3 GitHub Help.adoc | GitHub help
+|4 Git Help.adoc | Git help
+|5 Text Editor Help.adoc |Text editors/IDEs help
+|6 AsciiDoc Help.adoc |AsciiDoc help  
+|Git and GitHub Terminology.adoc| Git and GitHub terminology
+|Experienced GitHub Users.adoc | A quick workflow for experienced Git, GitHub, and Asciidoc users
 |README.adoc |How to contribute to the AcMeta and SONAR-netCDF4 documents
