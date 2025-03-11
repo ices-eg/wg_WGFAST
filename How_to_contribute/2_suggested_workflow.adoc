@@ -69,7 +69,7 @@ B. Clipboard button. This places a copy of the repository's URL on your clipboar
 
 //
 [start=1]
-1. Open the Git terminal and use the navigate to the directory (folder) you want to copy the repository to.  +
+1. Open the Git terminal and navigate to the directory (folder) you want to copy the repository to.  +
 
 `cd` is the command for "change directory". +
 

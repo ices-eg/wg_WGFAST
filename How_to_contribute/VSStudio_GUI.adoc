@@ -13,6 +13,6 @@ ifdef::env-github[]
 endif::[]
 
 
-In development.
+In development. Nope. This information should go in the plain text editor help below AsciiDocFX. :nerd:  
 
 https://code.visualstudio.com/

@@ -13,7 +13,7 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
-These instructions are to help contributors install and use either AsciidocFX, or Visual Studio Code (VS Code) to edit the WGFAST convention documents. Atom and Brackets are no longer maintained and have been archived.
+These instructions are to help contributors install and use either AsciidocFX, or Visual Studio Code (VS Code) to edit the WGFAST convention documents. Atom and Brackets editors are no longer maintained and have been removed from these help documents.
 
 == Why use a text editor/IDE?
 There are three ways you can view and edit AsciiDoc documents. +
@@ -64,7 +64,7 @@ Visual Studio Code is more versatile that AsciiDocFX in that you can work in a v
 === Installing Visual Studio Code
 The easiest way to install Visual Studio Code is to go to https://code.visualstudio.com and click the download button.
 
-https://code.visualstudio.com/docs/[Getting Started documents] and other helpful links for Visual Studio Code. https://www.youtube.com/watch?v=B-s71n0dHUk&ab_channel=VisualStudioCode[Getting Started Video] - it is only 7 minutes long and is quite informative.
+https://code.visualstudio.com/docs/[Getting Started documents] and other helpful links for Visual Studio Code. https://www.youtube.com/watch?v=B-s71n0dHUk&ab_channel=VisualStudioCode[Getting Started Video] - it is only 7 minutes long and is quite informative. :nerd:
 
 === Integration with Git and GitHub
 Like AsciiDocFX, there is no Git/GitHub GUI native to Visual Studio Code, but there is a terminal emulator. 
