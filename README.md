@@ -49,7 +49,7 @@ In addition to these symposia, WGFAST has met yearly since 1984:
 |2014|6-9 May|New Bedford, USA|Joint session??|Verena Trenkel|66||
 |2013|16-19 April|San Sebastian, Spain||Nils Olav Handegard|75||
 |2012|24-27 April|Brest, France||Nils Olav Handegard|69||
-|2011|10-13 May|Reykjavík, Iceland|Joint session 9 April|Nils Olav Handegard|68||
+|2011|10-13 May|Reykjavík, Iceland|Joint session 9 May|Nils Olav Handegard|68||
 |2010|27-30 April|San Diego, USA||Rudy Kloser|68||
 |2009|19-22 May|Ancona, Italy||Rudy Kloser|62||
 |2008|23-Jun|Bergen, Norway|Symposium 16-20 June|Rudy Kloser|40|322|
