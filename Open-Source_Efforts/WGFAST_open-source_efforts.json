@@ -102,6 +102,17 @@
       }
     },
 	{
+      "title": "echoSMs",
+      "url": "https://ices-tools-dev.github.io/echoSMs/",
+      "programming_language": "Python",
+      "description": "Making acoustic scattering models available to fisheries and plankton scientists via the world wide web",
+      "contact": {
+        "name": "Mike Jech, Gavin Macaulay",
+        "e-mail": "mike.jech@noaa.gov, gavin@aqualyd.nz",
+        "institution": "NOAA, Aqulayd"
+      }
+	},
+	{
       "title": "",
       "url": "",
       "programming_language": "",
