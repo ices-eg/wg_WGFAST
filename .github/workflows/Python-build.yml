@@ -17,7 +17,7 @@ jobs:
     
     - name: install packages
       run: |
-        pip install pretty_html_table pandas
+        pip install itable pandas
 
     - name: build wgfast_efforts.html
       run: python Open-Source_Efforts/wgfast_efforts.py
