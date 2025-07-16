@@ -29,7 +29,7 @@ table = itables.to_html_datatable(df, allow_html=True, paging=True, showIndex=Fa
                                   footer=True, classes="display",
                                   style="width:100%")
 
-with open(data_dir/'text.html', 'w', encoding='utf-8') as f:
+with open(data_dir/'wgfast_efforts.html', 'w', encoding='utf-8') as f:
     f.write('<h1>' + html.escape(efforts['title']) + '</h1>')
     f.write('<p><small>Updated on ' + date.today().strftime('%d %b %Y') + '</small></p>')
     f.write('<p>' + html.escape(efforts['description']) + '</p>')
