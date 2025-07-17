@@ -17,18 +17,18 @@ jobs:
     
     - name: install packages
       run: |
-        pip install itables pandas packaging typing_extensions
+        pip install pandas tabulate
 
-    - name: build wgfast_efforts.html
+    - name: build wgfast_efforts.md
       run: python Open-Source_Efforts/wgfast_efforts.py
     
-    - name: Commit html file
+    - name: Commit markdown file
       run: |
         git config --global --add safe.directory $PWD
         git config --local user.email "github@ices.dk"
         git config --local user.name "ices-github-bot"
         git status
-        git add Open-Source_Efforts/wgfast_efforts.html
+        git add Open-Source_Efforts/wgfast_efforts.md
         git commit --allow-empty -m "Push triggered Python build"
         
     - name: Push changes
