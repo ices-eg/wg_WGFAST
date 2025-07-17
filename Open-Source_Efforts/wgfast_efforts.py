@@ -1,4 +1,4 @@
-"""Create a .html file from the .json file."""
+"""Create a markdown file from the .json file."""
 import json
 from pathlib import Path
 import pandas as pd
