@@ -1,12 +1,11 @@
-# WGFAST List of [Open-Source Data and Software Efforts](https://htmlpreview.github.io/?https://github.com/ices-eg/wg_WGFAST/blob/master/Open-Source_Efforts/wgfast_efforts.html)
+# WGFAST List of [Open-Source Data and Software Efforts](https://github.com/ices-eg/wg_WGFAST/blob/master/Open-Source_Efforts/wgfast_efforts.md)
 
 
 The ICES Working Group on Fisheries Acoustics, Science and Technology (WGFAST) has compiled a list of efforts from those in the fisheries acoustics community who are developing open-source data formats (e.g., using netCDF4 and HDF5) and open-source software (e.g., using Matlab, Python, Perl, R) for the acquisition, processing, analysis, and visualization of water-column sonar data. This list is intended to be comprehensive, but it relies on the community to populate it with known efforts.
 
 The list, `WGFAST_open-source_efforts.json`, is in JSON format, so anyone can read it and add new projects.
 
-### View the list of projects   
-To view the list of open-source projects in your web browser click [here](https://github.com/ices-eg/wg_WGFAST/blob/master/Open-Source_Efforts/wgfast_efforts.md).
+### [View the list of projects](https://github.com/ices-eg/wg_WGFAST/blob/master/Open-Source_Efforts/wgfast_efforts.md)
 
 
 ## How do we add new projects?  
