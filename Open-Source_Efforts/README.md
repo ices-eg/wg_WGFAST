@@ -3,8 +3,10 @@
 
 The ICES Working Group on Fisheries Acoustics, Science and Technology (WGFAST) has compiled a list of efforts from those in the fisheries acoustics community who are developing open-source data formats (e.g., using netCDF4 and HDF5) and open-source software (e.g., using Matlab, Python, Perl, R) for the acquisition, processing, analysis, and visualization of water-column sonar data. This list is intended to be comprehensive, but it relies on the community to populate it with known efforts.
 
+The list, `WGFAST_open-source_efforts.json`, is in JSON format, so anyone can read it and add new projects.
 
-The list, `WGFAST_open-source_efforts.json`, is in JSON format, so anyone can read it and add new projects. 
+### View the list of projects   
+To view the list of open-source projects in your web browser click [here](https://github.com/ices-eg/wg_WGFAST/blob/master/Open-Source_Efforts/wgfast_efforts.md).
 
 
 ## How do we add new projects?  
@@ -18,9 +20,6 @@ For **less experienced GitHub users**, follow the bullets above but after you ha
 
 
 ### How it works  
-The R script `wgfast_efforts.R` uses the markdown file `wgfast_efforts.Rmd` to create an HTML table, `wgfast_efforts.html`, that is useful for reports and documents. You are free to copy these scripts and use them. The HTML file is generated from the .json file and is not meant to be edited. Each time a change is pushed to this repository, a Github Action is started that runs the R script and commits the generated .html file to the repository.
+The Python script `wgfast_efforts.py` reads the .json file into Pandas and then exports it as a table in markdown format to the `wgfast_efforts.md` file. You are free to copy this script and use it.
 
-### View the list of projects   
-To view the list of open-source projects in your web browser click [here](https://htmlpreview.github.io/?https://github.com/ices-eg/wg_WGFAST/blob/master/Open-Source_Efforts/wgfast_efforts.md).
-
-
+The markdown file is not meant to be edited as each time a change is pushed to this repository, a Github Action is started that runs the Python script and commits the generated markdown file to the repository. Earlier versions of this process used R to create an .html file but the Github Action took several minutes to complete, compared to 20 s for the Python version (due to the time taken to install the required R packages).
