@@ -108,7 +108,7 @@
       "description": "Making acoustic scattering models available to fisheries and plankton scientists via the world wide web",
       "contact": {
         "name": "Mike Jech, Gavin Macaulay",
-        "e-mail": "mike.jech@noaa.gov, gavin@aqualyd.nz",
+        "e-mail": "michael.jech@noaa.gov, gavin@aqualyd.nz",
         "institution": "NOAA, Aqulayd"
       }
 	},
@@ -125,3 +125,4 @@
     }
   ]
 }
+
