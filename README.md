@@ -35,6 +35,7 @@ In addition to these symposia, WGFAST has met yearly since 1984:
 
 |Year|Dates|Location|Note|Chair|No. attendees|Symposium attendees|Source|
 |---|---|---|---|---|---|---|---|
+|2026|20-24 April|Wageningen, The Netherlands||Sven Gastauer||||
 |2025|8-11 April|Hafnarfjörður, Iceland|Online and physical, 81 in person, 65 remote|Anne Lebourges-Dhaussy|146|||
 |2024|9-12 April|Brest, France|Online and physical, 85 in person, 115 registrations|Anne Lebourges-Dhaussy|115|||
 |2023|31 March|Portland, Maine, USA|Symposium 27-30 March|Anne Lebourges-Dhaussy|47|150||
