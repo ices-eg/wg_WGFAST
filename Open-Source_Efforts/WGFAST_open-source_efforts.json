@@ -70,7 +70,7 @@
     },
     {
       "title": "Matecho",
-      "url": "ftp://ftp.ifremer.fr/ifremer/ird/acoustics/survey_kit",
+      "url": "https://forge.ird.fr/lemar/active_acoustics/matecho",
       "programming_language": "Matlab",
       "description": "Matecho is an automated processing method to extract information and perform echo-integration and fish shoal extraction from various scientific echo-sounder sources. The procedure allows the semiautomatic cleaning of echogram data and the application of automatic data filters. Echo-integration processing is executed for each depth layer and integrates their characteristics per elementary sampling unit. Sound scattered layers are automatically detected by segmentation from the echo-integrated echogram, and shoals are extracted according to an iterative process of aggregation of filtered echogram echoes that allows, in both cases, the calculation of the ad hoc parameters describing morphological, spatial location and acoustic characteristics of sound scattered layers and shoals.",
       "contact": {
